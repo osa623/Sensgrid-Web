@@ -18,6 +18,9 @@ import dSI from '../Assets/DSISport.png';
 import dHL from '../Assets/DHL.png';
 import Mobitel from '../Assets/SLTMobitel.png';
 
+//object images
+import object from '../Assets/object01.png';
+
 
 const details = [
     {
@@ -376,8 +379,8 @@ const LandingPage = () => {
                                 <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[1rem] lgs:h-[1rem]'/>
                                 <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
                     </div>
-                    <div className={`flex flex-col bg-gradient-to-t h-[15rem] ${introSec ? 'h-[50rem]' : 'h-[15rem]'} w-full from-blue-950 to-theme01 items-center justify-center transform-all duration-1000 ease-in-out`}>
-                    <div className='flex flex-col w-full h-auto items-center justify-center'>
+                    <div className={`relative flex flex-col bg-gradient-to-t overflow-hidden h-[15rem] ${introSec ? 'h-[50rem]' : 'h-[15rem]'} w-full from-blue-950 to-theme01 items-center justify-center transform-all duration-1000 ease-in-out`}>
+                    <div className='flex flex-col w-full h-auto items-center justify-center mt-12'>
                                 <h2 className={`font-kanit ${introSec ? 'text-7xl' : 'text-5xl'} text-primary text-center transform-all duration-700 ease-in-out`}
                                 style={{
                                     fontWeight:'100'
@@ -394,10 +397,12 @@ const LandingPage = () => {
                                                     Let's Observe
                                                 </h2>
                                                 <img src= {dropdown} alt='' className='object-cover lgs:h-5'/>
-                                            </div> 
+                              </div> 
                                  
 
-                        </div>  
+                    </div>  
+
+
                     </div>
 
                     </section>
