@@ -115,11 +115,11 @@ const LandingPage = () => {
             <div className='relative h-auto w-auto'>
 
                     {/* Hero Section */}
-                    <section className='relative flex-col h-[100vh] lgs:mb-3 w-full z-10'>
+                    <section className='relative flex-col lgs:h-[100vh] sms:h-[75vh] lgs:mb-3 w-full z-10'>
                                 
-                                <div className='absolute flex-col lg:w-full lgs:h-[100vh] z-20'>
+                                <div className='absolute flex-col w-full lgs:h-[100vh] z-20'>
 
-                                    <div className="relative w-full h-[80vh] overflow-hidden">
+                                    <div className="hidden relative lgs:flex flex-col w-[100vw] h-[80vh] overflow-hidden">
                                         <img
                                         src={background}
                                         alt="Beach View"
@@ -128,6 +128,9 @@ const LandingPage = () => {
                                         priority
                                         />
                                     </div>
+                                    
+                                    <div className="hidden bg-gradient-to-t from-theme01 to-blue-950 sms:flex mds:flex w-full h-[50vh] overflow-hidden"/>
+
                                     <div className='flex bg-transparent lgs:w-[100vw] lgs:h-[20vh]'/>
 
 
@@ -135,13 +138,13 @@ const LandingPage = () => {
 
                                 <div className='absolute flex-col flex w-full lgs:h-[100vh] z-30'>
 
-                                        <div className='relative flex flex-col bg-transparent items-center justify-center w-[100vw] h-[80vh]'>
+                                        <div className='relative flex flex-col bg-transparent items-center justify-center sms:mt-36 sms:justify-start  w-[100vw] lgs:h-[80vh]'>
                                             
-                                            <div className='flex flex-col items-center cursor-pointer justify-center lgs:space-y-4 lgs:w-[80vw] mds:w-[60vw]'>
-                                                <h2 className='font-dmsans lg:text-7xl mds:text-6xl text-primary'>Powering the <span className='font-bold text-baseprimary'>Next Generation</span></h2>
-                                                <h2 className='font-dmsans lg:text-7xl mds:text-6xl text-baseprimary'>of Smart <span className='font-bold text-primary'>IoT Solutions</span></h2>
+                                            <div className='flex flex-col items-center cursor-pointer justify-center lgs:space-y-4 sms:w-[70vw] lgs:w-[80vw] mds:w-[60vw]'>
+                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl sms:text-center mds:text-6xl text-primary'>Powering the <span className='font-bold text-baseprimary'>Next Generation</span></h2>
+                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl sms:text-center mds:text-6xl text-baseprimary'>of Smart <span className='font-bold text-primary'>IoT Solutions</span></h2>
                                             </div>
-                                            <div className='flex w-auto h-auto lgs:mt-8'>
+                                            <div className='hidden lgs:flex w-auto h-auto lgs:mt-8 sms:mt-6'>
                                                 <button className='flex bg-blue-800 lgs:w-[10rem] lgs:h-[3rem] items-center justify-center cursor-pointer  text-primary font-dmsans text-md p-4 rounded-3xl hover:bg-blue-900 hover:text-baseprimary'
                                                 style={{
                                                     boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)',
@@ -157,18 +160,18 @@ const LandingPage = () => {
 
                                 </div>
 
-                                <div className={`absolute ${sectionExplanded ? '-bottom-2' : 'bottom-10' } flex-col bg-transparent lgs:w-[100vw] lgs:h-auto z-50 transfrom-700 duration-700 ease-in-out`}>
+                                <div className={`absolute ${sectionExplanded ? 'lgs:-bottom-2 sms:bottom-4' : 'lgs:bottom-10 sms:bottom-0' } flex-col bg-transparent lgs:w-[100vw] lgs:h-auto sms:h-[35vh] z-50 transfrom-700 duration-700 ease-in-out`}>
 
-                                    <div className='flex bg-transparent items-center justify-center lg:w-[100vw] lg:h-auto space-x-6'>
+                                    <div className='flex bg-transparent items-center justify-center w-[100vw] lg:h-auto space-x-6'>
                                     
-                                        <div className={`relative flex lgs:w-[60rem] overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem]' : 'lgs:h-[12rem]'} bg-theme01 rounded-3xl transform-all duration-700 ease-in-out`} style={{
+                                        <div className={`relative flex lgs:w-[60rem] sms:w-[90vw] overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem] sms:h-[20rem]' : 'lgs:h-[12rem] sms:h-[8rem]'} bg-theme01 sms:pt-5 rounded-3xl transform-all duration-700 ease-in-out`} style={{
                                             boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)',
                                         }}>
                                             <div className='absolute flex w-full blur-sm h-auto overflow-hidden z-20'>
                                                 <img src={'background2'} alt='' className='flex object-cover'/>
                                             </div>
                                             <div className={`absolute flex flex-col    ${sectionExplanded ? 'lgs:h-[20rem] lgs:space-y-5' : 'lgs:h-[12rem] lgs:space-y-2'}  items-center justify-center lgs:w-[60rem] overflow-hidden transform-all duration-700 ease-in-out z-30`}>
-                                                <h2 className={`font-kanit ${sectionExplanded ? 'text-5xl' : 'text-8xl'}  text-primary font-bold text-center transform-all duration-700 ease-in-out`}>
+                                                <h2 className={`font-kanit ${sectionExplanded ? 'lgs:text-5xl sms:text-4xl' : 'lgs:text-8xl sms:text-5xl'}  text-primary font-bold text-center transform-all duration-700 ease-in-out`}>
                                                     INDUSTRY {''}<span className='font-kanit font-thin text-primary'>4.0</span>
                                                 </h2>
                                                 <div
@@ -228,11 +231,11 @@ const LandingPage = () => {
 
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center'>
                             <div className='group flex flex-col w-auto h-auto'>
-                                    <h2 className='group flex flex-col font-kanit text-center font-medium text-8xl text-theme01 transform-all duration-1000 ease-in-out'>
+                                    <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl sms:text-4xl text-theme01 transform-all duration-1000 ease-in-out'>
                                         What We Provide{''} 
                                     </h2>  
-                                    <h2 className='flex flex-col font-kanit text-4xl text-theme01' style={{
-                                        fontWeight:'100'
+                                    <h2 className='flex flex-col font-kanit lgs:text-4xl sms:text-md text-theme01' style={{
+                                        fontWeight:'200'
                                     }}>
                                         Unified Control System for Sensors and Machines{''}<div className='flex lgs:w-1/4 h-[0.1rem] bg-green-500 group-hover:lgs:w-full  transform-all duration-1000 ease-in-out'/>
                                 </h2>   
@@ -240,17 +243,17 @@ const LandingPage = () => {
                             </div>
                         </div> 
 
-                        <div className='flex lgs:w-[80vw] h-auto items-center lgs:space-x-5 justify-center lgs:mt-6 lgs:p-5'>
+                        <div className='flex sms:flex-col w-[80vw] h-auto items-center lgs:space-x-5 sms:space-y-5 justify-center mt-12 lgs:p-5'>
 
                             {details.slice(0,3).map((tool) => (
 
-                                <div key={tool.id} className='group overflow-hidden flex flex-col lgs:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' style={{
+                                <div key={tool.id} className='group overflow-hidden flex flex-col w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' style={{
                                     boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'
                                 }}>
-                                    <div className='relative flex flex-col lgs:h-[10rem] lgs:w-[20rem] justify-center rounded-md overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20'>
+                                    <div className='relative flex flex-col h-[10rem] w-[20rem] justify-center rounded-md overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20'>
                                         <img src={tool.image} alt='' className='object-cover'/>
                                     </div>
-                                    <div className='flex flex-col lgs:h-[2rem] lgs:w-[20rem] bg-theme01 justify-center items-center z-30'>
+                                    <div className='flex flex-col h-[2rem] w-[20rem] bg-theme01 justify-center items-center z-30'>
                                         <h2 className='font-dmsans text-center lgs:w-[15rem] text-md text-primary'
                                             style={{
                                                 fontWeight:'600'
@@ -258,8 +261,8 @@ const LandingPage = () => {
                                                 {tool.title}
                                             </h2>
                                     </div>
-                                    <div className='flex flex-col lgs:h-[6rem] lgs:w-[20rem] bg-primary rounded-b-lg justify-center items-center z-30'>
-                                            <p className='font-kanit text-center lgs:w-[15rem] text-sm text-secondary'
+                                    <div className='flex flex-col h-[6rem] w-[20rem] bg-primary rounded-b-lg justify-center items-center z-30'>
+                                            <p className='font-kanit text-center w-[15rem] text-sm text-secondary'
                                             style={{
                                                 fontWeight:'200'
                                             }}>
@@ -273,41 +276,42 @@ const LandingPage = () => {
 
                         </div>     
 
-                        <div className='flex lgs:w-[80vw] h-auto items-center lgs:space-x-5 justify-center lgs:p-5'>
+                        <div className='flex sms:flex-col w-[80vw] h-auto items-center lgs:space-x-5 sms:mt-6  sms:space-y-5 justify-center lgs:p-5'>
+
 
 
                             {details.slice(3,6).map((tool) => (
 
-                            <div key={tool.id} className='group overflow-hidden flex flex-col lgs:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' style={{
-                                boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'
-                            }}>
-                                <div className='relative flex flex-col lgs:h-[10rem] lgs:w-[20rem] justify-center rounded-md overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20'>
-                                    <img src={tool.image} alt='' className='object-cover'/>
-                                </div>
-                                <div className='flex flex-col lgs:h-[2rem] lgs:w-[20rem] bg-theme01 justify-center items-center z-30'>
-                                    <h2 className='font-dmsans text-center lgs:w-[15rem] text-md text-primary'
-                                        style={{
-                                            fontWeight:'600'
-                                        }}>
-                                            {tool.title}
-                                        </h2>
-                                </div>
-                                <div className='flex flex-col lgs:h-[6rem] lgs:w-[20rem] bg-primary rounded-b-lg justify-center items-center z-30'>
-                                        <p className='font-kanit text-center lgs:w-[15rem] text-sm text-secondary'
-                                        style={{
-                                            fontWeight:'200'
-                                        }}>
-                                            {tool.description}
-                                        </p>
+                                <div key={tool.id} className='group overflow-hidden flex flex-col w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' style={{
+                                    boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'
+                                }}>
+                                    <div className='relative flex flex-col h-[10rem] w-[20rem] justify-center rounded-md overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20'>
+                                        <img src={tool.image} alt='' className='object-cover'/>
+                                    </div>
+                                    <div className='flex flex-col h-[2rem] w-[20rem] bg-theme01 justify-center items-center z-30'>
+                                        <h2 className='font-dmsans text-center lgs:w-[15rem] text-md text-primary'
+                                            style={{
+                                                fontWeight:'600'
+                                            }}>
+                                                {tool.title}
+                                            </h2>
+                                    </div>
+                                    <div className='flex flex-col h-[6rem] w-[20rem] bg-primary rounded-b-lg justify-center items-center z-30'>
+                                            <p className='font-kanit text-center w-[15rem] text-sm text-secondary'
+                                            style={{
+                                                fontWeight:'200'
+                                            }}>
+                                                {tool.description}
+                                            </p>
+                                    </div>
+
                                 </div>
 
-                            </div>
-
-                            ))} 
+                                ))} 
 
                     </div> 
 
-                      <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center'>
+                      <div className='flex bg-transparent lgs:w-auto h-[5rem] items-center lgs:space-x-2 justify-center'>
                                     <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
                                     <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
                                     <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
@@ -322,37 +326,37 @@ const LandingPage = () => {
                     <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
                     <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
                         <div className='group flex flex-col w-auto h-auto'>
-                                <h2 className='group flex flex-col font-kanit text-center font-medium text-8xl text-theme01 transform-all duration-1000 ease-in-out'>
+                                <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl sms:text-4xl text-theme01 transform-all duration-1000 ease-in-out'>
                                     Our Partners{''} 
                                 </h2>  
-                                <h2 className='flex flex-col font-kanit text-4xl text-theme01' style={{
-                                    fontWeight:'100'
+                                <h2 className='flex flex-col font-kanit lgs:text-4xl sms:text-md text-theme01' style={{
+                                    fontWeight:'200'
                                 }}>
                                     Partnering with Leaders to Build Success Together.{''}<div className='flex lgs:w-1/4 h-[0.1rem] bg-green-500 group-hover:lgs:w-full  transform-all duration-1000 ease-in-out'/>
                                </h2>   
 
                         </div>
 
-                        <div className='flex lgs:w-[80vw] h-auto items-center lgs:space-x-5 justify-center lgs:mt-12'>
+                        <div className='flex sms:flex-col w-[80vw] h-auto items-center lgs:space-x-5 sms:space-y-5 justify-center mt-12'>
                                     
                             {partners.slice(0,3).map((tool) => (
 
-                            <div key={tool.id} className='flex flex-col lgs:w-[25rem] overflow-hidden bg-primary cursor-pointer items-center justify-center rounded-lg lgs:h-[25rem]' style={{
+                            <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] overflow-hidden bg-primary cursor-pointer items-center justify-center rounded-lg lgs:h-[25rem]' style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) '
                             }}>
-                                    <div className='relative flex flex-col lgs:h-[10rem] lgs:w-[25rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
+                                    <div className='relative flex flex-col h-[10rem] lgs:w-[25rem]  sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
                                         <img src={tool.image} alt='' className='object-cover h-40'/>
                                     </div>
-                                    <div className='flex flex-col lgs:h-[10rem] lgs:w-[20rem] bg-primary rounded-b-lg justify-center items-center'>
-                                            <p className='flex font-dmsans text-center lgs:w-[20rem] text-sm text-secondary'
+                                    <div className='flex flex-col h-[10rem] lgs:w-[20rem] bg-primary rounded-b-lg justify-center items-center smsLp-4'>
+                                            <p className='flex font-dmsans text-center w-[20rem] text-sm text-secondary'
                                             style={{
                                                 fontWeight:'300'
                                             }}>
                                                 {tool.description}
                                             </p>
                                     </div>
-                                    <div className='relative flex flex-col lgs:h-[5rem] lgs:w-[25rem] bg-primary rounded-b-lg justify-center items-center'>
-                                                <div className='absolute right-0 bottom-0 flex lgs:w-[15rem] rounded-tl-full items-center justify-center  lgs:h-[5rem] bg-gradient-to-r from-blue-950 to-theme01'>
+                                    <div className='relative flex flex-col h-[5rem] lgs:w-[25rem] sms:w-[22rem]  bg-primary rounded-b-lg justify-center items-center'>
+                                                <div className='absolute right-0 bottom-0 flex w-[15rem] rounded-tl-full items-center justify-center h-[4rem] bg-gradient-to-r from-blue-950 to-theme01'>
                                                         <h2 className='text-lg font-dmsans text-primary'style={{
                                                             fontWeight:'200'
                                                         }}>
@@ -365,6 +369,7 @@ const LandingPage = () => {
                             ))}    
 
                         </div>
+                        <div className='hidden sms:flex bg-transparent lgs:w-auto h-[5rem] items-center justify-center'/>
 
                     </div> 
 
@@ -382,9 +387,12 @@ const LandingPage = () => {
                                         <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
                                         <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
                             </div>
-                            <div className={`relative flex flex-col bg-gradient-to-t overflow-hidden ${introSec ? 'h-[100rem] from-primary to-primary' : 'h-[15rem] from-blue-950 to-theme01'} w-full items-center justify-start transform-all duration-1000 ease-in-out`}>
+                            <div className={`relative flex flex-col bg-primary overflow-hidden ${introSec ? 'h-[100rem]' : 'h-[15rem]'} w-full items-center justify-start transform-all duration-1000 ease-in-out`}
+                            style={{
+                                boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) , inset 0px 5px 20px 1px rgba(0, 0, 0, 0.2)',
+                            }}>
                                     <div className='flex flex-col w-full h-auto items-center justify-start mt-12'>
-                                                <h2 className={`font-kanit ${introSec ? 'text-6xl text-theme01' : 'text-5xl  text-primary'} text-primary text-center transform-all duration-700 ease-in-out`}
+                                                <h2 className={`font-kanit text-theme01 ${introSec ? 'text-6xl' : 'text-5xl'} text-center transform-all duration-700 ease-in-out`}
                                                 style={{
                                                     fontWeight:'100'
                                                 }}>
