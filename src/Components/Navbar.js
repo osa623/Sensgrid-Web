@@ -14,14 +14,14 @@ const Navbar = () => {
   };
 
   return (
-    <div className='fixed w-full lgs:w-[100vw] flex items-center justify-evenly sms:justify-between mds:justify-between bg-theme01 px-4 z-50 transition-all duration-300'
+    <div className='fixed w-full lgs:w-[100vw] flex items-center justify-evenly sms:justify-between mds:justify-between bg-primary px-4 z-50 transition-all duration-300'
     style={{
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     }}>
       <div className="flex items-center justify-center lgs:w-[20vw]">
         <img src={namelogo} alt="bwlogo" className="h-12 lgs:scale-150 w-auto m-4 mds:h-8 mds:m-2 lgs:h-12  sms:h-12" />
       </div>
-      <ul className="hidden md:flex lgs:flex  items-center font-dmsans justify-center text-primary text-lg cursor-pointer lgs:w-[60vw] lgs:space-x-4"
+      <ul className="hidden md:flex lgs:flex  items-center font-dmsans justify-center text-secondary text-lg cursor-pointer lgs:w-[60vw] lgs:space-x-4"
       style={{
         fontWeight:'400'
       }}>
