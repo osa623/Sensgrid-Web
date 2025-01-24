@@ -115,7 +115,7 @@ const LandingPage = () => {
             <div className='relative h-auto w-auto'>
 
                     {/* Hero Section */}
-                    <section className='relative flex-col lgs:h-[100vh] sms:h-[75vh] lgs:mb-3 w-full z-10'>
+                    <section className='relative flex-col lgs:h-[100vh] sms:h-[60vh] lgs:mb-3 w-full z-10'>
                                 
                                 <div className='absolute flex-col w-full lgs:h-[100vh] z-20'>
 
@@ -131,7 +131,7 @@ const LandingPage = () => {
                                     
                                     <div className="hidden bg-gradient-to-t from-theme01 to-blue-950 sms:flex mds:flex w-full h-[50vh] overflow-hidden"/>
 
-                                    <div className='flex bg-transparent lgs:w-[100vw] lgs:h-[20vh]'/>
+                                    <div className='flex bg-transparent lgs:w-[100vw] lgs:h-[20vh] sms:'/>
 
 
                                 </div>
@@ -160,7 +160,7 @@ const LandingPage = () => {
 
                                 </div>
 
-                                <div className={`absolute ${sectionExplanded ? 'lgs:-bottom-2 sms:bottom-4' : 'lgs:bottom-10 sms:bottom-0' } flex-col bg-transparent lgs:w-[100vw] lgs:h-auto sms:h-[35vh] z-50 transfrom-700 duration-700 ease-in-out`}>
+                                <div className={`absolute ${sectionExplanded ? 'lgs:-bottom-2 sms:bottom-4' : 'lgs:bottom-10 sms:bottom-0' } flex-col bg-transparent lgs:w-[100vw] lgs:h-auto sms:h-[20vh] z-50 transfrom-700 duration-700 ease-in-out`}>
 
                                     <div className='flex bg-transparent items-center justify-center w-[100vw] lg:h-auto space-x-6'>
                                     
@@ -387,12 +387,12 @@ const LandingPage = () => {
                                         <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
                                         <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
                             </div>
-                            <div className={`relative flex flex-col bg-primary overflow-hidden ${introSec ? 'h-[100rem]' : 'h-[15rem]'} w-full items-center justify-start transform-all duration-1000 ease-in-out`}
+                            <div className={`relative flex flex-col bg-primary overflow-hidden ${introSec ? 'lgs:h-[100rem] sms:h-[160rem]' : 'lgs:h-[15rem] sms:h-[15rem]'} w-full items-center justify-start transform-all duration-1000 ease-in-out`}
                             style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) , inset 0px 5px 20px 1px rgba(0, 0, 0, 0.2)',
                             }}>
                                     <div className='flex flex-col w-full h-auto items-center justify-start mt-12'>
-                                                <h2 className={`font-kanit text-theme01 ${introSec ? 'text-6xl' : 'text-5xl'} text-center transform-all duration-700 ease-in-out`}
+                                                <h2 className={`font-kanit text-theme01 ${introSec ? 'lgs:text-3xl sms:text-4xl' : 'lgs:text-2xl sms:text-3xl'} text-center transform-all duration-700 ease-in-out`}
                                                 style={{
                                                     fontWeight:'100'
                                                 }}>
@@ -402,26 +402,26 @@ const LandingPage = () => {
                                                 </h2>
                                                 
                                                 <div className='flex flex-col h-auto w-auto lgs:mt-2 cursor-pointer hover:mt-4 items-center justify-center transform-all duration-700 ease-in-out' onClick={handleIntroSec}>
-                                                                <h2 className={`font-kanit ${introSec ? 'text-2xl text-secondary' : 'text-2xl text-primary'}  transform-all duration-700 ease-in-out`}
+                                                                <h2 className={`font-kanit ${introSec ? 'text-2xl text-secondary' : 'text-2xl text-secondary'}  transform-all duration-700 ease-in-out`}
                                                                 style={{
                                                                     fontWeight:'100'
                                                                 }}>
                                                                     Let's Observe
                                                                 </h2>
-                                                                <img src= {dropdown} alt='' className='object-cover lgs:h-5'/>
+                                                                <img src= {dropdown} alt='' className='object-cover lgs:h-5 sms:h-6'/>
                                                 </div>
                                                 <div className='flex flex-col lgs:w-auto h-auto lgs:mt-4 items-center justify-center'>
                                                     <div className = 'flex flex-col lgs:w-[80vw] h-auto  items-center lgs:space-y-5 justify-evenly'>
-                                                       <div className='flex w-auto lgs:w-[80vw] justify-evenly items-center'>
+                                                       <div className='flex sms:flex-col w-auto lgs:w-[80vw] justify-evenly items-center'>
                                                            
                                                        <img src={sensegrid} alt='' className='object-cover lgs:w-[30rem] lgs:h-auto'/>
 
-                                                            <div className = 'flex flex-col lgs:w-[30rem] h-auto items-center justify-center lgs:space-y-4'>
+                                                            <div className = 'flex flex-col lgs:w-[30rem] h-auto items-center sms:space-y-4 justify-center lgs:space-y-4'>
                                                                 <h2 className='font-kanit text-5xl text-theme01 text-center'
                                                                 style={{fontWeight:'200'}}>
                                                                 Who We Are
                                                                 </h2>  
-                                                                <p className='font-kanit text-md text-center text-secondary' style={{
+                                                                <p className='font-kanit text-md text-center sms:w-[80vw] text-secondary' style={{
                                                                     fontWeight:'200'
                                                                 }}>
                                                                 SenseGrid, powered by SLTMobitel, specializes in delivering advanced Industrial IoT solutions. Our focus is on improving efficiency, productivity, and sustainability across industries through innovative technologies. We are committed to providing customized, reliable, and transformative solutions that meet the unique needs of modern industrial operations.
@@ -429,70 +429,70 @@ const LandingPage = () => {
                                                             </div>
                                                         
                                                        </div>
-                                                       <div className='flex w-auto lgs:w-[80vw] lgs:mt-12 justify-evenly items-center'>
+                                                       <div className='flex sms:flex-col w-auto lgs:w-[80vw] mt-12  justify-evenly items-center'>
 
-                                                                <div className = 'flex flex-col lgs:w-[30rem] h-auto items-center justify-center lgs:space-y-4'>
+                                                                <div className = 'flex flex-col lgs:w-[30rem] sms:w-[80vw] h-auto sms:space-y-4  items-center justify-center lgs:space-y-4'>
                                                                     <h2 className='font-kanit text-5xl text-theme01 text-center'
                                                                     style={{fontWeight:'200'}}>
                                                                     Our Achievements
                                                                     </h2>  
-                                                                    <h2 className='font-kanit text-md text-center text-secondary' style={{
+                                                                    <h2 className='font-kanit text-md text-center  sms:w-[80vw] text-secondary' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Successfully designed and manufactured cutting-edge IoT solutions through the SLT-Mobitel Innovation Center.
                                                                     </h2>  
-                                                                    <h2 className='font-kanit text-md text-center text-secondary' style={{
+                                                                    <h2 className='font-kanit text-md text-center  sms:w-[80vw] text-secondary' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Empowered industries with real-time monitoring and predictive technologies, significantly reducing downtime.
                                                                     </h2> 
-                                                                                                                                        <h2 className='font-kanit text-md text-center text-secondary' style={{
+                                                                   <h2 className='font-kanit text-md text-center  sms:w-[80vw] text-secondary' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Delivered cost-effective and scalable solutions tailored to diverse industrial sectors, fostering productivity and growth.
                                                                     </h2>                                      
                                                                 </div>
                                                            
-                                                           <img src={sensegrid1} alt='' className='object-cover lgs:w-[35rem] rounded-xl lgs:h-auto'/>
+                                                           <img src={sensegrid1} alt='' className='object-cover lgs:w-[35rem] sms:mt-12 sms:w-[20rem] rounded-xl lgs:h-auto'/>
     
 
                                                             
                                                         </div>
-                                                        <div className='flex w-auto lgs:w-[80vw] lgs:mt-12 justify-evenly items-center'>
+                                                        <div className='flex sms:flex-col w-auto lgs:w-[80vw] mt-12 justify-evenly items-center'>
                                                            
                                                            <img src={sensegrid2} alt='' className='object-cover lgs:w-[30rem] lgs:h-auto'/>
     
-                                                                <div className = 'flex flex-col lgs:w-[30rem] h-auto items-center justify-center lgs:space-y-4'>
+                                                                <div className = 'flex flex-col lgs:w-[30rem] sms:space-y-4 h-auto items-center justify-center lgs:space-y-4'>
                                                                     <h2 className='font-kanit text-5xl text-theme01 text-center'
                                                                     style={{fontWeight:'200'}}>
                                                                     Our Solutions
                                                                     </h2>  
-                                                                    <h2 className='font-kanit text-md text-start text-secondary' style={{
+                                                                    <h2 className='font-kanit text-md sms:w-[80vw] sms:text-center text-start text-secondary' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Machine Condition Monitoring: Real-time insights for predictive maintenance and enhanced performance
                                                                     </h2> 
-                                                                    <h2 className='font-kanit text-md text-start text-secondary' style={{
+                                                                    <h2 className='font-kanit text-md sms:w-[80vw] sms:text-center text-start text-secondary' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Process Optimization and Monitoring: Automated systems for increased efficiency and tailored dashboards.
                                                                     </h2> 
-                                                                    <h2 className='font-kanit text-md text-start text-secondary' style={{
+                                                                    <h2 className='font-kanit text-md sms:w-[80vw] sms:text-center text-start text-secondary' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Environment Monitoring Solutions: Comprehensive systems for regulatory compliance and advanced analytics.
                                                                     </h2>
-                                                                    <h2 className='font-kanit text-md text-start text-secondary' style={{
+                                                                    <h2 className='font-kanit text-md sms:w-[80vw] sms:text-center text-start text-secondary' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                    Energy Management Solutions: Tools for optimizing energy usage and reporting sustainability metrics.
                                                                     </h2>  
-                                                                    <h2 className='font-kanit text-md text-start text-secondary' style={{
+                                                                    <h2 className='font-kanit text-md sms:w-[80vw] sms:text-center text-start text-secondary' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Supply Chain Monitoring: Inventory tracking and logistics optimization for better visibility.
                                                                     </h2>  
-                                                                    <h2 className='font-kanit text-md text-start text-secondary' style={{
+                                                                    <h2 className='font-kanit text-md sms:w-[80vw] sms:text-center text-start text-secondary' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Remote Monitoring and Control: IoT-enabled solutions for efficient remote access and operations.
