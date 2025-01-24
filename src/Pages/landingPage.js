@@ -239,7 +239,7 @@ const LandingPage = () => {
                     </section>
 
                     {/* Offering Section */}
-                    <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
+                    <section ref={sectionRef} className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
 
                         <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center'>
                                     <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
