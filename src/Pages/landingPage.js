@@ -448,7 +448,7 @@ const LandingPage = () => {
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) , inset 0px 5px 20px 1px rgba(0, 0, 0, 0.2)',
                             }}>
                                     <div className='flex flex-col w-full h-auto items-center justify-start mt-12'>
-                                                <h2 className={`font-kanit text-theme01 ${introSec ? 'lgs:text-3xl sms:text-3xl mds:text-4xl' : 'lgs:text-2xl text-3xl'} text-center transform-all duration-700 ease-in-out`}
+                                                <h2 className={`font-kanit text-theme01 ${introSec ? 'lgs:text-3xl sms:text-3xl mds:text-4xl' : 'lgs:text-4xl text-3xl'} text-center transform-all duration-700 ease-in-out`}
                                                 style={{
                                                     fontWeight:'100'
                                                 }}>
