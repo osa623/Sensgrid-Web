@@ -164,13 +164,13 @@ const LandingPage = () => {
 
                                     <div className='flex bg-transparent items-center justify-center w-[100vw] lg:h-auto space-x-6'>
                                     
-                                        <div className={`relative flex lgs:w-[60rem] sms:w-[90vw] overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem] sms:h-[20rem]' : 'lgs:h-[12rem] sms:h-[8rem]'} bg-theme01 sms:pt-5 rounded-3xl transform-all duration-700 ease-in-out`} style={{
+                                        <div className={`relative flex lgs:w-[60rem] sms:w-[90vw] overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem] sms:h-[20rem]' : 'lgs:h-[12rem] sms:h-[8rem]'} bg-theme01 items-center justify-center  rounded-3xl transform-all duration-700 ease-in-out`} style={{
                                             boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)',
                                         }}>
                                             <div className='absolute flex w-full blur-sm h-auto overflow-hidden z-20'>
                                                 <img src={'background2'} alt='' className='flex object-cover'/>
                                             </div>
-                                            <div className={`absolute flex flex-col    ${sectionExplanded ? 'lgs:h-[20rem] lgs:space-y-5' : 'lgs:h-[12rem] lgs:space-y-2'}  items-center justify-center lgs:w-[60rem] overflow-hidden transform-all duration-700 ease-in-out z-30`}>
+                                            <div className={`absolute flex flex-col ${sectionExplanded ? 'lgs:h-[20rem] space-y-5' : 'lgs:h-[12rem] space-y-2'}  items-center justify-center lgs:w-[60rem] overflow-hidden transform-all duration-700 ease-in-out z-30`}>
                                                 <h2 className={`font-kanit ${sectionExplanded ? 'lgs:text-5xl sms:text-4xl' : 'lgs:text-8xl sms:text-5xl'}  text-primary font-bold text-center transform-all duration-700 ease-in-out`}>
                                                     INDUSTRY {''}<span className='font-kanit font-thin text-primary'>4.0</span>
                                                 </h2>
@@ -180,7 +180,7 @@ const LandingPage = () => {
                                                         } transition-all duration-700 ease-in-out`}
                                                         >
                                                         {sectionExplanded && (
-                                                            <p className="font-kanit text-primary text-md text-center" style={{
+                                                            <p className="font-kanit text-primary text-md sms:text-sm sms:w-[75vw] text-center" style={{
                                                                 fontWeight:'200'
                                                             }}>
                                                             Revolutionizing the Industry 2.0 era with innovative IoT solutions, our platform is designed
@@ -200,7 +200,7 @@ const LandingPage = () => {
                                                     }}>
                                                         Let's Find Out
                                                     </h2>
-                                                    <img src= {dropdown} alt='' className='object-cover lgs:h-5'/>
+                                                    <img src= {dropdown} alt='' className='object-cover h-5'/>
                                                 </div>
                                             </div>
 
@@ -392,7 +392,7 @@ const LandingPage = () => {
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) , inset 0px 5px 20px 1px rgba(0, 0, 0, 0.2)',
                             }}>
                                     <div className='flex flex-col w-full h-auto items-center justify-start mt-12'>
-                                                <h2 className={`font-kanit text-theme01 ${introSec ? 'lgs:text-3xl sms:text-4xl' : 'lgs:text-2xl sms:text-3xl'} text-center transform-all duration-700 ease-in-out`}
+                                                <h2 className={`font-kanit text-theme01 ${introSec ? 'lgs:text-3xl sms:text-3xl' : 'lgs:text-2xl sms:text-3xl'} text-center transform-all duration-700 ease-in-out`}
                                                 style={{
                                                     fontWeight:'100'
                                                 }}>
@@ -402,13 +402,13 @@ const LandingPage = () => {
                                                 </h2>
                                                 
                                                 <div className='flex flex-col h-auto w-auto lgs:mt-2 cursor-pointer hover:mt-4 items-center justify-center transform-all duration-700 ease-in-out' onClick={handleIntroSec}>
-                                                                <h2 className={`font-kanit ${introSec ? 'text-2xl text-secondary' : 'text-2xl text-secondary'}  transform-all duration-700 ease-in-out`}
+                                                                <h2 className={`font-kanit ${introSec ? 'text-2xl text-secondary' : 'text-xl text-secondary'}  transform-all duration-700 ease-in-out`}
                                                                 style={{
                                                                     fontWeight:'100'
                                                                 }}>
                                                                     Let's Observe
                                                                 </h2>
-                                                                <img src= {dropdown} alt='' className='object-cover lgs:h-5 sms:h-6'/>
+                                                                <img src= {dropdown} alt='' className='object-cover h-6 '/>
                                                 </div>
                                                 <div className='flex flex-col lgs:w-auto h-auto lgs:mt-4 items-center justify-center'>
                                                     <div className = 'flex flex-col lgs:w-[80vw] h-auto  items-center lgs:space-y-5 justify-evenly'>
