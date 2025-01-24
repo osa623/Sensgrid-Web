@@ -160,7 +160,7 @@ const LandingPage = () => {
 
                                 </div>
 
-                                <div className={`absolute ${sectionExplanded ? 'lgs:-bottom-2 sms:bottom-4 mds:bottom-4' : 'bottom-20 sms:bottom-0' } flex-col bg-transparent lgs:w-[100vw] lgs:h-auto sms:h-[20vh] z-50 transfrom-700 duration-700 ease-in-out`}>
+                                <div className={`absolute ${sectionExplanded ? 'lgs:-bottom-2 sms:bottom-20 mds:bottom-4' : 'bottom-20 sms:bottom-0' } flex-col bg-transparent lgs:w-[100vw] lgs:h-auto sms:h-[20vh] z-50 transfrom-700 duration-700 ease-in-out`}>
 
                                     <div className='flex bg-transparent items-center justify-center w-[100vw] lg:h-auto space-x-6'>
                                     
