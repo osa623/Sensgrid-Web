@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useEffect, useState, useRef } from 'react';
 
 //backgrounds
 import background from '../Assets/HeroSection.jpg';
@@ -92,6 +92,8 @@ const LandingPage = () => {
     const [sectionExplanded , setSectionExpanded] = useState(false);   
     const [offersec , setOfferSec] = useState(false);
     const [introSec , setIntroSec] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
 
     const handleSectionExpand = () => {
 
@@ -107,6 +109,23 @@ const LandingPage = () => {
 
         setIntroSec(!introSec);
     };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            setIsVisible(entry.isIntersecting); // Set visibility when section is visible
+          },
+          { threshold: 0.1 } // Trigger when at least 10% of the section is visible
+        );
+    
+        if (sectionRef.current) {
+          observer.observe(sectionRef.current);
+        }
+    
+        return () => {
+          if (sectionRef.current) observer.unobserve(sectionRef.current);
+        };
+      }, []);
 
 
   return (
@@ -247,10 +266,10 @@ const LandingPage = () => {
 
                             {details.slice(0,3).map((tool) => (
 
-                                <div key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col sms:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' style={{
+                                <div ref={sectionRef} key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col sms:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' style={{
                                     boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'
                                 }}>
-                                    <div className='relative flex flex-col h-[10rem] w-[20rem] justify-center rounded-md overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20'>
+                                    <div className={`relative flex flex-col h-[10rem] w-[20rem] justify-center rounded-md  ${isVisible ? 'sms:scale-150' : 'sms:scale-100'} overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20`}>
                                         <img src={tool.image} alt='' className='object-cover'/>
                                     </div>
                                     <div className='flex flex-col h-[2rem] w-[20rem] bg-theme01 justify-center items-center z-30'>
@@ -279,35 +298,34 @@ const LandingPage = () => {
 
                         <div className='hidden sms:flex lgs:flex sms:flex-col w-[80vw] h-auto items-center lgs:space-x-5 sms:mt-6  sms:space-y-5 justify-center lgs:p-5'>
 
-                          {details.slice(3,6).map((tool) => (
+                        {details.slice(3,6).map((tool) => (
 
-                                <div key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' style={{
-                                    boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'
-                                }}>
-                                    <div className='relative flex flex-col h-[10rem] w-[20rem] justify-center rounded-md overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20'>
-                                        <img src={tool.image} alt='' className='object-cover'/>
-                                    </div>
-                                    <div className='flex flex-col h-[2rem] w-[20rem] bg-theme01 justify-center items-center z-30'>
-                                        <h2 className='font-dmsans text-center lgs:w-[15rem] text-md text-primary'
-                                            style={{
-                                                fontWeight:'600'
-                                            }}>
-                                                {tool.title}
-                                            </h2>
-                                    </div>
-                                    <div className='flex flex-col h-[6rem] w-[20rem] bg-primary rounded-b-lg justify-center items-center z-30'>
-                                            <p className='font-kanit text-center w-[15rem] text-sm text-secondary'
-                                            style={{
-                                                fontWeight:'200'
-                                            }}>
-                                                {tool.description}
-                                            </p>
-                                    </div>
-
+                            <div ref={sectionRef} key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col sms:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' style={{
+                                boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'
+                            }}>
+                                <div className={`relative flex flex-col h-[10rem] w-[20rem] justify-center rounded-md  ${isVisible ? 'sms:scale-150' : 'sms:scale-100'} overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20`}>
+                                    <img src={tool.image} alt='' className='object-cover'/>
+                                </div>
+                                <div className='flex flex-col h-[2rem] w-[20rem] bg-theme01 justify-center items-center z-30'>
+                                    <h2 className='font-dmsans text-center lgs:w-[15rem] text-md text-primary'
+                                        style={{
+                                            fontWeight:'600'
+                                        }}>
+                                            {tool.title}
+                                        </h2>
+                                </div>
+                                <div className='flex flex-col h-[6rem] w-[20rem] bg-primary rounded-b-lg justify-center items-center z-30'>
+                                        <p className='font-kanit text-center w-[15rem] text-sm text-secondary'
+                                        style={{
+                                            fontWeight:'200'
+                                        }}>
+                                            {tool.description}
+                                        </p>
                                 </div>
 
-                                ))} 
+                            </div>
 
+                            ))}
                        </div> 
 
                        {/* Medium Screen Section*/}
