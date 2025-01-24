@@ -115,7 +115,7 @@ const LandingPage = () => {
             <div className='relative h-auto w-auto'>
 
                     {/* Hero Section */}
-                    <section className='relative flex-col lgs:h-[100vh] sms:h-[60vh] lgs:mb-3 w-full z-10'>
+                    <section className='relative flex-col lgs:h-[100vh] h-[60vh] lgs:mb-3 w-full z-10'>
                                 
                                 <div className='absolute flex-col w-full lgs:h-[100vh] z-20'>
 
@@ -138,11 +138,11 @@ const LandingPage = () => {
 
                                 <div className='absolute flex-col flex w-full lgs:h-[100vh] z-30'>
 
-                                        <div className='relative flex flex-col bg-transparent items-center justify-center sms:mt-36 sms:justify-start  w-[100vw] lgs:h-[80vh]'>
+                                        <div className='relative flex flex-col bg-transparent items-center justify-center sms:mt-36 mds:mt-24 sms:justify-start  w-[100vw] lgs:h-[80vh]'>
                                             
                                             <div className='flex flex-col items-center cursor-pointer justify-center lgs:space-y-4 sms:w-[70vw] lgs:w-[80vw] mds:w-[60vw]'>
-                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl sms:text-center mds:text-6xl text-primary'>Powering the <span className='font-bold text-baseprimary'>Next Generation</span></h2>
-                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl sms:text-center mds:text-6xl text-baseprimary'>of Smart <span className='font-bold text-primary'>IoT Solutions</span></h2>
+                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl sms:text-center mds:text-5xl text-primary'>Powering the <span className='font-bold text-baseprimary'>Next Generation</span></h2>
+                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl sms:text-center mds:text-5xl text-baseprimary'>of Smart <span className='font-bold text-primary'>IoT Solutions</span></h2>
                                             </div>
                                             <div className='hidden lgs:flex w-auto h-auto lgs:mt-8 sms:mt-6'>
                                                 <button className='flex bg-blue-800 lgs:w-[10rem] lgs:h-[3rem] items-center justify-center cursor-pointer  text-primary font-dmsans text-md p-4 rounded-3xl hover:bg-blue-900 hover:text-baseprimary'

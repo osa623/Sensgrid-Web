@@ -19,7 +19,7 @@ const Navbar = () => {
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     }}>
       <div className="flex items-center justify-center lgs:w-[20vw]">
-        <img src={namelogo} alt="bwlogo" className="h-12 lgs:scale-150 sms:scale-125 w-auto m-4 mds:h-8 mds:m-2 lgs:h-12  sms:h-12" />
+        <img src={namelogo} alt="bwlogo" className="lgs:scale-150 w-auto m-4 mds:h-8 mds:m-2 lgs:h-12  sms:h-10" />
       </div>
       <ul className="hidden md:flex lgs:flex  items-center font-dmsans justify-center text-secondary text-lg cursor-pointer lgs:w-[60vw] lgs:space-x-4"
       style={{
@@ -58,19 +58,19 @@ const Navbar = () => {
                     </div>
                     {/* Use Link component for mobile navigation */}
                     <li className="p-4 border-b border-gray-600 text-center">
-                     About Me
+                     Home
                     </li>
                     <li  className="p-4 border-b border-gray-600 text-center">
-                      Projects
+                      Our Clients
                     </li>
                     <li className="p-4 border-b border-gray-600 text-center">
-                      Skills
+                      Features
                     </li>
                     <li  className="p-4 border-b border-gray-600 text-center">
-                      Services
+                      About Us
                     </li>
                     <li o className="p-4 border-b border-gray-600 text-center">
-                      Contact Me
+                      Blog
                     </li>
                   </ul>
               </div>
