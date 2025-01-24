@@ -393,7 +393,7 @@ const LandingPage = () => {
 
                         </div>
 
-                        <div className='flex sms:flex-col w-[80vw] h-auto items-center space-x-5 sms:space-y-5 justify-center mt-12'>
+                        <div className='flex sms:flex-col w-[80vw] h-auto items-center mds:space-x-5 lgs:space-x-5 sms:space-y-5 justify-center mt-12'>
                                     
                             {partners.slice(0,3).map((tool) => (
 
