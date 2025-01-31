@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/landingPage.js';
 import Navbar from './Components/Navbar.js';
 import Loading from './Components/Loading.js';
+import BlogPage from './Pages/Blog.js';
+
 
 
 
@@ -22,6 +24,7 @@ const AppContent = () => {
         ) : (
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path='/blog/:id' element={<BlogPage />} />
           </Routes>
         )}
       </div>

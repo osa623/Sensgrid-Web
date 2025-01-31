@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 //backgrounds
 import background from '../Assets/HeroSection.jpg';
@@ -26,6 +27,16 @@ import sensegrid2 from '../Assets/object02.png';
 //object images
 import object from '../Assets/object01.png';
 import namelogo from '../Assets/SensGrid logo.png';
+
+//blog01
+import blog01 from '../Assets/image01.png';
+import portfolio1 from '../Assets/Nishan.png';
+import subimage01 from '../Assets/blogimage02.png';
+import subimage02 from '../Assets/blogimage03.png';
+
+//blog02
+import blog02 from '../Assets/image02.png';
+import portfolio2 from '../Assets/Madeesha.png';
 
 
 const details = [
@@ -86,6 +97,74 @@ const details = [
 ];
 
 
+const blog = [
+    {
+      id: 1,
+      title: 'WiFi AP vs. STA Mode in IoT devices.',
+      subtitle: 'Which One is Right for Your Project?',
+      introduction: [
+        'Typically, IoT devices can run on two modes as AP (Access Point) and STA(Station). Station Mode (STA) is the standard mode for most WiFi devices. In this mode, a device connects to an existing network, much like your smartphone does when it connects to your home WiFi. In this scenario, your phone is functioning in Station Mode.',
+        'In contrast, Access Point Mode (AP) transforms the device into an access point. Instead of joining a network, the device creates its own network, allowing other devices to connect directly to it. '
+      ],
+      image: blog01,
+      profileimage : portfolio1,
+      authorName : 'Nishan Dananjaya',
+      authorTitle : 'Associate Embedded Engineer',
+      date: 'January 28, 2025',
+      topic1:'Why AP mode, what are the use cases? ',
+      subimage01: subimage01,
+      subtopic1: 'Why Use AP Mode?',
+      subdescription1: 'AP mode offers numerous advantages for IoT devices, enabling them to create independent networks that facilitate seamless connectivity for other devices. Additionally, IoT devices can function as central hubs, managing connections for multiple wireless clients. AP mode seamlessly integrates with both wired and wireless networks, enhancing flexibility in various deployment scenarios',
+      subtopic12: 'Use Cases',
+      subdescription12: [
+        'Smart Home Systems: AP mode is ideal for connecting multiple IoT devices within a smart home, ensuring reliable and efficient communication between devices. ',
+        'Industrial IoT Gateways: In industrial environments, AP mode enables a gateway to collect and manage data from multiple connected devices, improving operational efficiency. ',
+        'Remote Monitoring Systems: For applications such as agriculture or wildlife monitoring, AP mode allows multiple sensors to connect to a centralized device, providing real-time data collection and analysis. '
+      ],
+        topic2: "Why STA mode, what are the use cases?",
+        subimage02: subimage02,
+        subtopic21: "Why Use STA Mode?",
+        subdescription21: "STA mode allows IoT devices to connect to existing Wi-Fi networks, providing seamless integration into established network infrastructures. This mode enables key functionalities such as cloud-based data storage, firmware updates, and remote access. Additionally, STA mode is more power-efficient than AP mode, making it ideal for battery-operated devices.",
+        subtopic22 : "Use Cases",
+        subdescription22 : [
+            "Smart Appliances: Home devices like smart refrigerators, thermostats, and lighting systems use STA mode to connect to the home Wi-Fi network, allowing users to control them remotely via smartphones or voice assistants.",
+            "Wearable Technology: Devices such as smartwatches and fitness trackers operate in STA mode to sync data with smartphones or cloud services, providing users with real-time health and activity information.",
+            "Industrial Automation: In industrial settings, sensors and machinery equipped with IoT capabilities connect in STA mode to the facility's Wi-Fi network, enabling centralized monitoring, data collection, and process optimization."
+      ],
+      topic3: "How to select the AP or STA mode for your project?",
+        subtopic31: "Key Considerations",
+        subdescription31:  "When selecting between AP and STA modes, several factors should be considered to ensure optimal performance and integration.",
+        subtopic32: "Selection Criteria",
+        subdescription32 : [
+            "Network Infrastructure: If an existing Wi-Fi network is available, STA mode allows devices to integrate seamlessly. If the device needs to operate independently or in an environment without existing Wi-Fi, AP mode enables it to establish its own network for direct connections.",
+            "Device Roles and Communication: Devices designed as central hubs, managing multiple client devices (e.g., smart home controllers), are best suited for AP mode. In contrast, devices that send data to a central server or the cloud benefit from STA mode, leveraging the existing network for connectivity.",
+            "Power Consumption: STA mode is generally more energy efficient, making it ideal for battery-powered devices due to its reduced connection management overhead.",
+            "Security Considerations: AP mode can enhance security by creating a dedicated network that isolates traffic, while STA mode relies on the security protocols of the existing network, simplifying management but requiring trust in the network's safeguards.",
+            "Scalability: AP mode is suitable for a limited number of devices connecting to a central hub, whereas STA mode is ideal for large-scale deployments, allowing devices to utilize an existing robust network infrastructure without requiring each one to manage its own network."
+    ],
+
+
+    },
+    {
+        id: 2,
+        title: 'ESP32 FOTA Using GitHub  Repositories',
+        subtitle: 'Simplifying OTA Updates with GitHub',
+        introduction: [
+          'Typically, IoT devices can run on two modes as AP (Access Point) and STA(Station). Station Mode (STA) is the standard mode for most WiFi devices. In this mode, a device connects to an existing network, much like your smartphone does when it connects to your home WiFi. In this scenario, your phone is functioning in Station Mode.',
+          'In contrast, Access Point Mode (AP) transforms the device into an access point. Instead of joining a network, the device creates its own network, allowing other devices to connect directly to it. '
+        ],
+        image: blog02,
+        profileimage : portfolio2,
+        authorName : 'Madeehsa Lakshan',
+        authorTitle : 'Associate Embedded Engineer',
+        date: 'January 25, 2025'
+  
+      },
+];
+
+
+
+
 
 const LandingPage = () => {
 
@@ -94,6 +173,7 @@ const LandingPage = () => {
     const [introSec , setIntroSec] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
+    const navigate = useNavigate();
 
     const handleSectionExpand = () => {
 
@@ -126,6 +206,10 @@ const LandingPage = () => {
           if (sectionRef.current) observer.unobserve(sectionRef.current);
         };
       }, []);
+
+
+
+
 
 
   return (
@@ -572,9 +656,103 @@ const LandingPage = () => {
                     </section>
 
                     {/* Introduction Section */}
-                    <section className='flex flex-col overflow-hidden items-center justify-center h-screen w-full'>
+                    <section className='flex flex-col overflow-hidden items-center justify-start sms:mt-5 h-screen w-full'>
 
-                   
+                            <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center'>
+                                        <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
+                                        <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
+                                        <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
+                                        <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
+                            </div>
+                            <div className='group flex flex-col w-auto h-auto cursor-pointer'>
+                                <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-4xl text-theme01 transform-all duration-1000 ease-in-out'>
+                                    Blogs{''} 
+                                </h2>  
+                                <h2 className='flex flex-col font-kanit lgs:text-xl lgs:w-[40vw] justify-center items-center text-center sms:text-md mds:text-xl text-theme01' style={{
+                                    fontWeight:'200'
+                                }}>
+                                    Partnering with Leaders to Build Success Together.{''}
+                                    
+                               </h2>   
+
+                           </div>
+                           <div className='flex sms:flex-col h-auto w-full items-center justify-center lgs:space-x-5 sms:space-y-4 mt-12'>
+                            
+                            {blog.map((tool)=> (
+                                <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-default items-center justify-center rounded-lg lgs:h-[22rem]' style={{
+                                boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) '
+                            }}>
+                                    <div className='relative flex flex-col h-[12rem] lgs:w-[25rem] mds:w-[15rem] sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
+                                        <img src={tool.image} alt='' className='object-cover scale-150 h-40 mds:h-20'/>
+                                        <div className='absolute top-0 right-0 flex flex-col h-[2rem] w-[5rem] rounded-bl-2xl bg-blue-700 justify-center items-center'
+                                        style={{
+                                            boxShadow: '0px 5px 8px 2px rgba(0, 0, 0, 0.5) , inset 0px 4px 5px 2px rgba(255, 255, 255, 0.4)',
+                                        }}>
+                                            <span className='text-primary font-dmsans text-md'>blog #{tool.id}</span>
+                                        </div>
+                                    </div>
+                                    <div className='flex flex-col h-[5rem] lgs:w-[25rem] mds:w-[20rem] sms:w-[22rem] bg-transparent lgs:rounded-t-xl justify-center items-start p-2 sms:p-1'>
+                                       <h2 className='font-dmsans text-start lgs:w-[25rem] sms:w-[22rem] text-lg text-blue-900' style={{
+                                        fontWeight:'700'
+                                       }}>
+                                             {tool.title}
+                                       </h2>
+                                       <h2 className='font-dmsans text-start w-[25rem] text-sm text-secondary' style={{
+                                        fontWeight:'200'
+                                       }}>
+                                             {tool.subtitle}
+                                       </h2>
+
+                                    </div>
+                                    <div className='flex h-[5rem] lgs:w-[25rem] mds:w-[20rem] sms:w-[22rem]  bg-transparent  justify-center items-center sms:p-1'>
+                                       <div className='flex lgs:w-[15rem] sms:w-[15rem] h-[5rem] items-center justify-start lgs:p-2'>
+
+                                         <div className='flex w-[3.5rem] h-[3.5rem] items-center justify-center lgs:border-2 border-blue-400 overflow-hidden bg-theme01 rounded-full'>
+                                            <img src= {tool.profileimage} alt='' className='object-cover rounded-full'/>
+                                         </div>
+                                         <div className='flex flex-col ml-2'>
+                                            <h2 className='font-dmsans text-sm text-secondary' style={{
+                                                fontWeight:'500'
+                                            }}>
+                                                {tool.authorName}
+                                            </h2>
+                                            <h2 className='font-dmsans text-secondary' style={{
+                                                fontWeight:'200',
+                                                fontSize:'10px'
+                                            }}>
+                                                {tool.authorTitle}
+                                            </h2>
+                                            <h2 className='font-dmsans text-secondary' style={{
+                                                fontWeight:'200',
+                                                 fontSize:'9px'
+                                            }}>
+                                                {tool.date}
+                                            </h2>
+                                         </div>
+
+                                      </div>
+                                       <div className='flex lgs:w-[10rem] sms:w-[7rem]  h-[4rem] items-center justify-center'>
+
+                                         <div  onClick={() => navigate(`/blog/${tool.id}`, { state: { tool } })}  className='flex lgs:w-[8rem] sms:w-[6rem] sms:h-[3rem] lgs:h-[2.5rem] bg-blue-600 rounded-xl cursor-pointer items-center justify-center' style={{
+                                            boxShadow: '0px 5px 8px 2px rgba(0, 0, 0, 0.3) , inset 0px 4px 5px 2px rgba(255, 255, 255, 0.4)',
+                                         }}>
+                                           <h2 className='font-dmsans text-white text-md' style={{}}>
+                                             Read
+                                           </h2>'
+
+                                         </div>
+
+                                       </div>
+
+                                    
+                                    </div>
+
+                            </div>
+                            ))}
+
+                           </div>
+                           <div className='flex bg-transparent lgs:w-auto h-[5rem] items-center justify-center'/>
+                    
                     </section>
 
 
