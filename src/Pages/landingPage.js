@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 //backgrounds
 import background from '../Assets/HeroSection.jpg';
@@ -207,6 +209,12 @@ const LandingPage = () => {
         };
       }, []);
 
+      useEffect(() => {
+        AOS.init({
+          duration: 1000, // Animation duration in milliseconds
+        });
+      }, []);
+
 
 
 
@@ -243,9 +251,9 @@ const LandingPage = () => {
 
                                         <div className='relative flex flex-col bg-transparent items-center justify-center sms:mt-36 mds:mt-24 sms:justify-start  w-[100vw] lgs:h-[80vh]'>
                                             
-                                            <div className='flex flex-col items-center cursor-pointer justify-center lgs:space-y-4 sms:w-[70vw] lgs:w-[80vw] mds:w-[60vw]'>
-                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-primary'>Powering the <span className='font-bold text-baseprimary'>Next Generation</span></h2>
-                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-baseprimary'>of Smart <span className='font-bold text-primary'>IoT Solutions</span></h2>
+                                            <div className='flex flex-col items-center cursor-pointer justify-center lgs:space-y-4 sms:w-[70vw] lgs:w-[80vw] mds:w-[60vw] overflow-hidden'>
+                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-primary' data-aos='fade-down'>Powering the <span className='font-bold text-baseprimary' data-aos='fade-up'>Next Generation</span></h2>
+                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-baseprimary' data-aos='fade-up'>of Smart <span className='font-bold text-primary'>IoT Solutions</span></h2>
                                             </div>
                                             <div className='hidden lgs:flex w-auto h-auto lgs:mt-8 sms:mt-6'>
                                                 <button className='flex bg-blue-800 lgs:w-[10rem] lgs:h-[3rem] items-center justify-center cursor-pointer  text-primary font-dmsans text-md p-4 rounded-3xl hover:bg-blue-900 hover:text-baseprimary'
@@ -325,19 +333,19 @@ const LandingPage = () => {
                     {/* Offering Section */}
                     <section ref={sectionRef} className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
 
-                        <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center'>
-                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
-                                    <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
-                                    <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
-                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
+                        <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
+                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
+                                    <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                    <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
                         </div>
 
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center'>
-                            <div className='group flex flex-col w-auto h-auto'>
-                                    <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-4xl text-theme01 transform-all duration-1000 ease-in-out'>
+                            <div className='group flex flex-col w-auto h-auto overflow-hidden'>
+                                    <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-4xl text-theme01 transform-all duration-1000 ease-in-out'data-aos='zoom-in'>
                                         What We Provide{''} 
                                     </h2>  
-                                    <h2 className='flex flex-col font-kanit lgs:text-4xl mds:text-xl sms:text-md text-theme01' style={{
+                                    <h2 className='flex flex-col font-kanit lgs:text-4xl mds:text-xl sms:text-md text-theme01' data-aos='fade-up' style={{
                                         fontWeight:'200'
                                     }}>
                                         Unified Control System for Sensors and Machines{''}<div className='flex lgs:w-1/4 h-[0.1rem] bg-green-500 group-hover:lgs:w-full  transform-all duration-1000 ease-in-out'/>
@@ -350,7 +358,7 @@ const LandingPage = () => {
 
                             {details.slice(0,3).map((tool) => (
 
-                                <div ref={sectionRef} key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col sms:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' style={{
+                                <div ref={sectionRef} key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col sms:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' data-aos='fade-up' data-aos-delay={`${300 + tool.id * 150}`}style={{
                                     boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'
                                 }}>
                                     <div className={`relative flex flex-col h-[10rem] w-[20rem] justify-center rounded-md  ${isVisible ? 'sms:scale-150' : 'sms:scale-100'} overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20`}>
@@ -384,7 +392,7 @@ const LandingPage = () => {
 
                         {details.slice(3,6).map((tool) => (
 
-                            <div ref={sectionRef} key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col sms:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' style={{
+                            <div ref={sectionRef} key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col sms:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' data-aos='fade-up' data-aos-delay={`${300 + tool.id * 150}`} style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'
                             }}>
                                 <div className={`relative flex flex-col h-[10rem] w-[20rem] justify-center rounded-md  ${isVisible ? 'sms:scale-150' : 'sms:scale-100'} overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20`}>
@@ -419,6 +427,8 @@ const LandingPage = () => {
                                     <div
                                         key={tool.id}
                                         className='group overflow-hidden flex-col mds:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]'
+                                        data-aos='fade-up'
+                                        data-aos-delay={`${200 + tool.id * 150}`}
                                         style={{
                                             boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2), inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)',
                                         }}
@@ -451,11 +461,11 @@ const LandingPage = () => {
                        </div>
 
 
-                      <div className='flex bg-transparent lgs:w-auto h-[5rem] items-center lgs:space-x-2 justify-center'>
-                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
-                                    <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
-                                    <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
-                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
+                      <div className='flex bg-transparent lgs:w-auto h-[5rem] items-center lgs:space-x-2 overflow-hidden justify-center'>
+                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
+                                    <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='zoom-in'/>
+                                    <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='zoom-in'/>
+                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
                         </div>     
 
 
@@ -465,11 +475,12 @@ const LandingPage = () => {
                     <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
                     <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
                     <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
-                        <div className='group flex flex-col w-auto h-auto'>
-                                <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-4xl text-theme01 transform-all duration-1000 ease-in-out'>
+                        <div className='group flex flex-col w-auto h-auto overflow-hidden'>
+                                <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-4xl text-theme01 transform-all duration-1000 ease-in-out'
+                                data-aos='zoom-in'>
                                     Our Partners{''} 
                                 </h2>  
-                                <h2 className='flex flex-col font-kanit lgs:text-4xl sms:text-md mds:text-xl text-theme01' style={{
+                                <h2 className='flex flex-col font-kanit lgs:text-4xl sms:text-md mds:text-xl text-theme01' data-aos='fade-up'  style={{
                                     fontWeight:'200'
                                 }}>
                                     Partnering with Leaders to Build Success Together.{''}<div className='flex lgs:w-1/4 h-[0.1rem] bg-green-500 group-hover:lgs:w-full  transform-all duration-1000 ease-in-out'/>
@@ -481,7 +492,8 @@ const LandingPage = () => {
                                     
                             {partners.slice(0,3).map((tool) => (
 
-                            <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-pointer items-center justify-center rounded-lg lgs:h-[25rem]' style={{
+                            <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-pointer items-center justify-center rounded-lg lgs:h-[25rem]'                                         data-aos='fade-up'
+                                        data-aos-delay={`${200 + tool.id * 150}`} style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) '
                             }}>
                                     <div className='relative flex flex-col h-[10rem] lgs:w-[25rem] mds:w-[15rem] sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
@@ -522,10 +534,10 @@ const LandingPage = () => {
                     <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
 
                             <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center'>
-                                        <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
-                                        <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
-                                        <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
-                                        <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
+                                        <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
+                                        <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='zoom-in'/>
+                                        <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='zoom-in'/>
+                                        <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
                             </div>
                             <div className={`relative flex flex-col bg-primary overflow-hidden ${introSec ? 'lgs:h-[100rem] sms:h-[160rem] mds:h-[100rem]' : 'lgs:h-[15rem] sms:h-[15rem] mds:h-[15rem]'} w-full items-center justify-start transform-all duration-1000 ease-in-out`}
                             style={{
@@ -679,7 +691,9 @@ const LandingPage = () => {
                            <div className='flex sms:flex-col h-auto w-full items-center justify-center lgs:space-x-5 sms:space-y-4 mt-12'>
                             
                             {blog.map((tool)=> (
-                                <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-default items-center justify-center rounded-lg lgs:h-[22rem]' style={{
+                                <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-default items-center justify-center rounded-lg lgs:h-[22rem]'
+                                                                        data-aos='fade-up'
+                                                                        data-aos-delay={`${200 + tool.id * 150}`} style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) '
                             }}>
                                     <div className='relative flex flex-col h-[12rem] lgs:w-[25rem] mds:w-[15rem] sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
@@ -707,7 +721,7 @@ const LandingPage = () => {
                                     <div className='flex h-[5rem] lgs:w-[25rem] mds:w-[20rem] sms:w-[22rem]  bg-transparent  justify-center items-center sms:p-1'>
                                        <div className='flex lgs:w-[15rem] sms:w-[15rem] h-[5rem] items-center justify-start lgs:p-2'>
 
-                                         <div className='flex w-[3.5rem] h-[3.5rem] items-center justify-center lgs:border-2 border-blue-400 overflow-hidden bg-theme01 rounded-full'>
+                                         <div className='flex w-[3.5rem] h-[3.5rem] items-center justify-center border-2 border-blue-400 overflow-hidden bg-theme01 rounded-full'>
                                             <img src= {tool.profileimage} alt='' className='object-cover rounded-full'/>
                                          </div>
                                          <div className='flex flex-col ml-2'>
