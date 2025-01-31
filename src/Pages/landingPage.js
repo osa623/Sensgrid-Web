@@ -691,13 +691,13 @@ const LandingPage = () => {
                                             <span className='text-primary font-dmsans text-md'>blog #{tool.id}</span>
                                         </div>
                                     </div>
-                                    <div className='flex flex-col h-[5rem] lgs:w-[25rem] mds:w-[20rem] sms:w-[22rem] bg-transparent lgs:rounded-t-xl justify-center items-start p-2 sms:p-1'>
-                                       <h2 className='font-dmsans text-start lgs:w-[25rem] sms:w-[22rem] text-lg text-blue-900' style={{
-                                        fontWeight:'700'
+                                    <div className='flex flex-col h-[5rem] lgs:w-[25rem] mds:w-[20rem] sms:w-[22rem] bg-transparent lgs:rounded-t-xl justify-center items-start p-2'>
+                                       <h2 className='font-dmsans text-start lgs:w-[25rem] sms:w-[22rem] lgs:text-lg sms:text-md text-blue-900' style={{
+                                        fontWeight:'800'
                                        }}>
                                              {tool.title}
                                        </h2>
-                                       <h2 className='font-dmsans text-start w-[25rem] text-sm text-secondary' style={{
+                                       <h2 className='font-dmsans text-start w-[25rem] text-sm sms:text-xs text-secondary' style={{
                                         fontWeight:'200'
                                        }}>
                                              {tool.subtitle}
