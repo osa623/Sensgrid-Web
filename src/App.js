@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route,  useLocation } from 'react-router-dom';
 
 //Pages
 import Home from './Pages/landingPage.js';
@@ -12,7 +12,21 @@ import BlogPage from './Pages/Blog.js';
 
 const AppContent = () => {
 
-  const [isLoading] = useState(false);
+  const [isLoading , setIsLoading] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    
+    if (!isLoading) {
+      setIsLoading(true);
+
+      const loadingTimer = setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
+
+      return () => clearTimeout(loadingTimer);
+    }
+  }, [location]);
 
 
   return (
