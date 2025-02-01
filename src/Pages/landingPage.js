@@ -35,10 +35,13 @@ import blog01 from '../Assets/image01.png';
 import portfolio1 from '../Assets/Nishan.png';
 import subimage01 from '../Assets/blogimage02.png';
 import subimage02 from '../Assets/blogimage03.png';
+import subimage03 from '../Assets/Picture1.png';
 
 //blog02
 import blog02 from '../Assets/image02.png';
 import portfolio2 from '../Assets/Madeesha.png';
+import blog2chart from '../Assets/blog2chart.png';
+import blog2chart2 from '../Assets/blog2chart2.png';
 
 
 const details = [
@@ -78,9 +81,9 @@ const details = [
       description: 'Access live reports and analytics anytime, anywhere.',
       image : CloudBaseDashboard
     }
-  ];
+];
 
-  const partners = [
+const partners = [
     {
       id: 1,
       description: 'Empower your business with real-time fine-tuning capabilities that adapt to dynamic operational needs. Monitor, modify, and optimize workflows seamlessly to ensure peak performance and instant adaptability to changing environments.',
@@ -97,7 +100,6 @@ const details = [
       image: Mobitel
     },
 ];
-
 
 const blog = [
     {
@@ -134,32 +136,98 @@ const blog = [
             "Industrial Automation: In industrial settings, sensors and machinery equipped with IoT capabilities connect in STA mode to the facility's Wi-Fi network, enabling centralized monitoring, data collection, and process optimization."
       ],
       topic3: "How to select the AP or STA mode for your project?",
-        subtopic31: "Key Considerations",
+      subimage03: subimage03,
         subdescription31:  "When selecting between AP and STA modes, several factors should be considered to ensure optimal performance and integration.",
-        subtopic32: "Selection Criteria",
         subdescription32 : [
-            "Network Infrastructure: If an existing Wi-Fi network is available, STA mode allows devices to integrate seamlessly. If the device needs to operate independently or in an environment without existing Wi-Fi, AP mode enables it to establish its own network for direct connections.",
-            "Device Roles and Communication: Devices designed as central hubs, managing multiple client devices (e.g., smart home controllers), are best suited for AP mode. In contrast, devices that send data to a central server or the cloud benefit from STA mode, leveraging the existing network for connectivity.",
-            "Power Consumption: STA mode is generally more energy efficient, making it ideal for battery-powered devices due to its reduced connection management overhead.",
-            "Security Considerations: AP mode can enhance security by creating a dedicated network that isolates traffic, while STA mode relies on the security protocols of the existing network, simplifying management but requiring trust in the network's safeguards.",
-            "Scalability: AP mode is suitable for a limited number of devices connecting to a central hub, whereas STA mode is ideal for large-scale deployments, allowing devices to utilize an existing robust network infrastructure without requiring each one to manage its own network."
+            "Network Infrastructure plays a key role in this decision. If an existing Wi-Fi network is available, STA mode allows devices to seamlessly integrate into the current setup without the need to create a separate network. Conversely, if the device needs to operate independently or in an environment without existing Wi-Fi, AP mode enables it to establish its own network for direct connections.",
+            "Device Roles and Communication are also critical. Devices designed to act as central hubs, managing multiple client devices like smart home controllers, are best suited for AP mode. In contrast, devices that need to send data to a central server or the cloud benefit from STA mode, leveraging the existing network for connectivity.",
+            "Power Consumption is another consideration, as STA mode is generally more energyefficient, making it ideal for battery-powered devices due to its reduced connection management overhead.",
+            "Security Considerations must also be evaluated; AP mode can enhance security by creating a dedicated network that isolates traffic, while STA mode relies on the security protocols of the existing network, which may simplify management but requires trust in the network's safeguards",
+            "Lastly, Scalability is important for deployment. AP mode is well-suited for scenarios involving a limited number of devices connecting directly to a central device. For largescale deployments, STA mode is preferable, as it allows devices to utilize a robust existing network infrastructure, accommodating numerous devices without requiring each one to manage its own network."
     ],
+        topic4: "Conclusion",
+        subimage04: "",
+        subtopic41: " ",
+        subdescription41: "Choosing between AP and STA modes for your IoT project depends on the specific requirements of your application. AP mode is ideal for scenarios where the device needs to create its own network, act as a central hub, or operate in environments without existing infrastructure. On the other hand, STA mode is better suited for devices that need to connect to an existing network, prioritize power efficiency, or integrate seamlessly into large-scale deployments. By carefully evaluating factors such as network infrastructure, device roles, power consumption, security, and scalability, you can determine which mode best aligns with your project's goals. Both modes have their unique advantages, and the right choice will ensure optimal performance and functionality for your IoT solution.",
+        subtopic42 : " ",
+        subdescription42 : [],
 
+        topic5: "",
+        subimage05: "",
+        subtopic51: "",
+        subdescription51: "",
+        subtopic52 : "",
+        subdescription52 : [],
 
-    },
+        topic6: "",
+        subimage06: "",
+        subtopic61: "",
+        subdescription61: "",
+        subtopic62 : "",
+        subdescription62 : [],
+
+        },
     {
         id: 2,
         title: 'ESP32 FOTA Using GitHub  Repositories',
         subtitle: 'Simplifying OTA Updates with GitHub',
-        introduction: [
-          'Typically, IoT devices can run on two modes as AP (Access Point) and STA(Station). Station Mode (STA) is the standard mode for most WiFi devices. In this mode, a device connects to an existing network, much like your smartphone does when it connects to your home WiFi. In this scenario, your phone is functioning in Station Mode.',
-          'In contrast, Access Point Mode (AP) transforms the device into an access point. Instead of joining a network, the device creates its own network, allowing other devices to connect directly to it. '
-        ],
+        introduction: [],
         image: blog02,
         profileimage : portfolio2,
         authorName : 'Madeehsa Lakshan',
         authorTitle : 'Associate Embedded Engineer',
-        date: 'January 25, 2025'
+        date: 'January 25, 2025',
+        topic1:'Introduction',
+      subimage01: 'blog02',
+      subtopic1: '',
+      subdescription1: 'Firmware Over-The-Air (FOTA) is one of the most important features of IoT devices, which allows users to upgrade firmware without physical access to the devices. This FOTA update mechanism allows a device to update itself based on data received while the normal firmware is running. This blog post will discuss the implementation of FOTA updates for ESP32 using a GitHub (private or public) repository (SSL).',
+      subtopic12: '',
+      subdescription12: [],
+        topic2: "How it works",
+        subimage02: blog2chart,
+        subtopic21: "",
+        subdescription21: "ESP32 connects to the internet and establishes a secure connection with the GitHub server. Then ESP periodically checks with the saved version file and compares with the current version. If a new version is detected, end devices download the firmware binary file to a different partition and perform an OTA update.",
+        subtopic22 : "",
+        subdescription22 : [],
+        topic3: "Use Case:  ESP32 FOTA update using GitHub private repositories",
+        subimage03: blog2chart2,
+        subdescription31:  "",
+        subdescription32 : [],
+    topic4: "Key Components and Architecture",
+    subimage04: "",
+    subtopic41: "Firmware Version Management",
+    subdescription41: "",
+    subtopic42 : "A JSON file on GitHub stores the current firmware version and download URL",
+    subdescription42 : [
+        "A JSON file on GitHub stores the current firmware version and download URL",
+        "The ESP32 compares its current version with the server-side version",
+        "If a new version is detected, it initiates the download and update process"       
+   ],
+   topic5: "",
+   subimage05: "",
+   subtopic51: "Secure Connectivity",
+   subdescription51: "",
+   subtopic52 : "Security is paramount in this implementation",
+   subdescription52 : [
+
+    "Uses WiFiClientSecure for encrypted connections",
+    "Supports loading custom Root CA certificates",
+    "Authenticates GitHub API requests using Personal Access Tokens (PAT)",
+    "Stores WiFi credentials securely in LittleFS"
+           
+  ],
+
+  topic6: "",
+  subimage06: "",
+  subtopic61: "Rollback Mechanism",
+  subdescription61: "",
+  subtopic62 : "An innovative feature allows hardware-triggered firmware rollback",
+  subdescription62 : [
+    "A dedicated pin can trigger a return to the previous firmware version",
+    "Provides a safety net if a new firmware update causes unexpected issues"
+          
+ ],
+
   
       },
 ];
@@ -341,14 +409,17 @@ const LandingPage = () => {
                         </div>
 
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center'>
-                            <div className='group flex flex-col w-auto h-auto overflow-hidden'>
-                                    <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-4xl text-theme01 transform-all duration-1000 ease-in-out'data-aos='zoom-in'>
-                                        What We Provide{''} 
+                            <div className='group flex flex-col w-auto h-auto overflow-hidden items-center justify-center'>
+                                    <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-8xl sms:text-7xl text-theme01 transform-all duration-1000 ease-in-out' 
+                                    style={{
+                                        fontWeight:'300'
+                                    }} data-aos='zoom-in'>
+                                        What We Do{''} 
                                     </h2>  
-                                    <h2 className='flex flex-col font-kanit lgs:text-4xl mds:text-xl sms:text-md text-theme01' data-aos='fade-up' style={{
+                                    <h2 className='flex flex-col font-kanit text-center  lgs:text-4xl mds:text-xl sms:w-[75vw] sms:text-md text-theme01' data-aos='fade-up' style={{
                                         fontWeight:'200'
                                     }}>
-                                        Unified Control System for Sensors and Machines{''}<div className='flex lgs:w-1/4 h-[0.1rem] bg-green-500 group-hover:lgs:w-full  transform-all duration-1000 ease-in-out'/>
+                                        Unified Control System for Sensors and Machines
                                 </h2>   
 
                             </div>
@@ -358,7 +429,7 @@ const LandingPage = () => {
 
                             {details.slice(0,3).map((tool) => (
 
-                                <div ref={sectionRef} key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col sms:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' data-aos='fade-up' data-aos-delay={`${300 + tool.id * 150}`}style={{
+                                <div ref={sectionRef} key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col sms:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' data-aos='fade-up' data-aos-delay={`${300 + tool.id * 50}`}style={{
                                     boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'
                                 }}>
                                     <div className={`relative flex flex-col h-[10rem] w-[20rem] justify-center rounded-md  ${isVisible ? 'sms:scale-150' : 'sms:scale-100'} overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20`}>
@@ -392,7 +463,7 @@ const LandingPage = () => {
 
                         {details.slice(3,6).map((tool) => (
 
-                            <div ref={sectionRef} key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col sms:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' data-aos='fade-up' data-aos-delay={`${300 + tool.id * 150}`} style={{
+                            <div ref={sectionRef} key={tool.id} className='hidden group overflow-hidden lgs:flex sms:flex flex-col sms:w-[20rem] cursor-pointer bg-primary rounded-lg lgs:h-[18rem]' data-aos='fade-up' data-aos-delay={`${300 + tool.id * 50}`} style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'
                             }}>
                                 <div className={`relative flex flex-col h-[10rem] w-[20rem] justify-center rounded-md  ${isVisible ? 'sms:scale-150' : 'sms:scale-100'} overflow-hidden items-center group-hover:scale-150 transform-all duration-700 ease-in-out z-20`}>
@@ -475,15 +546,18 @@ const LandingPage = () => {
                     <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
                     <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
                     <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
-                        <div className='group flex flex-col w-auto h-auto overflow-hidden'>
-                                <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-4xl text-theme01 transform-all duration-1000 ease-in-out'
+                        <div className='group flex flex-col w-auto h-auto justify-center items-center overflow-hidden'>
+                                <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-8xl text-theme01 transform-all duration-1000 ease-in-out'
+                                style={{
+                                    fontWeight:'300'
+                                }}
                                 data-aos='zoom-in'>
-                                    Our Partners{''} 
+                                    Partners{''} 
                                 </h2>  
-                                <h2 className='flex flex-col font-kanit lgs:text-4xl sms:text-md mds:text-xl text-theme01' data-aos='fade-up'  style={{
+                                <h2 className='flex flex-col font-kanit lgs:text-4xl sms:w-[75vw] text-center sms:text-md mds:text-xl text-theme01' data-aos='fade-up'  style={{
                                     fontWeight:'200'
                                 }}>
-                                    Partnering with Leaders to Build Success Together.{''}<div className='flex lgs:w-1/4 h-[0.1rem] bg-green-500 group-hover:lgs:w-full  transform-all duration-1000 ease-in-out'/>
+                                    Partnering with Leaders to Build Success Together.
                                </h2>   
 
                         </div>
@@ -493,7 +567,7 @@ const LandingPage = () => {
                             {partners.slice(0,3).map((tool) => (
 
                             <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-pointer items-center justify-center rounded-lg lgs:h-[25rem]'                                         data-aos='fade-up'
-                                        data-aos-delay={`${200 + tool.id * 150}`} style={{
+                                        data-aos-delay={`${200 + tool.id * 50}`} style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) '
                             }}>
                                     <div className='relative flex flex-col h-[10rem] lgs:w-[25rem] mds:w-[15rem] sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
@@ -667,7 +741,7 @@ const LandingPage = () => {
 
                     </section>
 
-                    {/* Introduction Section */}
+                    {/* Blog Section */}
                     <section className='flex flex-col overflow-hidden items-center justify-start sms:mt-5 h-screen w-full'>
 
                             <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center'>
@@ -677,13 +751,16 @@ const LandingPage = () => {
                                         <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
                             </div>
                             <div className='group flex flex-col w-auto h-auto cursor-pointer'>
-                                <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-4xl text-theme01 transform-all duration-1000 ease-in-out'>
+                                <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-8xl text-theme01 transform-all duration-1000 ease-in-out'
+                                style={{
+                                    fontWeight:'300'
+                                }}>
                                     Blogs{''} 
                                 </h2>  
-                                <h2 className='flex flex-col font-kanit lgs:text-xl lgs:w-[40vw] justify-center items-center text-center sms:text-md mds:text-xl text-theme01' style={{
+                                <h2 className='flex flex-col font-kanit lgs:text-xl sms:mt-5 lgs:w-[40vw] sms:w-[75vw] justify-center items-center text-center sms:text-md mds:text-xl text-secondary' style={{
                                     fontWeight:'200'
                                 }}>
-                                    Partnering with Leaders to Build Success Together.{''}
+                                    Explore in-depth articles, expert reviews, and the latest trends in the automobile industry.{''}
                                     
                                </h2>   
 
@@ -693,7 +770,7 @@ const LandingPage = () => {
                             {blog.map((tool)=> (
                                 <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-default items-center justify-center rounded-lg lgs:h-[22rem]'
                                                                         data-aos='fade-up'
-                                                                        data-aos-delay={`${200 + tool.id * 150}`} style={{
+                                                                        data-aos-delay={`${100 + tool.id * 50}`} style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) '
                             }}>
                                     <div className='relative flex flex-col h-[12rem] lgs:w-[25rem] mds:w-[15rem] sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
