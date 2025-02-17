@@ -23,7 +23,7 @@ const Navbar = () => {
       </div>
       <ul className="hidden md:flex lgs:flex  items-center font-dmsans justify-center text-secondary text-lg cursor-pointer lgs:w-[60vw] lgs:space-x-4"
       style={{
-        fontWeight:'400'
+        fontWeight:'300'
       }}>
         {/* Use Link component for routing */}
         <li className="p-4 hover:text-baseprimary mds:text-sm">
@@ -40,6 +40,9 @@ const Navbar = () => {
         </li>
         <li on className="p-4 hover:text-baseprimary mds:text-sm">
           Blog
+        </li>
+        <li on className="p-4 hover:text-baseprimary mds:text-sm">
+          Contact Us
         </li>
       </ul>
       <div className="flex items-center lgs:w-[20vw] mds:w-[20vw]"/>
@@ -71,6 +74,9 @@ const Navbar = () => {
                     </li>
                     <li o className="p-4 border-b border-gray-600 text-center">
                       Blog
+                    </li>
+                    <li o className="p-4 border-b border-gray-600 text-center">
+                      Contact Us
                     </li>
                   </ul>
               </div>

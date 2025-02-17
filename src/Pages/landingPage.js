@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 //backgrounds
 import background from '../Assets/HeroSection.jpg';
 import background1 from '../Assets/background3.jpg';
+import backgroundVideo from '../Assets/backgroundVideo.mp4';
 
 //details images
 import dropdown from '../Assets/dropdown.png';
@@ -42,6 +43,9 @@ import blog02 from '../Assets/image02.png';
 import portfolio2 from '../Assets/Madeesha.png';
 import blog2chart from '../Assets/blog2chart.png';
 import blog2chart2 from '../Assets/blog2chart2.png';
+
+//portraits
+import portrait from '../Assets/Portrait.jpg';
 
 
 const details = [
@@ -233,6 +237,28 @@ const blog = [
 ];
 
 
+const testimonial = [
+    {
+      id: 1,
+      description: 'SenseGrid team delivered a seamless industrial plant monitoring solution at our Galle factory that exceeded our expectations. Their expertise, proactive communication, and unwavering support ensured a smooth implementation and boosted our production efficiency. We highly recommend SenseGrid Products for their exceptional service and commitment to client success. Looking forward to expand to our subsidiaries.',
+      name : 'Mr. Sanderuwan',
+      image: portrait
+    },
+    {
+      id: 2,
+      description: 'SenseGrid team has been an outstanding partner in deploying our DHL warehouse monitoring system. Their technical expertise, quick implementation and support have resulted in seamless implementation and greatly enhanced operational oversight. We highly recommend SenseGrid solution for their professionalism and dedication to delivering top-tier monitoring solutions.',
+      name : 'Mr. Abewardena',
+      image: portrait
+    },
+    {
+    id: 3,
+    description: 'SenseGrid team has been an outstanding partner in deploying our DHL warehouse monitoring system. Their technical expertise, quick implementation and support have resulted in seamless implementation and greatly enhanced operational oversight. We highly recommend SenseGrid solution for their professionalism and dedication to delivering top-tier monitoring solutions.',
+    name : 'Mr. Nimantha',
+    image: portrait
+  }
+
+];
+
 
 
 
@@ -298,15 +324,10 @@ const LandingPage = () => {
                                 
                                 <div className='absolute flex-col w-full lgs:h-[100vh]  z-20'>
 
-                                    <div className="hidden relative lgs:flex flex-col w-[100vw] h-[80vh] overflow-hidden">
-                                        <img
-                                        src={background}
-                                        alt="Beach View"
-                                        layout="fill"
-                                        objectFit="cover"
-                                        priority
-                                        />
+                                    <div className="hidden relative lgs:flex flex-col w-[100vw] h-[80vh] overflow-hidden z-30">
+                                        <video src={backgroundVideo} autoPlay loop muted className='object-cover'/>
                                     </div>
+                                    
                                     
                                     <div className="hidden bg-gradient-to-t from-theme01 to-blue-950 sms:flex mds:flex  w-full h-[50vh] mds:h-[20rem] overflow-hidden"/>
 
@@ -320,8 +341,8 @@ const LandingPage = () => {
                                         <div className='relative flex flex-col bg-transparent items-center justify-center sms:mt-36 mds:mt-24 sms:justify-start  w-[100vw] lgs:h-[80vh]'>
                                             
                                             <div className='flex flex-col items-center cursor-pointer justify-center lgs:space-y-4 sms:w-[70vw] lgs:w-[80vw] mds:w-[60vw] overflow-hidden'>
-                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-primary' data-aos='fade-down'>Powering the <span className='font-bold text-baseprimary' data-aos='fade-up'>Next Generation</span></h2>
-                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-baseprimary' data-aos='fade-up'>of Smart <span className='font-bold text-primary'>IoT Solutions</span></h2>
+                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-shadow-xl text-primary' data-aos='fade-down'>Powering the <span className='font-bold text-shadow-xl text-baseprimary' data-aos='fade-up'>Next Generation</span></h2>
+                                                <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-shadow-xl text-baseprimary' data-aos='fade-up'>of Smart <span className='font-bold text-shadow-xl text-primary'>IoT Solutions</span></h2>
                                             </div>
                                             <div className='hidden lgs:flex w-auto h-auto lgs:mt-8 sms:mt-6'>
                                                 <button className='flex bg-blue-800 lgs:w-[10rem] lgs:h-[3rem] items-center justify-center cursor-pointer  text-primary font-dmsans text-md p-4 rounded-3xl hover:bg-blue-900 hover:text-baseprimary'
@@ -419,7 +440,7 @@ const LandingPage = () => {
                                     }} data-aos='zoom-in'>
                                         What We Do{''} 
                                     </h2>  
-                                    <h2 className='flex flex-col font-kanit text-center  lgs:text-4xl mds:text-xl sms:w-[75vw] sms:text-md text-theme01' data-aos='fade-up' style={{
+                                    <h2 className='flex flex-col font-kanit text-center  lgs:text-md lgs:w-[50vw] mds:text-xl sms:w-[75vw] sms:text-md text-theme01' data-aos='fade-up' style={{
                                         fontWeight:'200'
                                     }}>
                                         Unified Control System for Sensors and Machines
@@ -647,7 +668,7 @@ const LandingPage = () => {
 
                                                             <div className = 'flex flex-col lgs:w-[30rem] h-auto items-center space-y-4 justify-center overflow-hidden'>
                                                                 <h2 className='font-kanit text-5xl text-theme01 text-center'
-                                                                data-aos='fade-down' data-aos-delay='400'
+                                                                data-aos='fade-down ' data-aos-delay='400'
                                                                 style={{fontWeight:'200'}}>
                                                                 Who We Are
                                                                 </h2>  
@@ -866,8 +887,69 @@ const LandingPage = () => {
                             ))}
 
                            </div>
-                           <div className='flex bg-transparent lgs:w-auto h-[15rem] items-center justify-center'/>
+                           <div className='flex bg-transparent lgs:w-auto h-[5rem] items-center justify-center'/>
                     
+                    </section>
+
+                    {/*  Section */}
+                    <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
+
+                        <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
+                        <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
+                            <div className='group flex flex-col w-auto h-auto justify-center items-center overflow-hidden'>
+                                    <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-8xl text-theme01 transform-all duration-1000 ease-in-out'
+                                    style={{
+                                        fontWeight:'300'
+                                    }}
+                                    data-aos='zoom-in'>
+                                        Testimonial{''} 
+                                    </h2>  
+                                    <h2 className='flex flex-col font-kanit lgs:text-4xl sms:w-[75vw] text-center sms:text-md mds:text-xl text-theme01' data-aos='fade-up'  style={{
+                                        fontWeight:'200'
+                                    }}>
+                                        Partnering with Leaders to Build Success Together.
+                                </h2>   
+
+                            </div>
+
+                            <div className='flex sms:flex-col w-[80vw] h-auto items-center mds:space-x-5 lgs:space-x-5 sms:space-y-5 justify-center mt-12'>
+                                        
+                                {testimonial.slice(0,3).map((tool) => (
+
+                                <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-pointer items-center justify-center rounded-lg lgs:h-[25rem]'                                         data-aos='fade-up'
+                                            data-aos-delay={`${200 + tool.id * 50}`} style={{
+                                    boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) '
+                                }}>
+                                        <div className='relative flex flex-col h-[10rem] lgs:w-[25rem] mds:w-[15rem] sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
+                                        <div className='absolute h-[5rem] lgs:w-[25rem] mds:w-[15rem] sms:w-[22rem] top-0 bg-theme01 z-40 rounded-b-full'/>
+                                           <div className='flex h-auto w-auto overflow-hidden rounded-full z-50'> 
+                                            <img src={tool.image} alt='' className='object-cover h-28 mds:h-20'/>
+                                          </div>
+                                        </div>
+                                        <div className='flex flex-col h-[15rem] lgs:w-[25rem] mds:w-[20rem] bg-primary rounded-b-lg justify-start items-center smsLp-4'>
+                                                <p className='flex font-dmsans text-center w-[22rem] lgs:h-[12rem]  mds:w-[10rem] lgs:p-2 text-sm mds:text-xs text-secondary'
+                                                style={{
+                                                    fontWeight:'300'
+                                                }}>
+                                                    {tool.description}
+                                                </p>
+                                                <h2 className='text-md font-dmsans text-center'>
+                                                    - {tool.name}
+                                                </h2>
+                                        </div>
+  
+                                </div>
+
+                                ))}    
+
+                            </div>
+                            <div className='hidden sms:flex lgs:flex mds:flex bg-transparent lgs:w-auto h-[5rem]  items-center justify-center'/>
+
+                        </div> 
+
+                        </div>
+
+
                     </section>
 
 

@@ -6,6 +6,8 @@ import Home from './Pages/landingPage.js';
 import Navbar from './Components/Navbar.js';
 import Loading from './Components/Loading.js';
 import BlogPage from './Pages/Blog.js';
+import ContactUs from './Pages/ContactUs.js';
+import Footer from './Components/Footer.js';
 
 
 
@@ -39,8 +41,10 @@ const AppContent = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path='/blog/:id' element={<BlogPage />} />
+            <Route path='/contactUs' element={<ContactUs/>}/>
           </Routes>
         )}
+        <Footer/>
       </div>
     </div>
   );
