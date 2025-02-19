@@ -37,9 +37,7 @@ const Footer = () => {
               <div>
                 <h3 className="text-lg font-semibold text-blue-300">Follow Us</h3>
                 <div className="mt-3 flex space-x-4">
-                  <a href="#" className="hover:text-blue-400">🔵 Facebook</a>
-                  <a href="#" className="hover:text-blue-400">🐦 Twitter</a>
-                  <a href="#" className="hover:text-blue-400">📸 Instagram</a>
+\
                 </div>
               </div>
     
