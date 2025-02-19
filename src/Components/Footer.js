@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="bg-gray-900 text-white py-8">
           <div className="max-w-7xl mx-auto px-4">
             {/* Grid Layout */}
-            <div className="grid grid-cols-1 mds:grid-cols-2 lgs:grid-cols-4 gap-6">
+            <div className="flex grid-cols-1 justify-between place-items-start mds:grid-cols-2 lgs:grid-cols-4 gap-6">
               
               {/* Logo & About */}
               <div>
@@ -33,13 +33,6 @@ const Footer = () => {
                 </ul>
               </div>
     
-              {/* Social Media */}
-              <div>
-                <h3 className="text-lg font-semibold text-blue-300">Follow Us</h3>
-                <div className="mt-3 flex space-x-4">
-\
-                </div>
-              </div>
     
               {/* Newsletter */}
               <div>

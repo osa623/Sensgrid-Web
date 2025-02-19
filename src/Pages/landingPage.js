@@ -442,20 +442,24 @@ const LandingPage = () => {
                         </div>
 
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center'>
-                            <div className='group flex flex-col w-auto h-auto overflow-hidden items-center justify-center'>
-                                    <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-8xl sms:text-7xl text-theme01 transform-all duration-1000 ease-in-out' 
-                                    style={{
-                                        fontWeight:'300'
-                                    }} data-aos='zoom-in'>
-                                        What We Do{''} 
-                                    </h2>  
-                                    <h2 className='flex flex-col font-kanit text-center  lgs:text-md lgs:w-[50vw] mds:text-xl sms:w-[75vw] sms:text-md text-theme01' data-aos='fade-up' style={{
-                                        fontWeight:'200'
-                                    }}>
-                                        Unified Control System for Sensors and Machines
-                                </h2>   
-
+                        <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
+                            <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
+                               <div className="flex w-auto h-auto ">
+                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
+                                  style={{
+                                    fontWeight:'200'
+                                  }}>
+                                    WHAT
+                                  </h2>
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-5xl text-7xl items-center justify-center text-center" style={{
+                                    fontWeight:'900',
+                                    boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                  }}>
+                                    WE DO
+                                  </h2>
+                               </div>
                             </div>
+                        </div>
                         </div> 
 
                         <div className='hidden sms:flex lgs:flex sms:flex-col w-[80vw] h-auto items-center lgs:space-x-5 sms:space-y-5 justify-center mt-12 lgs:p-5'>
@@ -579,20 +583,24 @@ const LandingPage = () => {
                     <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
                     <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
                     <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
-                        <div className='group flex flex-col w-auto h-auto justify-center items-center overflow-hidden'>
-                                <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-8xl text-theme01 transform-all duration-1000 ease-in-out'
-                                style={{
-                                    fontWeight:'300'
-                                }}
-                                data-aos='zoom-in'>
-                                    Partners{''} 
-                                </h2>  
-                                <h2 className='flex flex-col font-kanit lgs:text-4xl sms:w-[75vw] text-center sms:text-md mds:text-xl text-theme01' data-aos='fade-up'  style={{
-                                    fontWeight:'200'
-                                }}>
-                                    Partnering with Leaders to Build Success Together.
-                               </h2>   
-
+                    <div className="relative flex lgs:h-[15rem] w-full z-40 items-center justify-center">
+                            <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
+                               <div className="flex w-auto h-auto ">
+                                  <h2 className="font-dmsans text-theme01 bg-primary lgs:p-4 text-7xl text-center"
+                                  style={{
+                                    fontWeight:'200',
+                                    boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                  }}>
+                                    TRUSTED
+                                  </h2>
+                                  <h2 className="flex bg-theme01 p-1 flex-col font-dmsans text-primary lgs:p-2 text-7xl items-center justify-center text-center" style={{
+                                    fontWeight:'900',
+                                    
+                                  }}>
+                                     PARTNERS
+                                  </h2>
+                               </div>
+                            </div>
                         </div>
 
                         <div className='flex sms:flex-col w-[80vw] h-auto items-center mds:space-x-5 lgs:space-x-5 sms:space-y-5 justify-center mt-12'>
@@ -801,24 +809,24 @@ const LandingPage = () => {
                                         <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
                                         <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
                             </div>
-                            <div className='group flex flex-col w-auto h-auto cursor-pointer'>
-                                <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-8xl text-theme01 transform-all duration-1000 ease-in-out'
-                                  data-aos='zoom-in'
-                                style={{
-                                    fontWeight:'300'
-                                }}>
-                                    Blogs{''} 
-                                </h2>  
-                                <h2 className='flex flex-col font-kanit lgs:text-xl sms:mt-5 lgs:w-[40vw] sms:w-[75vw] justify-center items-center text-center sms:text-md mds:text-xl text-secondary'
-                                                                  data-aos='zoom-in'
-                                                                   style={{
+                            <div className="relative flex lgs:h-[15rem] w-full z-40 items-center justify-center">
+                            <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
+                               <div className="flex w-auto h-auto ">
+                                  <h2 className="font-dmsans text-primary bg-theme01 lgs:p-4 text-7xl text-center"
+                                  style={{
                                     fontWeight:'200'
-                                }}>
-                                    Explore in-depth articles, expert reviews, and the latest trends in the automobile industry.{''}
-                                    
-                               </h2>   
-
-                           </div>
+                                  }}>
+                                    LATEST
+                                  </h2>
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-7xl items-center justify-center text-center" style={{
+                                    fontWeight:'900',
+                                    boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                  }}>
+                                    BLOGS
+                                  </h2>
+                               </div>
+                            </div>
+                        </div>
                            <div className='flex sms:flex-col sms:h-auto sms:p-5  w-full items-center justify-center lgs:space-x-5 sms:space-y-4 mt-12'>
                             
                             {blog.map((tool)=> (
@@ -905,21 +913,24 @@ const LandingPage = () => {
 
                         <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
-                            <div className='group flex flex-col w-auto h-auto justify-center items-center overflow-hidden'>
-                                    <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-8xl mds:text-5xl sms:text-8xl text-theme01 transform-all duration-1000 ease-in-out'
-                                    style={{
-                                        fontWeight:'300'
-                                    }}
-                                    data-aos='zoom-in'>
-                                        Testimonial{''} 
-                                    </h2>  
-                                    <h2 className='flex flex-col font-kanit lgs:text-4xl sms:w-[75vw] text-center sms:text-md mds:text-xl text-theme01' data-aos='fade-up'  style={{
-                                        fontWeight:'200'
-                                    }}>
-                                        Partnering with Leaders to Build Success Together.
-                                </h2>   
-
+                        <div className="relative flex lgs:h-[15rem] w-full z-40 items-center justify-center">
+                            <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
+                               <div className="flex w-auto h-auto ">
+                                  <h2 className="font-dmsans text-primary bg-theme01 lgs:p-4 text-7xl text-center"
+                                  style={{
+                                    fontWeight:'200'
+                                  }}>
+                                    CLIENT
+                                  </h2>
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-7xl items-center justify-center text-center" style={{
+                                    fontWeight:'900',
+                                    boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                  }}>
+                                    REVIEWS
+                                  </h2>
+                               </div>
                             </div>
+                        </div>
 
                             <div className='flex sms:flex-col w-[80vw] h-auto items-center mds:space-x-5 lgs:space-x-5 sms:space-y-5 justify-center mt-12'>
                                         
@@ -963,18 +974,22 @@ const LandingPage = () => {
 
                     {/* Powered By Section */}
                     <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full lgs:p-12'>
-
-                    <div className='group flex flex-col w-auto h-auto justify-center items-center overflow-hidden'>
-                                    <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-5xl mds:text-5xl sms:text-8xl text-theme01 transform-all duration-1000 ease-in-out'
-                                    style={{
-                                        fontWeight:'300'
-                                    }}
-                                    data-aos='zoom-in'>
-                                        Powered By{''} 
-                                    </h2>  
-
-
-                    </div>
+                           <div className="flex items-center justify-center w-full h-[10rem] bg-transparent">
+                               <div className="flex w-auto h-auto ">
+                                  <h2 className="font-dmsans text-primary bg-theme01 lgs:p-4 text-7xl text-center"
+                                  style={{
+                                    fontWeight:'200'
+                                  }}>
+                                    POWERED
+                                  </h2>
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-7xl items-center justify-center text-center" style={{
+                                    fontWeight:'900',
+                                    boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                  }}>
+                                    BY
+                                  </h2>
+                               </div>
+                            </div>
 
                      {/*mobile responsive configs for this section */}
                     <div className='hidden sms:flex flex-col items-center justify-center lgs:mt-12 h-auto w-auto pt-5 ' data-aos='zoom-in'>
@@ -1124,6 +1139,16 @@ const LandingPage = () => {
 
                     </Marquee>
                     </div> 
+
+
+                    <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
+                                    
+                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
+                                    <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                    <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
+                        
+                        </div>
 
 
 
