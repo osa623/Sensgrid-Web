@@ -48,6 +48,7 @@ const Blog = () => {
           
           <div className = 'flex bg-transparent lgs:w-[80vw] h-auto items-start justify-between overflow-hidden'>
 
+              {/* Sachintha  */}
               <div className='flex flex-col bg-transparent lgs:w-[50vw] h-auto'>
 
 

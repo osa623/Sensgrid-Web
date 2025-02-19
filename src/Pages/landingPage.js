@@ -2,6 +2,8 @@ import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import 'aos/dist/aos.css';
+import Marquee from "react-fast-marquee";
 
 //backgrounds
 import background from '../Assets/HeroSection.jpg';
@@ -46,6 +48,13 @@ import blog2chart2 from '../Assets/blog2chart2.png';
 
 //portraits
 import portrait from '../Assets/Portrait.jpg';
+
+
+//powered By images
+import espressif from '../Assets/espressif.png';
+import nvidia from '../Assets/nvidia.png';
+import rasberryPi from '../Assets/rasberryPi.png';
+import arduino from '../Assets/arduino.png';
 
 
 const details = [
@@ -951,6 +960,182 @@ const LandingPage = () => {
 
 
                     </section>
+
+                    {/* Powered By Section */}
+                    <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full lgs:p-12'>
+
+                    <div className='group flex flex-col w-auto h-auto justify-center items-center overflow-hidden'>
+                                    <h2 className='group flex flex-col font-kanit text-center font-medium lgs:text-5xl mds:text-5xl sms:text-8xl text-theme01 transform-all duration-1000 ease-in-out'
+                                    style={{
+                                        fontWeight:'300'
+                                    }}
+                                    data-aos='zoom-in'>
+                                        Powered By{''} 
+                                    </h2>  
+
+
+                    </div>
+
+                     {/*mobile responsive configs for this section */}
+                    <div className='hidden sms:flex flex-col items-center justify-center lgs:mt-12 h-auto w-auto pt-5 ' data-aos='zoom-in'>
+
+                            
+
+                        
+                    <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
+                        borderRadius: '20px',
+                        overflow:'hidden'
+                    }}>
+                    <img src={rasberryPi} alt="supta" style={{
+                        width:'90%',
+                        height: 'auto',
+                        objectFit: 'Fill',
+                        borderRadius: 'inherit'
+                    }}/>
+
+                    </div>
+
+                    <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
+                        borderRadius: '20px',
+                        overflow:'hidden'
+                    }}>
+                    <img src={nvidia} alt="supta" style={{
+                        width:'90%',
+                        height: 'auto',
+                        objectFit: 'Fill',
+                        borderRadius: 'inherit'
+                    }}/>
+
+                    </div>
+                    <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
+                        borderRadius: '20px',
+                        overflow:'hidden'
+                    }}>
+                    <img src={espressif} alt="supta" style={{
+                        width:'90%',
+                        height: 'auto',
+                        objectFit: 'Fill',
+                        borderRadius: 'inherit'
+                    }}/>
+
+                    </div>
+                    <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
+                        borderRadius: '20px',
+                        overflow:'hidden'
+                    }}>
+                    <img src={arduino} alt="supta" style={{
+                        width:'90%',
+                        height: 'auto',
+                        objectFit: 'Fill',
+                        borderRadius: 'inherit'
+                    }}/>
+
+                    </div>
+
+
+
+                    </div> 
+
+
+
+
+                    {/*larger responsive configs for this section */}
+                    <div className='hidden mds:flex lgs:flex  flex-col items-center justify-center lgs:mt-12  h-auto w-auto pt-5 ' data-aos='zoom-in' style={{
+                        
+                    }}>
+                    <Marquee style={{
+                    width:'60%',
+                    height:'50%',
+                    justifyItems: 'center',
+                    overflow: 'hidden',
+                    boxShadow:'inset 0 5px 10px 10px rgba(255, 255, 255, 0.9) , 0 5px 10px 10px rgba(255, 255, 255, 0.9)',
+                    borderRadius: '20px',
+                    backdropFilter: 'blur(20px)',
+                    WebkitBackdropFilter: 'blur(10px)',
+
+                    
+
+                    }}>
+                    <div
+                    className='flex flex-col w-auto mds:h-[25vh] items-center justify-center lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                        borderRadius: '20px',
+                        overflow:'hidden'
+                        
+                    }}>
+                    
+
+                        <img src={rasberryPi} alt="supta" style={{
+                            width:'100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                        }}/>
+                    
+
+                    </div>
+
+                    <div 
+                    to={'https://youtu.be/quGTcDHwnUI?si=EHCyuH_eviB5DJm4'}
+                    className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                    borderRadius:'20px',
+                    overflow:'hidden'
+                    }}>
+
+                    <img src={arduino} alt="supta" style={{
+                        width:'100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        borderRadius:'inherit'
+
+                    }}/>
+
+                    </div>
+                    <div
+                    to={'https://youtu.be/k_n20pKXZJk?si=U3lFz5kKsitLHYgs'}
+                    className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                        borderRadius: '20px',
+                        overflow:'hidden'
+                    }}>
+                    <img src={nvidia} alt="supta" style={{
+                        width:'100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        borderRadius: 'inherit'
+
+                    }}/>
+
+                    </div>
+
+                    <div
+                    to={'https://youtu.be/MF-wVTab9-E?si=MPgcie2Wa6hOakqe'}
+                    className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                        borderRadius: '20px',
+                        overflow:'hidden'
+                    }}>
+                    <img src={espressif} alt="supta" style={{
+                        width:'100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        borderRadius: 'inherit'
+
+                    }}/>
+
+
+                    </div>
+
+                    </Marquee>
+                    </div> 
+
+
+
+
+                    </section>
+
+
+
+
+
+
+
 
 
 
