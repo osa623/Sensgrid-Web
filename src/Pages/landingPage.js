@@ -351,12 +351,12 @@ const LandingPage = () => {
                                                 <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-shadow-xl text-primary' data-aos='fade-down'>Powering the <span className='font-bold text-shadow-xl text-baseprimary' data-aos='fade-up'>Next Generation</span></h2>
                                                 <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-shadow-xl text-baseprimary' data-aos='fade-up'>of Smart <span className='font-bold text-shadow-xl text-primary'>IoT Solutions</span></h2>
                                             </div>
-                                            <div className='hidden lgs:flex w-auto h-auto lgs:mt-8 sms:mt-6'>
-                                                <Link to={'/aboutUs'} className='flex bg-blue-800 lgs:w-[10rem] lgs:h-[3rem] items-center justify-center cursor-pointer  text-primary font-dmsans text-md p-4 rounded-3xl hover:bg-blue-900 hover:text-baseprimary'
+                                            <div className='hidden lgs:flex sms:flex w-auto h-auto lgs:mt-8 sms:mt-3'>
+                                                <Link to={'/aboutUs'} className='flex bg-blue-800 w-[10rem] lgs:h-[3rem] items-center justify-center cursor-pointer  text-primary font-dmsans text-md p-4 rounded-3xl hover:bg-blue-900 hover:text-baseprimary'
                                                 style={{
                                                     boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)',
                                                 }}>
-                                                Get Started
+                                                Who are we?
                                                 </Link>
                                         </div>
 
@@ -367,7 +367,7 @@ const LandingPage = () => {
 
                                 </div>
 
-                                <div className={`absolute ${sectionExplanded ? 'lgs:-bottom-2 sms:bottom-20 mds:bottom-4' : 'bottom-20 sms:bottom-0' } flex-col bg-transparent lgs:w-[100vw] lgs:h-auto sms:h-[20vh] z-50 transfrom-700 duration-700 ease-in-out`}>
+                                <div className={`absolute ${sectionExplanded ? 'lgs:-bottom-2 sms:bottom-20 mds:bottom-4' : 'bottom-20 sms:bottom-0' } flex-col bg-transparent lgs:w-[100vw] lgs:h-auto sms:h-[15vh] z-50 transfrom-700 duration-700 ease-in-out`}>
 
                                     <div className='flex bg-transparent items-center justify-center w-[100vw] lg:h-auto space-x-6 overflow-hidden'>
                                     
@@ -441,8 +441,8 @@ const LandingPage = () => {
 
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center'>
                         <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
-                            <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
-                               <div className="flex w-auto h-auto ">
+                            <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent overflow-hidden">
+                               <div className="flex w-auto h-auto" data-aos='fade-right'>
                                   <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
@@ -583,7 +583,7 @@ const LandingPage = () => {
                     <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
                         <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
-                               <div className="flex w-auto h-auto ">
+                               <div className="flex w-auto h-auto" data-aos='fade-left'>
                                   <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-5xl sms:text-4xl text-center"
                                   style={{
                                     fontWeight:'200'
@@ -653,7 +653,7 @@ const LandingPage = () => {
                             </div>
                             <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
-                               <div className="flex w-auto h-auto ">
+                               <div className="flex w-auto h-auto " data-aos='fade-right'>
                                   <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
@@ -757,7 +757,7 @@ const LandingPage = () => {
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
                         <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
-                               <div className="flex w-auto h-auto ">
+                               <div className="flex w-auto h-auto " data-aos='fade-left'>
                                   <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
@@ -789,7 +789,7 @@ const LandingPage = () => {
                                           </div>
                                         </div>
                                         <div className='flex flex-col h-[15rem] lgs:w-[25rem] mds:w-[20rem] bg-primary rounded-b-lg justify-start items-center smsLp-4'>
-                                                <p className='flex font-dmsans text-center w-[22rem] lgs:h-[12rem]  mds:w-[10rem] lgs:p-2 text-sm mds:text-xs text-secondary'
+                                                <p className='flex font-dmsans text-center w-[22rem] lgs:h-[12rem] sms:w-[20rem]  mds:w-[10rem] lgs:p-2 text-sm mds:text-xs text-secondary'
                                                 style={{
                                                     fontWeight:'300'
                                                 }}>
@@ -818,7 +818,7 @@ const LandingPage = () => {
                     <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full lgs:p-12'>
                     <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
-                               <div className="flex w-auto h-auto ">
+                               <div className="flex w-auto h-auto " data-aos='fade-right'>
                                   <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
