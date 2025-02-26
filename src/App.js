@@ -9,6 +9,7 @@ import BlogPage from './Pages/Blog.js';
 import ContactUs from './Pages/ContactUs.js';
 import Footer from './Components/Footer.js';
 import AboutUs from './Pages/AboutUs.js';
+import TreeView from './Pages/TreeView.js';
 
 
 
@@ -44,6 +45,7 @@ const AppContent = () => {
             <Route path='/blog/:id' element={<BlogPage />} />
             <Route path='/contactUs' element={<ContactUs/>}/>
             <Route path='/aboutUs' element={<AboutUs/>}/>
+            <Route path='/treeView' element={<TreeView/>}/>
           </Routes>
         )}
         <Footer/>
