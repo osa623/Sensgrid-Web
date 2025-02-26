@@ -8,6 +8,7 @@ import Loading from './Components/Loading.js';
 import BlogPage from './Pages/Blog.js';
 import ContactUs from './Pages/ContactUs.js';
 import Footer from './Components/Footer.js';
+import AboutUs from './Pages/AboutUs.js';
 
 
 
@@ -42,6 +43,7 @@ const AppContent = () => {
             <Route path="/" element={<Home />} />
             <Route path='/blog/:id' element={<BlogPage />} />
             <Route path='/contactUs' element={<ContactUs/>}/>
+            <Route path='/aboutUs' element={<AboutUs/>}/>
           </Routes>
         )}
         <Footer/>

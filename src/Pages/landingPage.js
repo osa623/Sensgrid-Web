@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import 'aos/dist/aos.css';
@@ -24,10 +24,6 @@ import dSI from '../Assets/DSISport.png';
 import dHL from '../Assets/DHL.png';
 import Mobitel from '../Assets/SLTMobitel.png';
 
-//sensegrid intro images
-import sensegrid from '../Assets/sensgrid1.png';
-import sensegrid1 from '../Assets/sensegrid2.png';
-import sensegrid2 from '../Assets/object02.png';
 
 //object images
 import object from '../Assets/object01.png';
@@ -318,6 +314,8 @@ const LandingPage = () => {
         });
       }, []);
 
+    
+
 
 
 
@@ -354,12 +352,12 @@ const LandingPage = () => {
                                                 <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-shadow-xl text-baseprimary' data-aos='fade-up'>of Smart <span className='font-bold text-shadow-xl text-primary'>IoT Solutions</span></h2>
                                             </div>
                                             <div className='hidden lgs:flex w-auto h-auto lgs:mt-8 sms:mt-6'>
-                                                <button className='flex bg-blue-800 lgs:w-[10rem] lgs:h-[3rem] items-center justify-center cursor-pointer  text-primary font-dmsans text-md p-4 rounded-3xl hover:bg-blue-900 hover:text-baseprimary'
+                                                <Link to={'/aboutUs'} className='flex bg-blue-800 lgs:w-[10rem] lgs:h-[3rem] items-center justify-center cursor-pointer  text-primary font-dmsans text-md p-4 rounded-3xl hover:bg-blue-900 hover:text-baseprimary'
                                                 style={{
                                                     boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)',
                                                 }}>
                                                 Get Started
-                                                </button>
+                                                </Link>
                                         </div>
 
                                         </div>
@@ -583,21 +581,20 @@ const LandingPage = () => {
                     <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
                     <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
                     <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
-                    <div className="relative flex lgs:h-[15rem] w-full z-40 items-center justify-center">
+                        <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
                                <div className="flex w-auto h-auto ">
-                                  <h2 className="font-dmsans text-theme01 bg-primary lgs:p-4 text-7xl text-center"
+                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-5xl sms:text-4xl text-center"
                                   style={{
-                                    fontWeight:'200',
-                                    boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                    fontWeight:'200'
                                   }}>
                                     TRUSTED
                                   </h2>
-                                  <h2 className="flex bg-theme01 p-1 flex-col font-dmsans text-primary lgs:p-2 text-7xl items-center justify-center text-center" style={{
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-4xl text-7xl items-center justify-center text-center" style={{
                                     fontWeight:'900',
-                                    
+                                    boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
-                                     PARTNERS
+                                    PARTNERS
                                   </h2>
                                </div>
                             </div>
@@ -645,161 +642,6 @@ const LandingPage = () => {
 
                     </section>
 
-                    {/* Introduction Section */}
-                    <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
-
-                            <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center'>
-                                        <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
-                                        <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='zoom-in'/>
-                                        <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='zoom-in'/>
-                                        <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
-                            </div>
-                            <div className={`relative flex flex-col bg-primary overflow-hidden ${introSec ? 'lgs:h-[100rem] sms:h-[160rem] mds:h-[100rem]' : 'lgs:h-[15rem] sms:h-[15rem] mds:h-[15rem]'} w-full items-center justify-start transform-all duration-1000 ease-in-out`}
-                            style={{
-                                boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) , inset 0px 5px 20px 1px rgba(0, 0, 0, 0.2)',
-                            }}>
-                                    <div className='flex flex-col w-full h-auto items-center justify-start mt-12'>
-                                                <h2 className={`font-kanit text-theme01 ${introSec ? 'lgs:text-3xl sms:text-3xl mds:text-4xl' : 'lgs:text-4xl text-3xl'} text-center transform-all duration-700 ease-in-out`}
-                                                style={{
-                                                    fontWeight:'100'
-                                                }}>
-                                                    Want to Know More About {''}<h2 className='flex font-kanit items-center justify-center text-baseprimary' style={{fontWeight:'800' , paddingLeft: '0.8rem'}}>
-                                                    {''}<span className='text-theme01'>SENSE</span>GRID     
-                                                    </h2>
-                                                </h2>
-                                                
-                                                <div className='flex flex-col h-auto w-auto lgs:mt-2 cursor-pointer hover:mt-4 items-center justify-center transform-all duration-700 ease-in-out' onClick={handleIntroSec}>
-                                                                <h2 className={`font-kanit ${introSec ? 'text-2xl text-secondary' : 'text-xl text-secondary'}  transform-all duration-700 ease-in-out`}
-                                                                style={{
-                                                                    fontWeight:'100'
-                                                                }}>
-                                                                    Let's Observe
-                                                                </h2>
-                                                                <img src= {dropdown} alt='' className='object-cover h-6 '/>
-                                                </div>
-                                                <div className='flex flex-col lgs:w-auto h-auto lgs:mt-4 items-center justify-center'>
-                                                    <div className = 'flex flex-col lgs:w-[80vw] mds:w-[80vw] h-auto  items-center lgs:space-y-5 mds:space-y-5 justify-evenly'>
-                                                       <div className='flex sms:flex-col w-auto lgs:w-[80vw] mds:w-[80vw] justify-evenly items-center overflow-hidden'>
-                                                           
-                                                       <img src={sensegrid} alt='' className='object-cover lgs:w-[30rem] mds:w-[20rem] lgs:h-auto' data-aos='fade-right' data-aos-delay='350'/>
-
-                                                            <div className = 'flex flex-col lgs:w-[30rem] h-auto items-center space-y-4 justify-center overflow-hidden'>
-                                                                <h2 className='font-kanit text-5xl text-theme01 text-center'
-                                                                data-aos='fade-down ' data-aos-delay='400'
-                                                                style={{fontWeight:'200'}}>
-                                                                Who We Are
-                                                                </h2>  
-                                                                <p className='font-kanit text-md mds:text-sm text-center sms:w-[80vw] text-secondary'
-                                                                data-aos='fade-left' data-aos-delay='450' style={{
-                                                                    fontWeight:'200'
-                                                                }}>
-                                                                SenseGrid, powered by SLTMobitel, specializes in delivering advanced Industrial IoT solutions. Our focus is on improving efficiency, productivity, and sustainability across industries through innovative technologies. We are committed to providing customized, reliable, and transformative solutions that meet the unique needs of modern industrial operations.
-                                                                </p>                                       
-                                                            </div>
-                                                        
-                                                       </div>
-                                                       <div className='flex sms:flex-col w-auto lgs:w-[80vw] mds:w-[80vw] mt-12  justify-evenly items-center'>
-
-                                                                <div className = 'flex flex-col lgs:w-[30rem] sms:w-[80vw] mds:w-[80vw] h-auto space-y-4 overflow-hidden items-center justify-center lgs:space-y-4'>
-                                                                    <h2 className='font-kanit text-5xl text-theme01 text-center'
-                                                                    data-aos='fade-down' data-aos-delay='350'
-                                                                    style={{fontWeight:'200'}}>
-                                                                    Our Achievements
-                                                                    </h2>  
-                                                                    <h2 className='font-kanit text-md mds:text-sm  text-center mds:w-[40vw]  sms:w-[80vw] text-secondary'
-                                                                     data-aos='fade-right' data-aos-delay='350' style={{
-                                                                        fontWeight:'200'
-                                                                    }}>
-                                                                    Successfully designed and manufactured cutting-edge IoT solutions through the SLT-Mobitel Innovation Center.
-                                                                    </h2>  
-                                                                    <h2 className='font-kanit text-md mds:text-sm text-center  mds:w-[40vw]   sms:w-[80vw] text-secondary'
-                                                                      data-aos='fade-right' data-aos-delay='400'
-                                                                     style={{
-                                                                        fontWeight:'200'
-                                                                    }}>
-                                                                    Empowered industries with real-time monitoring and predictive technologies, significantly reducing downtime.
-                                                                    </h2> 
-                                                                   <h2 className='font-kanit text-md mds:text-sm  text-center  mds:w-[40vw]   sms:w-[80vw] text-secondary'
-                                                                   data-aos='fade-right' data-aos-delay='450' style={{
-                                                                        fontWeight:'200'
-                                                                    }}>
-                                                                    Delivered cost-effective and scalable solutions tailored to diverse industrial sectors, fostering productivity and growth.
-                                                                    </h2>                                      
-                                                                </div>
-                                                           
-                                                           <img src={sensegrid1} alt='' className='object-cover lgs:w-[35rem] mds:w-[20rem] sms:mt-12 sms:w-[20rem] rounded-xl lgs:h-auto'
-                                                            data-aos='fade-left' data-aos-delay='350'
-                                                           />
-    
-
-                                                            
-                                                        </div>
-                                                        <div className='flex sms:flex-col w-auto lgs:w-[80vw] mds:w-[80vw] mt-12 justify-evenly items-center'>
-                                                           
-                                                           <img src={sensegrid2} alt='' className='object-cover lgs:w-[30rem] mds:w-[20rem]  lgs:h-auto'
-                                                                 data-aos='fade-right' data-aos-delay='350'
-                                                           />
-    
-                                                                <div className = 'flex flex-col lgs:w-[30rem] h-auto items-center justify-center overflow-hidden space-y-4'>
-                                                                    <h2 className='font-kanit text-5xl text-theme01 text-center'
-                                                                    data-aos='fade-down' data-aos-delay='350'
-                                                                    style={{fontWeight:'200'}}>
-                                                                    Our Solutions
-                                                                    </h2>  
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
-                                                                    data-aos='fade-left' data-aos-delay='350' style={{
-                                                                        fontWeight:'200'
-                                                                    }}>
-                                                                    Machine Condition Monitoring: Real-time insights for predictive maintenance and enhanced performance
-                                                                    </h2> 
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
-                                                                    data-aos='fade-left' data-aos-delay='400' style={{
-                                                                        fontWeight:'200'
-                                                                    }}>
-                                                                    Process Optimization and Monitoring: Automated systems for increased efficiency and tailored dashboards.
-                                                                    </h2> 
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
-                                                                    data-aos='fade-left' data-aos-delay='450' style={{
-                                                                        fontWeight:'200'
-                                                                    }}>
-                                                                    Environment Monitoring Solutions: Comprehensive systems for regulatory compliance and advanced analytics.
-                                                                    </h2>
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
-                                                                    data-aos='fade-left' data-aos-delay='500' style={{
-                                                                        fontWeight:'200'
-                                                                    }}>
-                                                                   Energy Management Solutions: Tools for optimizing energy usage and reporting sustainability metrics.
-                                                                    </h2>  
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
-                                                                    data-aos='fade-left' data-aos-delay='550' style={{
-                                                                        fontWeight:'200'
-                                                                    }}>
-                                                                    Supply Chain Monitoring: Inventory tracking and logistics optimization for better visibility.
-                                                                    </h2>  
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
-                                                                    data-aos='fade-left' data-aos-delay='600' style={{
-                                                                        fontWeight:'200'
-                                                                    }}>
-                                                                    Remote Monitoring and Control: IoT-enabled solutions for efficient remote access and operations.
-                                                                    </h2>                                           
-                                                                </div>
-                                                            
-                                                        </div>
-      
-
-                                                    </div>
-
-
-                                                </div>
-                                                
-
-                                    </div>  
-
-
-                            </div>
-
-                    </section>
-
                     {/* Blog Section */}
                     <section className='flex flex-col overflow-hidden items-center justify-start sms:mt-5 h-auto w-full'>
 
@@ -809,16 +651,16 @@ const LandingPage = () => {
                                         <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
                                         <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
                             </div>
-                            <div className="relative flex lgs:h-[15rem] w-full z-40 items-center justify-center">
+                            <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
                                <div className="flex w-auto h-auto ">
-                                  <h2 className="font-dmsans text-primary bg-theme01 lgs:p-4 text-7xl text-center"
+                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     LATEST
                                   </h2>
-                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-7xl items-center justify-center text-center" style={{
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-5xl text-7xl items-center justify-center text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
@@ -826,7 +668,7 @@ const LandingPage = () => {
                                   </h2>
                                </div>
                             </div>
-                        </div>
+                           </div>
                            <div className='flex sms:flex-col sms:h-auto sms:p-5  w-full items-center justify-center lgs:space-x-5 sms:space-y-4 mt-12'>
                             
                             {blog.map((tool)=> (
@@ -913,16 +755,16 @@ const LandingPage = () => {
 
                         <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
-                        <div className="relative flex lgs:h-[15rem] w-full z-40 items-center justify-center">
+                        <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
                                <div className="flex w-auto h-auto ">
-                                  <h2 className="font-dmsans text-primary bg-theme01 lgs:p-4 text-7xl text-center"
+                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     CLIENT
                                   </h2>
-                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-7xl items-center justify-center text-center" style={{
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-5xl text-7xl items-center justify-center text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
@@ -974,15 +816,16 @@ const LandingPage = () => {
 
                     {/* Powered By Section */}
                     <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full lgs:p-12'>
-                           <div className="flex items-center justify-center w-full h-[10rem] bg-transparent">
+                    <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
+                            <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
                                <div className="flex w-auto h-auto ">
-                                  <h2 className="font-dmsans text-primary bg-theme01 lgs:p-4 text-7xl text-center"
+                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     POWERED
                                   </h2>
-                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-7xl items-center justify-center text-center" style={{
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-5xl text-7xl items-center justify-center text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
@@ -990,158 +833,185 @@ const LandingPage = () => {
                                   </h2>
                                </div>
                             </div>
+                        </div>
 
-                     {/*mobile responsive configs for this section */}
-                    <div className='hidden sms:flex flex-col items-center justify-center lgs:mt-12 h-auto w-auto pt-5 ' data-aos='zoom-in'>
+                            {/*mobile responsive configs for this section */}
+                            <div className='hidden sms:flex flex-col items-center justify-center lgs:mt-12 h-auto w-auto pt-5 ' data-aos='zoom-in'>
+
+                                    
+                            <Marquee style={{
+                                            width:'100%',
+                                            height:'10%',
+                                            justifyItems: 'center',
+                                            overflow: 'hidden',
+                                            boxShadow:'inset 0 5px 10px 10px rgba(255, 255, 255, 0.9) , 0 5px 10px 10px rgba(255, 255, 255, 0.9)',
+                                            borderRadius: '20px',
+                                            backdropFilter: 'blur(20px)',
+                                            WebkitBackdropFilter: 'blur(10px)',
+
+                                            
+
+                                            }}>
+                                            <div
+                                            className='flex flex-col w-auto h-[2.5rem]  border-2 items-center justify-center lgs:h-[10vh] bg-basesecondary m-2  transition duration-1000 ease-in-out' style={{
+                                                borderRadius: '20px',
+                                                overflow:'hidden'
+                                                
+                                            }}>
+                                            
+
+                                                <img src={rasberryPi} alt="supta" style={{
+                                                    width:'100%',
+                                                    height: '100%',
+                                                    objectFit: 'cover',
+                                                }}/>
+                                            
+
+                                            </div>
+
+                                            <div 
+                                            className='flex flex-col w-auto h-[2.5rem] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                                            borderRadius:'20px',
+                                            overflow:'hidden'
+                                            }}>
+
+                                            <img src={arduino} alt="supta" style={{
+                                                width:'100%',
+                                                height: '100%',
+                                                objectFit: 'cover',
+                                                borderRadius:'inherit'
+
+                                            }}/>
+
+                                            </div>
+                                            <div
+                                            className='flex flex-col w-auto  h-[2.5rem] bg-basesecondary m-2 border-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                                                borderRadius: '20px',
+                                                overflow:'hidden'
+                                            }}>
+                                            <img src={nvidia} alt="supta" style={{
+                                                width:'100%',
+                                                height: '100%',
+                                                objectFit: 'cover',
+                                                borderRadius: 'inherit'
+
+                                            }}/>
+
+                                            </div>
+
+                                            <div
+                                            className='flex flex-col w-auto  h-[2.5rem] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                                                borderRadius: '20px',
+                                                overflow:'hidden'
+                                            }}>
+                                            <img src={espressif} alt="supta" style={{
+                                                width:'100%',
+                                                height: '100%',
+                                                objectFit: 'cover',
+                                                borderRadius: 'inherit'
+
+                                            }}/>
+
+
+                                            </div>
+
+                            </Marquee>
+                                    
+
+
+                            </div> 
+
+
+
+
+                            {/*larger responsive configs for this section */}
+                            <div className='hidden mds:flex lgs:flex  flex-col items-center justify-center lgs:mt-12  h-auto w-auto pt-5 ' data-aos='zoom-in' style={{
+                                
+                            }}>
+                            <Marquee style={{
+                            width:'60%',
+                            height:'50%',
+                            justifyItems: 'center',
+                            overflow: 'hidden',
+                            boxShadow:'inset 0 5px 10px 10px rgba(255, 255, 255, 0.9) , 0 5px 10px 10px rgba(255, 255, 255, 0.9)',
+                            borderRadius: '20px',
+                            backdropFilter: 'blur(20px)',
+                            WebkitBackdropFilter: 'blur(10px)',
 
                             
 
-                        
-                    <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
-                        borderRadius: '20px',
-                        overflow:'hidden'
-                    }}>
-                    <img src={rasberryPi} alt="supta" style={{
-                        width:'90%',
-                        height: 'auto',
-                        objectFit: 'Fill',
-                        borderRadius: 'inherit'
-                    }}/>
+                            }}>
+                            <div
+                            className='flex flex-col w-auto mds:h-[25vh] items-center justify-center lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                                borderRadius: '20px',
+                                overflow:'hidden'
+                                
+                            }}>
+                            
 
-                    </div>
+                                <img src={rasberryPi} alt="supta" style={{
+                                    width:'100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                }}/>
+                            
 
-                    <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
-                        borderRadius: '20px',
-                        overflow:'hidden'
-                    }}>
-                    <img src={nvidia} alt="supta" style={{
-                        width:'90%',
-                        height: 'auto',
-                        objectFit: 'Fill',
-                        borderRadius: 'inherit'
-                    }}/>
+                            </div>
 
-                    </div>
-                    <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
-                        borderRadius: '20px',
-                        overflow:'hidden'
-                    }}>
-                    <img src={espressif} alt="supta" style={{
-                        width:'90%',
-                        height: 'auto',
-                        objectFit: 'Fill',
-                        borderRadius: 'inherit'
-                    }}/>
+                            <div 
+                            to={'https://youtu.be/quGTcDHwnUI?si=EHCyuH_eviB5DJm4'}
+                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            borderRadius:'20px',
+                            overflow:'hidden'
+                            }}>
 
-                    </div>
-                    <div className='flex flex-col w-auto h-auto items-center justify-center bg-transparent m-2  hover:scale-110 transition duration-1000 ease-in-out' style={{
-                        borderRadius: '20px',
-                        overflow:'hidden'
-                    }}>
-                    <img src={arduino} alt="supta" style={{
-                        width:'90%',
-                        height: 'auto',
-                        objectFit: 'Fill',
-                        borderRadius: 'inherit'
-                    }}/>
+                            <img src={arduino} alt="supta" style={{
+                                width:'100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                borderRadius:'inherit'
 
-                    </div>
+                            }}/>
 
+                            </div>
+                            <div
+                            to={'https://youtu.be/k_n20pKXZJk?si=U3lFz5kKsitLHYgs'}
+                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                                borderRadius: '20px',
+                                overflow:'hidden'
+                            }}>
+                            <img src={nvidia} alt="supta" style={{
+                                width:'100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                borderRadius: 'inherit'
 
+                            }}/>
 
-                    </div> 
+                            </div>
 
+                            <div
+                            to={'https://youtu.be/MF-wVTab9-E?si=MPgcie2Wa6hOakqe'}
+                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                                borderRadius: '20px',
+                                overflow:'hidden'
+                            }}>
+                            <img src={espressif} alt="supta" style={{
+                                width:'100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                borderRadius: 'inherit'
 
-
-
-                    {/*larger responsive configs for this section */}
-                    <div className='hidden mds:flex lgs:flex  flex-col items-center justify-center lgs:mt-12  h-auto w-auto pt-5 ' data-aos='zoom-in' style={{
-                        
-                    }}>
-                    <Marquee style={{
-                    width:'60%',
-                    height:'50%',
-                    justifyItems: 'center',
-                    overflow: 'hidden',
-                    boxShadow:'inset 0 5px 10px 10px rgba(255, 255, 255, 0.9) , 0 5px 10px 10px rgba(255, 255, 255, 0.9)',
-                    borderRadius: '20px',
-                    backdropFilter: 'blur(20px)',
-                    WebkitBackdropFilter: 'blur(10px)',
-
-                    
-
-                    }}>
-                    <div
-                    className='flex flex-col w-auto mds:h-[25vh] items-center justify-center lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
-                        borderRadius: '20px',
-                        overflow:'hidden'
-                        
-                    }}>
-                    
-
-                        <img src={rasberryPi} alt="supta" style={{
-                            width:'100%',
-                            height: '100%',
-                            objectFit: 'cover',
-                        }}/>
-                    
-
-                    </div>
-
-                    <div 
-                    to={'https://youtu.be/quGTcDHwnUI?si=EHCyuH_eviB5DJm4'}
-                    className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
-                    borderRadius:'20px',
-                    overflow:'hidden'
-                    }}>
-
-                    <img src={arduino} alt="supta" style={{
-                        width:'100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        borderRadius:'inherit'
-
-                    }}/>
-
-                    </div>
-                    <div
-                    to={'https://youtu.be/k_n20pKXZJk?si=U3lFz5kKsitLHYgs'}
-                    className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
-                        borderRadius: '20px',
-                        overflow:'hidden'
-                    }}>
-                    <img src={nvidia} alt="supta" style={{
-                        width:'100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        borderRadius: 'inherit'
-
-                    }}/>
-
-                    </div>
-
-                    <div
-                    to={'https://youtu.be/MF-wVTab9-E?si=MPgcie2Wa6hOakqe'}
-                    className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
-                        borderRadius: '20px',
-                        overflow:'hidden'
-                    }}>
-                    <img src={espressif} alt="supta" style={{
-                        width:'100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        borderRadius: 'inherit'
-
-                    }}/>
+                            }}/>
 
 
-                    </div>
+                            </div>
 
-                    </Marquee>
-                    </div> 
+                            </Marquee>
+                            </div> 
 
 
-                    <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
+                    <div className='flex bg-transparent w-auto h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
                                     
                                     <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
                                     <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
@@ -1156,20 +1026,7 @@ const LandingPage = () => {
                     </section>
 
 
-
-
-
-
-
-
-
-
-
-
-                    
-
-
-                                    </div>
+            </div>
 
   )
 }
