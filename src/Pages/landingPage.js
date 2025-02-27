@@ -922,8 +922,6 @@ const LandingPage = () => {
                             </div> 
 
 
-
-
                             {/*larger responsive configs for this section */}
                             <div className='hidden mds:flex lgs:flex  flex-col items-center justify-center lgs:mt-12  h-auto w-auto pt-5 ' data-aos='zoom-in' style={{
                                 
@@ -942,7 +940,7 @@ const LandingPage = () => {
 
                             }}>
                             <div
-                            className='flex flex-col w-auto mds:h-[25vh] items-center justify-center lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            className='flex flex-col w-auto mds:h-[25vh] border-2 items-center justify-center lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
                                 borderRadius: '20px',
                                 overflow:'hidden'
                                 
@@ -959,8 +957,7 @@ const LandingPage = () => {
                             </div>
 
                             <div 
-                            to={'https://youtu.be/quGTcDHwnUI?si=EHCyuH_eviB5DJm4'}
-                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
                             borderRadius:'20px',
                             overflow:'hidden'
                             }}>
@@ -975,8 +972,7 @@ const LandingPage = () => {
 
                             </div>
                             <div
-                            to={'https://youtu.be/k_n20pKXZJk?si=U3lFz5kKsitLHYgs'}
-                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
                                 borderRadius: '20px',
                                 overflow:'hidden'
                             }}>
@@ -991,8 +987,7 @@ const LandingPage = () => {
                             </div>
 
                             <div
-                            to={'https://youtu.be/MF-wVTab9-E?si=MPgcie2Wa6hOakqe'}
-                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
                                 borderRadius: '20px',
                                 overflow:'hidden'
                             }}>
