@@ -42,7 +42,7 @@ const Navbar = () => {
           Blog
         </li>
         <li on className="p-4 hover:text-baseprimary mds:text-sm">
-          Contact Us
+           <Link to='/contactUs'>Contact Us</Link>
         </li>
         <li on className="p-4 hover:text-baseprimary mds:text-sm">
            <Link to='/treeView'>Social Tree</Link>
@@ -79,10 +79,10 @@ const Navbar = () => {
                       Blog
                     </li>
                     <li o className="p-4 border-b border-gray-600 text-center">
-                      Contact Us
+                      <Link to='/contactUs'>Contact Us</Link>
                     </li>
                     <li o className="p-4 border-b border-gray-600 text-center">
-                      Social Tree
+                       <Link to='/treeView'>Social Tree</Link>
                     </li>
                   </ul>
               </div>

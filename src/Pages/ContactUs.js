@@ -7,8 +7,7 @@ export default function ContactUs() {
     email: "",
     contactNumber: "",
     solution: "",
-    issueReport: "",
-    file: null,
+    issueReport: ""
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -38,7 +37,7 @@ export default function ContactUs() {
         (response) => {
           console.log("Email sent successfully", response);
           setSuccessMessage("Your message has been sent successfully!");
-          setFormData({ name: "", email: "", contactNumber: "", solution: "", issueReport: "", file: null });
+          setFormData({ name: "", email: "", contactNumber: "", solution: "", issueReport: "" });
         },
         (error) => {
           console.error("Error sending email", error);
@@ -51,9 +50,28 @@ export default function ContactUs() {
   return (
     <section id="contact" className="py-20 bg-white lgs:mt-12">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-dmsans font-bold text-center mb-10">Get In Touch with Us</h2>
+            <div className="relative flex lgs:h-[10rem] sms:h-[10rem] w-full items-center justify-center">
+                            <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
+                               <div className="flex w-auto h-auto " data-aos='fade-right'>
+                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-5xl sms:text-5xl text-center"
+                                  style={{
+                                    fontWeight:'200'
+                                  }}>
+                                    Get In Touch with
+                                  </h2>
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-5xl text-7xl items-center justify-center text-center" style={{
+                                    fontWeight:'900',
+                                    boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                  }}>
+                                    US
+                                  </h2>
+                               </div>
+                            </div>
+             </div>
         <div className="max-w-3xl mx-auto">
-          <form onSubmit={handleSubmit} className="space-y-6 bg-gray-50 p-6 rounded-lg shadow-lg">
+          <form onSubmit={handleSubmit} className="space-y-6 bg-gray-50 p-6 rounded-lg shadow-lg" style={{
+            boxShadow:'0px 4px 10px  rgba(0, 0, 0, 0.4)'
+          }}>
             <div className="grid grid-cols-1 mds:grid-cols-2 sms:grid-cols-2 gap-6">
               <input
                 type="text"
@@ -101,17 +119,7 @@ export default function ContactUs() {
               required
               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-colors"
             />
-            <h2 className="font-dmsans text-md text-start" style={{
-              fontWeight:'200'
-            }}>
-              Are there any files? Attach here
-            </h2>
-            <input
-              type="file"
-              name="file"
-              onChange={handleFileChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 file:bg-blue-500 file:text-white file:px-4 file:py-2 file:rounded-lg file:hover:bg-blue-600 transition-colors"
-            />
+
             <button
               type="submit"
               disabled={isSubmitting}
