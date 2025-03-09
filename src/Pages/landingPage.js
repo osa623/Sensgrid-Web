@@ -662,7 +662,7 @@ const LandingPage = () => {
                                </div>
                             </div>
                            </div>
-                           <div className='flex sms:flex-col sms:h-auto sms:p-5  w-full items-center justify-center space-x-5 sms:space-y-4 mt-12'>
+                           <div className='flex sms:flex-col sms:h-auto sms:p-5  w-full items-center justify-center mds:space-x-5 lgs:space-x-5 sms:space-y-4 mt-12'>
                             
                             {blog.map((tool)=> (
                                 <div key={tool.id} className='flex flex-col w-[25rem] sms:w-[22rem] overflow-hidden bg-primary cursor-default items-center justify-center rounded-lg lgs:h-[22rem]'
