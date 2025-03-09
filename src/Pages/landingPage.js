@@ -45,7 +45,7 @@ import espressif from '../Assets/espressif.png';
 import nvidia from '../Assets/nvidia.png';
 import rasberryPi from '../Assets/rasberryPi.png';
 import arduino from '../Assets/arduino.png';
-import Navbar from '../Components/Navbar';
+
 
 
 const details = [
@@ -273,20 +273,6 @@ const LandingPage = () => {
 
     
 
-    const handleNavigation = (ref) => {
-        console.log("handleNavigation called with:", ref); // Debugging
-        if (ref && ref.current) {
-            ref.current.scrollIntoView({ behavior: 'smooth' });
-        } else {
-            console.error("Invalid ref passed:", ref);
-        }
-    };
-
-    console.log("Passing onNavigate to Navbar:", handleNavigation); 
-      
-
-
-
 
     const handleSectionExpand = () => {
 
@@ -445,17 +431,18 @@ const LandingPage = () => {
                         
                         </div>
 
+                         {/* Topic Section */}
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center'>
-                        <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
+                        <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent overflow-hidden">
                                <div className="flex w-auto h-auto" data-aos='fade-right'>
-                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
+                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     WHAT
                                   </h2>
-                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-5xl text-7xl items-center justify-center text-center" style={{
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-5xl lgs:text-7xl items-center justify-center text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
@@ -587,16 +574,16 @@ const LandingPage = () => {
                     <section  className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
                     <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
                     <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
-                        <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
+                        <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
                                <div className="flex w-auto h-auto" data-aos='fade-left'>
-                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-5xl sms:text-4xl text-center"
+                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-5xl text-4xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     TRUSTED
                                   </h2>
-                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-4xl text-7xl items-center justify-center text-center" style={{
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-4xl lgs:text-7xl items-center justify-center text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
@@ -626,8 +613,8 @@ const LandingPage = () => {
                                             </p>
                                     </div>
                                     <div className='relative flex flex-col h-[5rem] lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem]  bg-primary rounded-b-lg justify-center items-center'>
-                                                <div className='absolute right-0 bottom-0 flex w-[15rem] rounded-tl-full items-center justify-center h-[4rem] bg-gradient-to-r from-blue-950 to-theme01'>
-                                                        <h2 className='text-lg font-dmsans text-primary'style={{
+                                                <div className='absolute right-0 bottom-0 flex w-[15rem] mds:w-[12rem] rounded-tl-full items-center justify-center h-[4rem] mds:h-[3rem] bg-gradient-to-r from-blue-950 to-theme01'>
+                                                        <h2 className='text-lg mds:text-sm font-dmsans text-primary'style={{
                                                             fontWeight:'200'
                                                         }}>
                                                             See more
@@ -657,16 +644,16 @@ const LandingPage = () => {
                                         <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
                                         <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
                             </div>
-                            <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
+                            <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
                                <div className="flex w-auto h-auto " data-aos='fade-right'>
-                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
+                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
                                     LATEST
                                   </h2>
-                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-5xl text-7xl items-center justify-center text-center" style={{
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-5xl lgs:text-7xl items-center justify-center text-center" style={{
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
@@ -675,16 +662,16 @@ const LandingPage = () => {
                                </div>
                             </div>
                            </div>
-                           <div className='flex sms:flex-col sms:h-auto sms:p-5  w-full items-center justify-center lgs:space-x-5 sms:space-y-4 mt-12'>
+                           <div className='flex sms:flex-col sms:h-auto sms:p-5  w-full items-center justify-center space-x-5 sms:space-y-4 mt-12'>
                             
                             {blog.map((tool)=> (
-                                <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-default items-center justify-center rounded-lg lgs:h-[22rem]'
+                                <div key={tool.id} className='flex flex-col w-[25rem] sms:w-[22rem] overflow-hidden bg-primary cursor-default items-center justify-center rounded-lg lgs:h-[22rem]'
                                                                         data-aos='fade-up'
                                                                         data-aos-delay={`${100 + tool.id * 50}`} style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) '
                             }}>
-                                    <div className='relative flex flex-col h-[12rem] lgs:w-[25rem] mds:w-[15rem] sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
-                                        <img src={tool.image} alt='' className='object-cover scale-150 h-40 mds:h-20'/>
+                                    <div className='relative flex flex-col h-[12rem] w-[25rem] sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
+                                        <img src={tool.image} alt='' className='object-cover scale-150 sms:h-40'/>
                                         <div className='absolute top-0 right-0 flex flex-col h-[2rem] w-[5rem] rounded-bl-2xl bg-blue-700 justify-center items-center'
                                         style={{
                                             boxShadow: '0px 5px 8px 2px rgba(0, 0, 0, 0.5) , inset 0px 4px 5px 2px rgba(255, 255, 255, 0.4)',
@@ -692,7 +679,7 @@ const LandingPage = () => {
                                             <span className='text-primary font-dmsans text-md'>blog #{tool.id}</span>
                                         </div>
                                     </div>
-                                    <div className='flex flex-col h-[5rem] lgs:w-[25rem] mds:w-[20rem] sms:w-[22rem] bg-transparent lgs:rounded-t-xl justify-center items-start p-2'>
+                                    <div className='flex flex-col h-[5rem] w-[25rem] sms:w-[22rem] bg-transparent lgs:rounded-t-xl justify-center items-start p-2'>
                                        <h2 className='font-dmsans text-start lgs:w-[25rem] sms:w-[22rem] lgs:text-lg sms:text-md text-blue-900' style={{
                                         fontWeight:'800'
                                        }}>
@@ -705,8 +692,8 @@ const LandingPage = () => {
                                        </h2>
 
                                     </div>
-                                    <div className='flex h-[5rem] lgs:w-[25rem] mds:w-[20rem] sms:w-[22rem]  bg-transparent  justify-center items-center sms:p-1'>
-                                       <div className='flex lgs:w-[15rem] sms:w-[15rem] h-[5rem] items-center justify-start lgs:p-2'>
+                                    <div className='flex h-[5rem] w-[25rem] sms:w-[22rem]  bg-transparent  justify-center items-center sms:p-1'>
+                                       <div className='flex w-[15rem] sms:w-[15rem] h-[5rem] items-center justify-start p-2'>
 
                                          <div className='flex w-[3.5rem] h-[3.5rem] items-center justify-center border-2 border-blue-400 overflow-hidden bg-theme01 rounded-full'>
                                             <img src= {tool.profileimage} alt='' className='object-cover rounded-full'/>
@@ -732,9 +719,9 @@ const LandingPage = () => {
                                          </div>
 
                                       </div>
-                                       <div className='flex lgs:w-[10rem] sms:w-[7rem]  h-[4rem] items-center justify-center'>
+                                       <div className='flex w-[10rem] sms:w-[7rem] h-[4rem] items-center justify-center'>
 
-                                         <div  onClick={() => navigate(`/blog/${tool.id}`, { state: { tool } })}  className='flex lgs:w-[8rem] sms:w-[6rem] sms:h-[3rem] lgs:h-[2.5rem] bg-blue-600 rounded-xl cursor-pointer items-center justify-center' style={{
+                                         <div  onClick={() => navigate(`/blog/${tool.id}`, { state: { tool } })}  className='flex w-[8rem] sms:w-[6rem] sms:h-[3rem] h-[2.5rem] bg-blue-600 rounded-xl cursor-pointer items-center justify-center' style={{
                                             boxShadow: '0px 5px 8px 2px rgba(0, 0, 0, 0.3) , inset 0px 4px 5px 2px rgba(255, 255, 255, 0.4)',
                                          }}>
                                            <h2 className='font-dmsans text-white text-md' style={{}}>
@@ -761,41 +748,42 @@ const LandingPage = () => {
 
                         <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
-                        <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
-                            <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
-                               <div className="flex w-auto h-auto " data-aos='fade-left'>
-                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
-                                  style={{
-                                    fontWeight:'200'
-                                  }}>
-                                    CLIENT
-                                  </h2>
-                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-5xl text-7xl items-center justify-center text-center" style={{
-                                    fontWeight:'900',
-                                    boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
-                                  }}>
-                                    REVIEWS
-                                  </h2>
-                               </div>
-                            </div>
-                        </div>
 
-                            <div className='flex sms:flex-col w-[80vw] h-auto items-center mds:space-x-5 lgs:space-x-5 sms:space-y-5 justify-center mt-12'>
+                            <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
+                                <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
+                                <div className="flex w-auto h-auto " data-aos='fade-left'>
+                                    <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl text-5xl text-center"
+                                    style={{
+                                        fontWeight:'200'
+                                    }}>
+                                        CLIENT
+                                    </h2>
+                                    <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-5xl lgs:text-7xl  items-center justify-center text-center" style={{
+                                        fontWeight:'900',
+                                        boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                    }}>
+                                        REVIEWS
+                                    </h2>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div className='flex sms:flex-col w-[80vw] mds:w-[90vw] h-auto items-center mds:space-x-5 lgs:space-x-5 sms:space-y-5 justify-center mt-12'>
                                         
                                 {testimonial.slice(0,3).map((tool) => (
 
-                                <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-pointer items-center justify-center rounded-lg lgs:h-[25rem]'                                         data-aos='fade-up'
-                                            data-aos-delay={`${200 + tool.id * 50}`} style={{
+                                <div key={tool.id} className='flex flex-col w-[30rem] sms:w-[22rem]  overflow-hidden bg-primary cursor-pointer items-center justify-center rounded-lg lgs:h-[25rem]'                                         data-aos='fade-up'
+                                             style={{
                                     boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) '
                                 }}>
-                                        <div className='relative flex flex-col h-[10rem] lgs:w-[25rem] mds:w-[15rem] sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
-                                        <div className='absolute h-[5rem] lgs:w-[25rem] mds:w-[15rem] sms:w-[22rem] top-0 bg-theme01 z-40 rounded-b-full'/>
+                                        <div className='relative flex flex-col h-[10rem] w-[25rem] sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
+                                        <div className='absolute h-[5rem] w-[25rem] mds:w-[15rem] sms:w-[22rem] top-0 bg-theme01 z-40 rounded-b-full'/>
                                            <div className='flex h-auto w-auto overflow-hidden rounded-full z-50'> 
                                             <img src={tool.image} alt='' className='object-cover h-28 mds:h-20'/>
                                           </div>
                                         </div>
-                                        <div className='flex flex-col h-[15rem] lgs:w-[25rem] mds:w-[20rem] bg-primary rounded-b-lg justify-start items-center smsLp-4'>
-                                                <p className='flex font-dmsans text-center w-[22rem] lgs:h-[12rem] sms:w-[20rem]  mds:w-[10rem] lgs:p-2 text-sm mds:text-xs text-secondary'
+                                        <div className='flex flex-col h-[15rem] w-[25rem] mds:w-[20rem] bg-primary rounded-b-lg justify-start items-center smsLp-4'>
+                                                <p className='flex font-dmsans text-center w-[22rem] h-[12rem]   mds:w-[10rem] lgs:p-2 text-sm mds:text-xs text-secondary'
                                                 style={{
                                                     fontWeight:'300'
                                                 }}>
@@ -822,24 +810,25 @@ const LandingPage = () => {
 
                     {/* Powered By Section */}
                     <section  className='flex flex-col overflow-hidden items-center justify-center h-auto w-full lgs:p-12'>
-                    <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
-                            <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
-                               <div className="flex w-auto h-auto " data-aos='fade-right'>
-                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl sms:text-5xl text-center"
-                                  style={{
-                                    fontWeight:'200'
-                                  }}>
-                                    POWERED
-                                  </h2>
-                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-5xl text-7xl items-center justify-center text-center" style={{
-                                    fontWeight:'900',
-                                    boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
-                                  }}>
-                                    BY
-                                  </h2>
-                               </div>
+
+                            <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
+                                <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
+                                <div className="flex w-auto h-auto " data-aos='fade-right'>
+                                    <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl text-5xl text-center"
+                                    style={{
+                                        fontWeight:'200'
+                                    }}>
+                                        POWERED
+                                    </h2>
+                                    <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-5xl lgs:text-7xl items-center justify-center text-center" style={{
+                                        fontWeight:'900',
+                                        boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                    }}>
+                                        BY
+                                    </h2>
+                                </div>
+                                </div>
                             </div>
-                        </div>
 
                             {/*mobile responsive configs for this section */}
                             <div className='hidden sms:flex flex-col items-center justify-center lgs:mt-12 h-auto w-auto pt-5 ' data-aos='zoom-in'>
@@ -946,7 +935,7 @@ const LandingPage = () => {
 
                             }}>
                             <div
-                            className='flex flex-col w-auto mds:h-[25vh] border-2 items-center justify-center lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            className='flex flex-col w-auto mds:h-[15vh] border-2 items-center justify-center lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
                                 borderRadius: '20px',
                                 overflow:'hidden'
                                 
@@ -963,7 +952,7 @@ const LandingPage = () => {
                             </div>
 
                             <div 
-                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            className='flex flex-col w-auto mds:h-[15vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
                             borderRadius:'20px',
                             overflow:'hidden'
                             }}>
@@ -978,7 +967,7 @@ const LandingPage = () => {
 
                             </div>
                             <div
-                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            className='flex flex-col w-auto mds:h-[15vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
                                 borderRadius: '20px',
                                 overflow:'hidden'
                             }}>
@@ -993,7 +982,7 @@ const LandingPage = () => {
                             </div>
 
                             <div
-                            className='flex flex-col w-auto mds:h-[25vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            className='flex flex-col w-auto mds:h-[15vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
                                 borderRadius: '20px',
                                 overflow:'hidden'
                             }}>
@@ -1012,14 +1001,14 @@ const LandingPage = () => {
                             </div> 
 
 
-                    <div className='flex bg-transparent w-auto h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
-                                    
-                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
-                                    <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
-                                    <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
-                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
-                        
-                        </div>
+                            <div className='flex bg-transparent w-auto h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
+                                            
+                                            <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
+                                            <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                            <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                            <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
+                                
+                             </div>
 
 
 
