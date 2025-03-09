@@ -13,6 +13,7 @@ const Navbar = () => {
     setNav(!nav);
   };
 
+
   return (
     <div className='fixed w-full lgs:w-[100vw] flex items-center justify-evenly sms:justify-between mds:justify-between bg-primary px-4 z-50 transition-all duration-300'
     style={{
@@ -21,25 +22,15 @@ const Navbar = () => {
       <div className="flex items-center justify-center lgs:w-[20vw]">
         <img src={namelogo} alt="bwlogo" className="lgs:scale-100 w-auto m-4 mds:h-8 mds:m-2 lgs:h-12  sms:h-10" />
       </div>
-      <ul className="hidden md:flex lgs:flex  items-center font-dmsans justify-center text-secondary text-lg cursor-pointer lgs:w-[60vw] lgs:space-x-4"
+      <ul className="hidden mds:flex lgs:flex  items-center font-dmsans justify-center lgs:text-sm text-secondary text-lg cursor-pointer lgs:w-[60vw] lgs:space-x-4"
       style={{
         fontWeight:'300'
       }}>
         {/* Use Link component for routing */}
+        <li  className="p-4 hover:text-baseprimary mds:text-sm">
+        <Link to='/'>Home</Link></li>
         <li className="p-4 hover:text-baseprimary mds:text-sm">
-          Home
-        </li>
-        <li className="p-4 hover:text-baseprimary mds:text-sm">
-          Our Clients
-        </li>
-        <li className="p-4 hover:text-baseprimary mds:text-sm">
-          Features
-        </li>
-        <li className="p-4 hover:text-baseprimary mds:text-sm">
-          About Us
-        </li>
-        <li on className="p-4 hover:text-baseprimary mds:text-sm">
-          Blog
+        <Link to='/aboutUs'>About Us</Link>
         </li>
         <li on className="p-4 hover:text-baseprimary mds:text-sm">
            <Link to='/contactUs'>Contact Us</Link>
@@ -58,30 +49,20 @@ const Navbar = () => {
       >
         <div className='relative flex-col h-screen bg-primary w-auto flex justify-between items-center'>
               <div className='flex flex-col w-[75vw] h-auto'>
-                  <ul className="p-4 font-dmsans text-secondary items-center lgs:text-sm justify-center">
+                  <ul className="p-4 font-dmsans text-secondary items-center text-sm justify-center">
                     <div className="flex items-center justify-center">
                       <img src={namelogo} alt="bwlogo" className="h-16 w-auto m-4" />
                     </div>
                     {/* Use Link component for mobile navigation */}
-                    <li className="p-4 border-b border-gray-600 text-center">
-                     Home
-                    </li>
                     <li  className="p-4 border-b border-gray-600 text-center">
-                      Our Clients
+                      <Link to='/'>Home</Link></li>
+                    <li  className="p-4 border-b border-gray-600 text-center">
+                    <Link to='/aboutUs'>About Us</Link>
                     </li>
                     <li className="p-4 border-b border-gray-600 text-center">
-                      Features
-                    </li>
-                    <li  className="p-4 border-b border-gray-600 text-center">
-                      About Us
-                    </li>
-                    <li o className="p-4 border-b border-gray-600 text-center">
-                      Blog
-                    </li>
-                    <li o className="p-4 border-b border-gray-600 text-center">
                       <Link to='/contactUs'>Contact Us</Link>
                     </li>
-                    <li o className="p-4 border-b border-gray-600 text-center">
+                    <li className="p-4 border-b border-gray-600 text-center">
                        <Link to='/treeView'>Social Tree</Link>
                     </li>
                   </ul>

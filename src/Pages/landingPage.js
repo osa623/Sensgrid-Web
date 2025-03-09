@@ -6,8 +6,6 @@ import 'aos/dist/aos.css';
 import Marquee from "react-fast-marquee";
 
 //backgrounds
-import background from '../Assets/HeroSection.jpg';
-import background1 from '../Assets/background3.jpg';
 import backgroundVideo from '../Assets/backgroundVideo.mp4';
 
 //details images
@@ -24,10 +22,6 @@ import dSI from '../Assets/DSISport.png';
 import dHL from '../Assets/DHL.png';
 import Mobitel from '../Assets/SLTMobitel.png';
 
-
-//object images
-import object from '../Assets/object01.png';
-import namelogo from '../Assets/SensGrid logo.png';
 
 //blog01
 import blog01 from '../Assets/image01.png';
@@ -51,6 +45,7 @@ import espressif from '../Assets/espressif.png';
 import nvidia from '../Assets/nvidia.png';
 import rasberryPi from '../Assets/rasberryPi.png';
 import arduino from '../Assets/arduino.png';
+import Navbar from '../Components/Navbar';
 
 
 const details = [
@@ -269,27 +264,37 @@ const testimonial = [
 
 const LandingPage = () => {
 
+
+    //other hooks
     const [sectionExplanded , setSectionExpanded] = useState(false);   
-    const [offersec , setOfferSec] = useState(false);
-    const [introSec , setIntroSec] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
-    const sectionRef = useRef(null);
     const navigate = useNavigate();
+    const sectionRef = useRef(null);
+
+    
+
+    const handleNavigation = (ref) => {
+        console.log("handleNavigation called with:", ref); // Debugging
+        if (ref && ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            console.error("Invalid ref passed:", ref);
+        }
+    };
+
+    console.log("Passing onNavigate to Navbar:", handleNavigation); 
+      
+
+
+
 
     const handleSectionExpand = () => {
 
         setSectionExpanded(!sectionExplanded);
     };
 
-    const handleOfferSec = () => {
+    
 
-        setOfferSec(!offersec);
-    };
-
-    const handleIntroSec = () => {
-
-        setIntroSec(!introSec);
-    };
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -299,12 +304,13 @@ const LandingPage = () => {
           { threshold: 0.1 } // Trigger when at least 10% of the section is visible
         );
     
-        if (sectionRef.current) {
-          observer.observe(sectionRef.current);
+        const currentSectionRef = sectionRef.current;
+        if (currentSectionRef) {
+          observer.observe(currentSectionRef);
         }
     
         return () => {
-          if (sectionRef.current) observer.unobserve(sectionRef.current);
+          if (currentSectionRef) observer.unobserve(currentSectionRef);
         };
       }, []);
 
@@ -327,7 +333,7 @@ const LandingPage = () => {
             <div className='relative h-auto w-auto'>
 
                     {/* Hero Section */}
-                    <section className='relative flex-col lgs:h-[100vh] sms:h-[60vh] mds:h-[30rem] lgs:mb-3 w-full z-10'>
+                    <section  className='relative flex-col lgs:h-[100vh] sms:h-[60vh] mds:h-[30rem] lgs:mb-3 w-full z-10'>
                                 
                                 <div className='absolute flex-col w-full lgs:h-[100vh]  z-20'>
 
@@ -428,7 +434,7 @@ const LandingPage = () => {
                     </section>
 
                     {/* Offering Section */}
-                    <section ref={sectionRef} className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
+                    <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
 
                         <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
                                     
@@ -578,7 +584,7 @@ const LandingPage = () => {
                     </section>
 
                     {/* Partners Section */}
-                    <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
+                    <section  className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
                     <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
                     <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
                         <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
@@ -750,8 +756,8 @@ const LandingPage = () => {
                     
                     </section>
 
-                    {/*  Section */}
-                    <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
+                    {/* Client Reviews Section */}
+                    <section  className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
 
                         <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
@@ -815,7 +821,7 @@ const LandingPage = () => {
                     </section>
 
                     {/* Powered By Section */}
-                    <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full lgs:p-12'>
+                    <section  className='flex flex-col overflow-hidden items-center justify-center h-auto w-full lgs:p-12'>
                     <div className="relative flex lgs:h-[15rem] sms:h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
                                <div className="flex w-auto h-auto " data-aos='fade-right'>

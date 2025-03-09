@@ -61,14 +61,39 @@ const treeSet = [
 const TreeView = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
-      once: true,
+      duration: 1000
     });
   }, []);
 
 
   return (
     <div className="flex flex-col h-auto bg-primary w-auto items-center justify-center mt-24 lgs:p-12">
+
+
+              {/* Our Journey */}
+                     <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center'>
+                        <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
+                            <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent overflow-hidden">
+                               <div className="flex w-auto h-auto" data-aos='fade-right'>
+                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl text-5xl text-center"
+                                  style={{
+                                    fontWeight:'200'
+                                  }}>
+                                    OUR
+                                  </h2>
+                                  <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-5xl lgs:text-7xl items-center justify-center text-center" style={{
+                                    fontWeight:'900',
+                                    boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                  }}>
+                                    JOURNEY
+                                  </h2>
+                               </div>
+                            </div>
+                        </div>
+                      </div> 
+
+
+
 
       {/* Large View */}
       <div className='hidden lgs:flex w-auto h-auto items-center justify-center'>
@@ -78,20 +103,20 @@ const TreeView = () => {
 
           <div key={index} className='relative flex bg-transparent w-[40rem] h-[25rem] items-center justify-center'>
           <div className='relative flex  w-[10rem] h-[25rem] top-0 bg-transparent items-start justify-center z-20  overflow-hidden'>
-            <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-30' style={{
+            <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
               boxShadow:'inset 0px 2px 10px 10px rgba(0,0,0,0.2)'
             }}>
-              <img src={tool.img} alt='tree' className='rounded-full border-4 border-gray-500 object-cover w-[5rem] h-[5rem]' />
+              <img src={tool.img} alt='tree' className='rounded-full border-4 border-blue-500 object-cover w-[5rem] h-[5rem]' />
             </div>
             { index !== 2 && (
-            <div className='absolute bg-secondary w-[0.1rem] h-screen items-center justify-center z-20' style={{
+            <div className='absolute flex bg-secondary w-[0.05rem] h-screen items-center justify-center z-20' data-aos='zoom-in' style={{
 
             }}/>
             )}
             
 
           </div>
-          <div className='flex w-[30rem] h-[25rem] items-start justify-start top-0 bg-transparent z-30 lgs:p-2'>
+          <div className='flex w-[30rem] h-[25rem] items-start justify-start top-0 bg-transparent z-30 lgs:p-2' data-aos='fade-right'>
             <div className='flex flex-col bg-primary-400 w-[30rem] h-[20rem] items-start rounded-3xl justify-start lgs:p-5'
             style={{
               boxShadow:'0px 2px 10px 10px rgba(0,0,0,0.2)'
@@ -123,19 +148,19 @@ const TreeView = () => {
 
           <div key={index} className='relative flex bg-transparent w-[40rem] h-[25rem] items-center justify-center'>
           <div className='relative flex  w-[10rem] h-[25rem] top-0 bg-transparent items-start justify-center z-20  overflow-hidden'>
-            <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-30' style={{
+            <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
               boxShadow:'inset 0px 2px 10px 10px rgba(0,0,0,0.2)'
             }}>
-              <img src={tool.img} alt='tree' className='rounded-full border-4 border-gray-500 object-cover w-[5rem] h-[5rem]' />
+              <img src={tool.img} alt='tree' className='rounded-full border-4 border-blue-500 object-cover w-[5rem] h-[5rem]' />
             </div>
             { index !== 2 && (
-            <div className='absolute bg-secondary w-[0.1rem] h-screen items-center justify-center z-20' style={{
+            <div className='absolute bg-secondary w-[0.05rem] h-screen items-center justify-center z-20' style={{
 
             }}/>
             )}
 
           </div>
-          <div className='flex w-[30rem] h-[25rem] items-start justify-start top-0 bg-transparent z-30 lgs:p-2'>
+          <div className='flex w-[30rem] h-[25rem] items-start justify-start top-0 bg-transparent z-30 lgs:p-2' data-aos='fade-right'>
             <div className='flex flex-col bg-primary-400 w-[30rem] h-[20rem] items-start rounded-3xl justify-start lgs:p-5'
             style={{
               boxShadow:'0px 2px 10px 10px rgba(0,0,0,0.2)'
@@ -172,20 +197,20 @@ const TreeView = () => {
 
               <div key={index} className='relative flex bg-transparent w-full h-[25rem] items-center justify-center'>
               <div className='relative flex  w-[20vw] h-[25rem] top-0 bg-transparent items-start justify-center z-20  overflow-hidden'>
-                <div className='absolute flex bg-primary rounded-full w-[4rem] h-[4rem] items-center justify-center z-30' style={{
+                <div className='absolute flex bg-primary rounded-full w-[4rem] h-[4rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
                   boxShadow:'inset 0px 2px 10px 10px rgba(0,0,0,0.2)'
                 }}>
                   <img src={tool.img} alt='tree' className='rounded-full border-2 border-gray-500 object-cover w-[4rem] h-[4rem]' />
                 </div>
                 { index !== 5 && (
-                <div className='absolute bg-secondary w-[0.05rem] h-screen items-center justify-center z-20' style={{
+                <div className='absolute bg-secondary w-[0.05rem] h-screen items-center justify-center z-20' data-aos='fade-down' style={{
 
                 }}/>
                 )}
                 
 
               </div>
-              <div className='flex w-[80vw] h-[25rem] items-start justify-start top-0 bg-transparent z-30 mds:p-5 p-2'>
+              <div className='flex w-[80vw] h-[25rem] items-start justify-start top-0 bg-transparent z-30 mds:p-5 p-2' data-aos='fade-right'>
                 <div className='flex flex-col bg-primary-400 w-full h-[22rem] items-start rounded-3xl justify-start p-5'
                 style={{
                   boxShadow:'0px 2px 10px 10px rgba(0,0,0,0.2)'

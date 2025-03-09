@@ -48,8 +48,8 @@ export default function ContactUs() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white lgs:mt-12">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="flex flex-col bg-white lgs:mt-12">
+      <div className="relative mx-auto px-6 sms:mt-12 p-12">
             <div className="relative flex lgs:h-[10rem] sms:h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
                                <div className="flex w-auto h-auto " data-aos='fade-right'>
@@ -57,7 +57,7 @@ export default function ContactUs() {
                                   style={{
                                     fontWeight:'200'
                                   }}>
-                                    Get In Touch with
+                                    Contact
                                   </h2>
                                   <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-5xl text-7xl items-center justify-center text-center" style={{
                                     fontWeight:'900',
@@ -68,7 +68,7 @@ export default function ContactUs() {
                                </div>
                             </div>
              </div>
-        <div className="max-w-3xl mx-auto">
+        <div className="sms:w-full mx-auto">
           <form onSubmit={handleSubmit} className="space-y-6 bg-gray-50 p-6 rounded-lg shadow-lg" style={{
             boxShadow:'0px 4px 10px  rgba(0, 0, 0, 0.4)'
           }}>
