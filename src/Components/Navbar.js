@@ -12,6 +12,9 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
+  const closeNav = () => {
+    setNav(false); // Close the mobile menu
+  };
 
 
   return (
@@ -28,15 +31,15 @@ const Navbar = () => {
       }}>
         {/* Use Link component for routing */}
         <li  className="p-4 hover:text-baseprimary mds:text-sm">
-        <Link to='/'>Home</Link></li>
+        <Link to='/' onClick={closeNav}>Home</Link></li>
         <li className="p-4 hover:text-baseprimary mds:text-sm">
-        <Link to='/aboutUs'>About Us</Link>
+        <Link to='/aboutUs' onClick={closeNav}>About Us</Link>
         </li>
         <li on className="p-4 hover:text-baseprimary mds:text-sm">
-           <Link to='/contactUs'>Contact Us</Link>
+           <Link to='/contactUs' onClick={closeNav}>Contact Us</Link>
         </li>
         <li on className="p-4 hover:text-baseprimary mds:text-sm">
-           <Link to='/treeView'>Social Tree</Link>
+           <Link to='/treeView' onClick={closeNav}>Social Tree</Link>
         </li>
       </ul>
       <div className="flex items-center lgs:w-[20vw] mds:w-[20vw]"/>
@@ -55,15 +58,15 @@ const Navbar = () => {
                     </div>
                     {/* Use Link component for mobile navigation */}
                     <li  className="p-4 border-b border-gray-600 text-center">
-                      <Link to='/'>Home</Link></li>
+                      <Link to='/' onClick={closeNav}>Home</Link></li>
                     <li  className="p-4 border-b border-gray-600 text-center">
-                    <Link to='/aboutUs'>About Us</Link>
+                    <Link to='/aboutUs' onClick={closeNav}>About Us</Link>
                     </li>
                     <li className="p-4 border-b border-gray-600 text-center">
-                      <Link to='/contactUs'>Contact Us</Link>
+                      <Link to='/contactUs' onClick={closeNav}>Contact Us</Link>
                     </li>
                     <li className="p-4 border-b border-gray-600 text-center">
-                       <Link to='/treeView'>Social Tree</Link>
+                       <Link to='/treeView' onClick={closeNav}>Social Tree</Link>
                     </li>
                   </ul>
               </div>
