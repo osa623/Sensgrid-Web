@@ -272,12 +272,31 @@ const testimonial = [
 
 // Slide data with images
 const DYN = [
-
-    { id: 1, name: 'Bertha Benzs historic drive?', statement: 'In 1888, Bertha Benz completed the first long-distance car journey, driving 106 km in Germany, showcasing the automobile potential.' },
-    { id: 2, name: 'the fastest car in the world?', statement: 'The Koenigsegg Jesko Absolut set a record by reaching 412.72 km/h (256.6 mph) in June 2024.' },
-    { id: 3, name: 'the worlds most expensive car?', statement: 'The Rolls-Royce Droptail, limited to four units, is estimated to cost between $25-30 million.' },
-    { id: 4, name: 'the invention of windshield wipers?', statement: 'Mary Anderson patented the first windshield wiper in 1903 after observing drivers struggle to clear their windshields.' },
-    { id: 5, name: 'the first speeding ticket?', statement: 'In 1896, a driver in England received the first speeding ticket for going 8 mph, exceeding the 2 mph limit in towns.' }
+    { 
+        id: 1, 
+        title: 'IoT and Smart Mobility Integration', 
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed turpis nec ipsum malesuada vehicula. Curabitur faucibus velit nec erat elementum, id tempus ligula pharetra.' 
+    },
+    { 
+        id: 2, 
+        title: 'Real-Time Data Processing in IoT', 
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod libero vel urna ultricies, id malesuada erat sagittis. Duis ut tortor in velit auctor tincidunt at non augue.' 
+    },
+    { 
+        id: 3, 
+        title: 'Edge Computing in IoT Networks', 
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed justo ac ligula ultricies convallis. Sed varius ex ut nunc tristique, ut dignissim libero dignissim.' 
+    },
+    { 
+        id: 4, 
+        title: 'Sensor Fusion in IoT Applications', 
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec lectus nec urna feugiat dapibus non ac lorem. Donec rhoncus nunc et ligula convallis, sit amet aliquet neque scelerisque.' 
+    },
+    { 
+        id: 5, 
+        title: 'AI-Powered IoT for Traffic Management', 
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis metus et arcu vehicula, in tristique velit mattis. Ut convallis dolor et ligula vestibulum, non dapibus libero cursus.' 
+    }
 ];
 
 
@@ -478,7 +497,7 @@ const LandingPage = () => {
                                 </div>
 
                                 {/* Swiper Container */}
-                                <div className="relative flex w-full items-center justify-center bg-transparent z-30">
+                                <div className="hidden relative lgs:flex w-full items-center justify-center bg-transparent z-30">
                                     
                                     <Swiper
                                         effect="coverflow"
@@ -495,7 +514,7 @@ const LandingPage = () => {
                                         pagination={{ clickable: true }}
                                         navigation={true}
                                         modules={[EffectCoverflow, Pagination, Navigation]}
-                                        className="flex lgs:h-[55rem]  items-center justify-center p-12"
+                                        className="flex lgs:h-[40rem] items-center justify-center p-24"
                                         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                                     >
                                         {DYN.map((tool, index) => {
@@ -510,30 +529,25 @@ const LandingPage = () => {
                                             return (
                                                 <SwiperSlide className="group" key={index}>
 
-                                                    <div className="flex lgs:h-[30rem] bg-primary  items-center rounded-2xl justify-center"
-                                                    style={{
-                                                        boxShadow:'inset 0px 20px 10px 2px rgba(0,0,0,0.4), 0px 0px 20px 2px rgba(255,255,255,0.5)'
-                                                    }}>
+                                                    <div className="flex lgs:h-[30rem] bg-transparent  items-center justify-center">
+
+                                                      <div className='flex flex-col lgs:h-[25rem] lgs:w-[25rem] bg-primary rounded-2xl  items-center justify-center'
+                                                      style={{boxShadow:'inset 0px 0px 10px 2px rgba(0,0,0,0.5) , 0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'}}>
+                                                        <h2 className='font-dmsans text-blue-900 lgs:w-[20rem] p-4 lgs:text-3xl text-center'>
+                                                            {tool.title}
+                                                        </h2> 
+                                                        <p className='font-kanit text-center w-[15rem] text-md text-secondary'
+                                                        style={{
+                                                            fontWeight:'200'
+                                                        }}>
+                                                            {tool.description}
+                                                        </p>
+                                                      </div>
             
                                                     </div>
-                                                    <div
-                                                        className="flex h-[30rem] items-center justify-center w-full transition-opacity duration-500"
-                                                        style={{ opacity }}
-                                                    >
-                                                    
-                                                            <div className="absolute flex z-10 w-auto h-auto bg-transparent items-center justify-center">
-                                                                                            
-                                                            </div>   
-                                                           
-                                                            style={{
-                                                                boxShadow:'inset 0px 0px 10px 2px rgba(255,255,255,0.5)'
-                                                            }}/>
-                                                           
-                                                    
-                                                    
-                                                    
-                                                    </div>
+       
                                                 </SwiperSlide>
+                                                
                                             );
                                         })}
                                     </Swiper>
