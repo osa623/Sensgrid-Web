@@ -529,7 +529,7 @@ const LandingPage = () => {
                                             return (
                                                 <SwiperSlide className="group" key={index}>
 
-                                                    <div className="flex lgs:h-[30rem] bg-transparent  items-center justify-center">
+                                                    <div className="flex flex-col lgs:h-[30rem] bg-transparent  items-center justify-center">
 
                                                       <div className='flex flex-col lgs:h-[25rem] lgs:w-[25rem] bg-primary rounded-2xl  items-center justify-center'
                                                       style={{boxShadow:'inset 0px 0px 10px 2px rgba(0,0,0,0.5) , 0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'}}>
