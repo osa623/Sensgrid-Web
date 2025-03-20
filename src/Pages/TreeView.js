@@ -96,19 +96,54 @@ const TreeView = () => {
 
 
       {/* Large View */}
-      <div className='hidden lgs:flex w-auto h-auto items-center justify-center'>
-      {/* First One */}
-        <div className='flex flex-col w-auto h-auto items-center justify-center'>
-         {treeSet.slice(0,3).map((tool, index)=> (     
+      <div className='hidden lgs:flex  w-auto h-auto items-center justify-center'>
 
-          <div key={index} className='relative flex bg-transparent w-[40rem] h-[25rem] items-center justify-center'>
-          <div className='relative flex  w-[10rem] h-[25rem] top-0 bg-transparent items-start justify-center z-20  overflow-hidden'>
+        <div className="flex flex-col w-auto h-auto items-center justify-center">
+          {treeSet.slice(0, 6).map((tool, index) => (
+            <div key={index} className="flex w-[30rem] h-[25rem] items-start justify-start bg-transparent z-30 lgs:p-2" data-aos="fade-left">
+              {index === 0 || index === 2 || index === 4 ? (
+                <div
+                  className="flex flex-col bg-primary-400 w-[30rem] h-[20rem] items-start rounded-3xl justify-start lgs:p-5"
+                  style={{
+                    boxShadow: "0px 2px 10px 10px rgba(0,0,0,0.2)",
+                  }}
+                >
+                  <h2 className="flex font-russoone text-2xl text-secondary">
+                    {tool.year}
+                  </h2>
+                  <h2
+                    className="flex font-dmsans text-2xl text-secondary"
+                    style={{ fontWeight: "200" }}
+                  >
+                    {tool.title}
+                  </h2>
+                  <p
+                    className="flex font-dmsans lgs:mt-4 text-sm text-secondary"
+                    style={{ fontWeight: "200" }}
+                  >
+                    {tool.description}
+                  </p>
+                </div>
+              ) : (
+                <div className="w-[30rem] h-[25rem]"></div> // Empty div for alignment
+              )}
+            </div>
+          ))}
+        </div>
+ 
+        <div className='flex flex-col w-auto h-auto items-center justify-center'>
+         {treeSet.slice(0,6).map((tool, index)=> (     
+
+          <div key={index} className='relative flex bg-transparent w-auto h-[25rem] items-center justify-center'>
+
+          <div className='relative flex  w-[10rem] h-[25rem] top-0 bg-transparent items-start justify-center z-30  overflow-hidden'>
             <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
               boxShadow:'inset 0px 2px 10px 10px rgba(0,0,0,0.2)'
             }}>
               <img src={tool.img} alt='tree' className='rounded-full border-4 border-blue-500 object-cover w-[5rem] h-[5rem]' />
             </div>
-            { index !== 2 && (
+            <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-20'/>
+            { index !== 5 && (
             <div className='absolute flex bg-secondary w-[0.05rem] h-screen items-center justify-center z-20' data-aos='zoom-in' style={{
 
             }}/>
@@ -116,76 +151,45 @@ const TreeView = () => {
             
 
           </div>
-          <div className='flex w-[30rem] h-[25rem] items-start justify-start top-0 bg-transparent z-30 lgs:p-2' data-aos='fade-right'>
-            <div className='flex flex-col bg-primary-400 w-[30rem] h-[20rem] items-start rounded-3xl justify-start lgs:p-5'
-            style={{
-              boxShadow:'0px 2px 10px 10px rgba(0,0,0,0.2)'
-            }}>
-               <h2 className='flex font-russoone text-2xl text-secondary'>
-                {tool.year}
-              </h2>
-              <h2 className='flex font-dmsans text-2xl text-secondary' style={{
-                fontWeight:'200'
-              }}>
-                {tool.title}
-              </h2>
-              <p className='flex font-dmsans lgs:mt-4 text-sm text-secondary' style={{
-                fontWeight:'200'
-              }}>
-                {tool.description}
-              </p>
-            </div>
-          </div>
+
 
           </div>
 
         ))}  
         </div>   
-        
-        {/* Second One */}
-        <div className='flex flex-col w-auto h-auto items-center justify-center'>
-         {treeSet.slice(3,6).map((tool, index)=> (     
 
-          <div key={index} className='relative flex bg-transparent w-[40rem] h-[25rem] items-center justify-center'>
-          <div className='relative flex  w-[10rem] h-[25rem] top-0 bg-transparent items-start justify-center z-20  overflow-hidden'>
-            <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-30' data-aos='zoom-in' data-aos-delay='100' style={{
-              boxShadow:'inset 0px 2px 10px 10px rgba(0,0,0,0.2)'
-            }}>
-              <img src={tool.img} alt='tree' className='rounded-full border-4 border-blue-500 object-cover w-[5rem] h-[5rem]' />
-            </div>
-            { index !== 2 && (
-            <div className='absolute bg-secondary w-[0.05rem] h-screen items-center justify-center z-20' style={{
-
-            }}/>
+        <div className="flex flex-col w-auto h-auto items-center justify-center">
+        {treeSet.slice(0, 6).map((tool, index) => (
+          <div key={index} className="flex w-[30rem] h-[25rem] items-start justify-start bg-transparent z-30 lgs:p-2" data-aos="fade-right">
+            {index === 1 || index === 3 || index === 5 ? (
+              <div
+                className="flex flex-col bg-primary-400 w-[30rem] h-[20rem] items-start rounded-3xl justify-start lgs:p-5"
+                style={{
+                  boxShadow: "0px 2px 10px 10px rgba(0,0,0,0.2)",
+                }}
+              >
+                <h2 className="flex font-russoone text-2xl text-secondary">
+                  {tool.year}
+                </h2>
+                <h2
+                  className="flex font-dmsans text-2xl text-secondary"
+                  style={{ fontWeight: "200" }}
+                >
+                  {tool.title}
+                </h2>
+                <p
+                  className="flex font-dmsans lgs:mt-4 text-sm text-secondary"
+                  style={{ fontWeight: "200" }}
+                >
+                  {tool.description}
+                </p>
+              </div>
+            ) : (
+              <div className="w-[30rem] h-[25rem]"></div> // Empty div for alignment
             )}
-
           </div>
-          <div className='flex w-[30rem] h-[25rem] items-start justify-start top-0 bg-transparent z-30 lgs:p-2' data-aos='fade-right'>
-            <div className='flex flex-col bg-primary-400 w-[30rem] h-[20rem] items-start rounded-3xl justify-start lgs:p-5'
-            style={{
-              boxShadow:'0px 2px 10px 10px rgba(0,0,0,0.2)'
-            }}>
-               <h2 className='flex font-russoone text-2xl text-secondary'>
-                {tool.year}
-              </h2>
-              <h2 className='flex font-dmsans text-2xl text-secondary' style={{
-                fontWeight:'200'
-              }}>
-                {tool.title}
-              </h2>
-              <p className='flex font-dmsans lgs:mt-4 text-sm text-secondary' style={{
-                fontWeight:'200'
-              }}>
-                {tool.description}
-              </p>
-            </div>
-          </div>
-
-          </div>
-
-        ))}  
-        </div> 
-
+        ))}
+      </div> 
 
      </div>
 

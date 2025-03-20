@@ -46,6 +46,16 @@ import nvidia from '../Assets/nvidia.png';
 import rasberryPi from '../Assets/rasberryPi.png';
 import arduino from '../Assets/arduino.png';
 
+//css
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
+
+
+import '../Components/Swiper.css';
+
 
 
 const details = [
@@ -260,6 +270,17 @@ const testimonial = [
 ];
 
 
+// Slide data with images
+const DYN = [
+
+    { id: 1, name: 'Bertha Benzs historic drive?', statement: 'In 1888, Bertha Benz completed the first long-distance car journey, driving 106 km in Germany, showcasing the automobile potential.' },
+    { id: 2, name: 'the fastest car in the world?', statement: 'The Koenigsegg Jesko Absolut set a record by reaching 412.72 km/h (256.6 mph) in June 2024.' },
+    { id: 3, name: 'the worlds most expensive car?', statement: 'The Rolls-Royce Droptail, limited to four units, is estimated to cost between $25-30 million.' },
+    { id: 4, name: 'the invention of windshield wipers?', statement: 'Mary Anderson patented the first windshield wiper in 1903 after observing drivers struggle to clear their windshields.' },
+    { id: 5, name: 'the first speeding ticket?', statement: 'In 1896, a driver in England received the first speeding ticket for going 8 mph, exceeding the 2 mph limit in towns.' }
+];
+
+
 
 
 const LandingPage = () => {
@@ -267,6 +288,7 @@ const LandingPage = () => {
 
     //other hooks
     const [sectionExplanded , setSectionExpanded] = useState(false);   
+    const [activeIndex, setActiveIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
     const navigate = useNavigate();
     const sectionRef = useRef(null);
@@ -418,6 +440,111 @@ const LandingPage = () => {
 
 
                     </section>
+
+                    {/* Submit Section */}
+                    <div className="relative flex  justify-center items-center bg-transparent">
+                        {/* Background Image */}
+
+                        <div className="relative flex flex-col h-auto w-full bg-transparent overflow-hidden z-40">
+
+                                <div
+                                className="absolute w-full h-auto items-center lgs:mt-12 justify-center z-30"
+                            >
+                                
+                                </div>
+
+                                {/* Primary Section */}
+                                <div className="relative flex lgs:h-[15rem] w-full z-40 justify-center items-center">
+                                    <div className="absolute flex items-center justify-center w-full lgs:h-[25rem] bg-gradient-to-b from-primary via-primary to-transparent">
+                                    <div className="flex w-auto h-auto mt-12">
+                                        <h2 className="font-bricolagegrotesque text-primary bg-blue-600 lgs:p-4 text-8xl text-center"
+                                        style={{
+                                            fontWeight:'200'
+                                        }}>
+                                            Turboss
+                                        </h2>
+                                        <h2 className="flex bg-primary p-1 flex-col font-bricolagegrotesque text-blue-600 lgs:p-2 text-8xl text-center" style={{
+                                            fontWeight:'900',
+                                            boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                        }}>
+                                            DNA<span className="lgs:text-sm font-dmsans text-secondary" style={{
+                                                fontWeight:'200'
+                                            }}>
+                                                Turboss Garage Section 01
+                                            </span>
+                                        </h2>
+                                    </div>
+                                    </div>
+                                </div>
+
+                                {/* Swiper Container */}
+                                <div className="relative flex w-full items-center justify-center bg-transparent z-30">
+                                    
+                                    <Swiper
+                                        effect="coverflow"
+                                        grabCursor={true}
+                                        centeredSlides={true}
+                                        loop={true}
+                                        slidesPerView="auto"
+                                        coverflowEffect={{
+                                            rotate: 0,
+                                            stretch: 0,
+                                            depth: 100,
+                                            modifier: 2.5,
+                                        }}
+                                        pagination={{ clickable: true }}
+                                        navigation={true}
+                                        modules={[EffectCoverflow, Pagination, Navigation]}
+                                        className="flex lgs:h-[55rem]  items-center justify-center p-12"
+                                        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                                    >
+                                        {DYN.map((tool, index) => {
+                                            let opacity = 0.8;
+
+                                            if (index === activeIndex) {
+                                                opacity = 1;
+                                            } else if (index === activeIndex - 1 || index === activeIndex + 1) {
+                                                opacity = 1;
+                                            }
+
+                                            return (
+                                                <SwiperSlide className="group" key={index}>
+
+                                                    <div className="flex lgs:h-[30rem] bg-primary  items-center rounded-2xl justify-center"
+                                                    style={{
+                                                        boxShadow:'inset 0px 20px 10px 2px rgba(0,0,0,0.4), 0px 0px 20px 2px rgba(255,255,255,0.5)'
+                                                    }}>
+            
+                                                    </div>
+                                                    <div
+                                                        className="flex h-[30rem] items-center justify-center w-full transition-opacity duration-500"
+                                                        style={{ opacity }}
+                                                    >
+                                                    
+                                                            <div className="absolute flex z-10 w-auto h-auto bg-transparent items-center justify-center">
+                                                                                            
+                                                            </div>   
+                                                           
+                                                            style={{
+                                                                boxShadow:'inset 0px 0px 10px 2px rgba(255,255,255,0.5)'
+                                                            }}/>
+                                                           
+                                                    
+                                                    
+                                                    
+                                                    </div>
+                                                </SwiperSlide>
+                                            );
+                                        })}
+                                    </Swiper>
+                                    
+                                </div>
+
+
+                        </div>
+
+
+                    </div>
 
                     {/* Offering Section */}
                     <section className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
