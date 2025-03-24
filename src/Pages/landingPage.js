@@ -473,31 +473,30 @@ const LandingPage = () => {
                                 </div>
 
                                 {/* Primary Section */}
-                                <div className="relative flex lgs:h-[15rem] w-full z-40 justify-center items-center">
-                                    <div className="absolute flex items-center justify-center w-full lgs:h-[25rem] bg-gradient-to-b from-primary via-primary to-transparent">
-                                    <div className="flex w-auto h-auto mt-12">
-                                        <h2 className="font-bricolagegrotesque text-primary bg-blue-600 lgs:p-4 text-8xl text-center"
+                                <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center'>
+                                <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
+                                    <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent overflow-hidden">
+                                    <div className="flex w-auto h-auto" data-aos='fade-right'>
+                                        <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl text-5xl text-center"
                                         style={{
                                             fontWeight:'200'
                                         }}>
-                                            Turboss
+                                            WHAT
                                         </h2>
-                                        <h2 className="flex bg-primary p-1 flex-col font-bricolagegrotesque text-blue-600 lgs:p-2 text-8xl text-center" style={{
+                                        <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-5xl lgs:text-7xl items-center justify-center text-center" style={{
                                             fontWeight:'900',
                                             boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                         }}>
-                                            DNA<span className="lgs:text-sm font-dmsans text-secondary" style={{
-                                                fontWeight:'200'
-                                            }}>
-                                                Turboss Garage Section 01
-                                            </span>
+                                            WE DO
                                         </h2>
                                     </div>
                                     </div>
                                 </div>
+                                </div> 
+
 
                                 {/* Swiper Container */}
-                                <div className="hidden relative lgs:flex w-full items-center justify-center bg-transparent z-30">
+                                <div className="hidden relative lgs:flex mds:flex w-full items-center justify-center bg-transparent z-30">
                                     
                                     <Swiper
                                         effect="coverflow"
@@ -529,9 +528,9 @@ const LandingPage = () => {
                                             return (
                                                 <SwiperSlide className="group" key={index}>
 
-                                                    <div className="flex flex-col lgs:h-[30rem] bg-transparent  items-center justify-center">
+                                                    <div className="flex flex-col lgs:h-[30rem] mds:h-[30rem] bg-transparent  items-center justify-center">
 
-                                                      <div className='flex flex-col lgs:h-[25rem] lgs:w-[25rem] bg-primary rounded-2xl  items-center justify-center'
+                                                      <div className='flex flex-col lgs:h-[25rem] mds:h-[20rem] w-[25rem] bg-primary rounded-2xl  items-center justify-center'
                                                       style={{boxShadow:'inset 0px 0px 10px 2px rgba(0,0,0,0.5) , 0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'}}>
                                                         <h2 className='font-dmsans text-blue-900 lgs:w-[20rem] p-4 lgs:text-3xl text-center'>
                                                             {tool.title}
