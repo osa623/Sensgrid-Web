@@ -62,6 +62,5 @@ This project is licensed under the MIT License.
 
 ## Contact
 For support or inquiries, contact:
-- **Email**: support@sensegrid.com
-- **GitHub**: [SenseGrid Repository](https://github.com/yourusername/sensegrid)
-- **Website**: [www.sensegrid.com](https://www.sensegrid.com)
+- **GitHub**: [SenseGrid Repository](https://github.com/osa623/Sensgrid-Web.git)
+- **Website**: [www.sensegrid.com](https://sensgrid-web.vercel.app/)
