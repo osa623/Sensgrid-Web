@@ -5,17 +5,9 @@ import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 //images
 import namelogo from '../Assets/SensGrid logo.png';
 
-const Navbar = () => {
+const Navbar = ({darkMode, setDarkMode}) => {
   const [nav, setNav] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
 
   const handleNav = () => {
     setNav(!nav);

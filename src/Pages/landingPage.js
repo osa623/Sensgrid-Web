@@ -302,7 +302,7 @@ const DYN = [
 
 
 
-const LandingPage = () => {
+const LandingPage = ({darkMode}) => {
 
 
     //other hooks
@@ -357,10 +357,10 @@ const LandingPage = () => {
   return (
 
 
-            <div className='relative h-auto w-auto'>
+            <div className={`relative h-auto w-auto ${darkMode ? 'bg-darkTheme' : ''}`}>
 
                     {/* Hero Section */}
-                    <section  className='relative flex-col lgs:h-[100vh] sms:h-[60vh] mds:h-[30rem] lgs:mb-3 w-full z-10'>
+                    <section  className={`relative flex-col lgs:h-[100vh] bg-transparent sms:h-[60vh] mds:h-[30rem] lgs:mb-3 w-full z-10`}>
                                 
                                 <div className='absolute flex-col w-full lgs:h-[100vh]  z-20'>
 
@@ -378,7 +378,7 @@ const LandingPage = () => {
 
                                 <div className='absolute flex-col flex w-full lgs:h-[100vh] z-30'>
 
-                                        <div className='relative flex flex-col bg-transparent items-center justify-center sms:mt-36 mds:mt-24 sms:justify-start  w-[100vw] lgs:h-[80vh]'>
+                                        <div className='relative flex flex-col bg-transparent dark:bg-theme01 items-center justify-center sms:mt-36 mds:mt-24 sms:justify-start  w-[100vw] lgs:h-[80vh]'>
                                             
                                             <div className='flex flex-col items-center cursor-pointer justify-center lgs:space-y-4 sms:w-[70vw] lgs:w-[80vw] mds:w-[60vw] overflow-hidden'>
                                                 <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-shadow-xl text-primary' data-aos='fade-down'>Powering the <span className='font-bold text-shadow-xl text-baseprimary' data-aos='fade-up'>Next Generation</span></h2>
@@ -461,7 +461,7 @@ const LandingPage = () => {
                     </section>
 
                     {/* Submit Section */}
-                    <div className="relative flex  justify-center items-center bg-transparent">
+                    <div className={`relative flex  justify-center ${darkMode ? 'flex bg-darkTheme' : ''} items-center bg-transparent`}>
                         {/* Background Image */}
 
                         <div className="relative flex flex-col h-auto w-full bg-transparent overflow-hidden z-40">
@@ -576,7 +576,7 @@ const LandingPage = () => {
                         <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent overflow-hidden">
                                <div className="flex w-auto h-auto" data-aos='fade-right'>
-                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl text-5xl text-center"
+                                  <h2 className="font-dmsans text-primary bg-theme01  p-4 lgs:text-7xl text-5xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
@@ -712,7 +712,7 @@ const LandingPage = () => {
 
                     {/* Partners Section */}
                     <section  className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
-                    <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
+                    <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center'>
                     <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
                         <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
@@ -886,7 +886,7 @@ const LandingPage = () => {
                     {/* Client Reviews Section */}
                     <section  className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
 
-                        <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center bg-primary'>
+                        <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center '>
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
 
                             <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">

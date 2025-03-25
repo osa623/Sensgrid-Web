@@ -11,6 +11,7 @@ module.exports = {
         secondary:"#000000",
         baseprimary:"#00bfff",
         theme01: "#0056A3",
+        darkTheme:"#021526",
         fontbasic:"#fdd122",
         fontsecondary:"#E5E4E2"
     },

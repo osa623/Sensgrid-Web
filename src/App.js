@@ -17,6 +17,7 @@ import TreeView from './Pages/TreeView.js';
 const AppContent = () => {
 
   const [isLoading , setIsLoading] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -32,16 +33,24 @@ const AppContent = () => {
     }
   }, [location]);
 
+  useEffect(()=> {
+    if(darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
 
   return (
     <div className="relative flex-col min-h-screen overflow-hidden">
-      <Navbar />
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <div className="flex-grow">
         {isLoading ? (
           <Loading />
         ) : (
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home darkMode={darkMode} />} />
             <Route path='/blog/:id' element={<BlogPage />} />
             <Route path='/contactUs' element={<ContactUs/>}/>
             <Route path='/aboutUs' element={<AboutUs/>}/>
