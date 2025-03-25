@@ -364,12 +364,12 @@ const LandingPage = ({darkMode}) => {
                                 
                                 <div className='absolute flex-col w-full lgs:h-[100vh]  z-20'>
 
-                                    <div className="hidden relative lgs:flex flex-col w-[100vw] h-[80vh] overflow-hidden z-30">
-                                        <video src={backgroundVideo} autoPlay loop muted className='object-cover'/>
+                                    <div className="hidden relative bg-transparent lgs:flex sms:flex flex-col w-[100vw] h-[80vh] sms:h-auto overflow-hidden z-30">
+                                        <video src={backgroundVideo} autoPlay loop muted className='object-cover sms:h-[50vh]'/>
                                     </div>
                                     
                                     
-                                    <div className="hidden bg-gradient-to-t from-theme01 to-blue-950 sms:flex mds:flex  w-full h-[50vh] mds:h-[20rem] overflow-hidden"/>
+                                    
 
                                     <div className='flex bg-transparent lgs:w-[100vw] lgs:h-[20vh] sms:'/>
 
@@ -378,7 +378,7 @@ const LandingPage = ({darkMode}) => {
 
                                 <div className='absolute flex-col flex w-full lgs:h-[100vh] z-30'>
 
-                                        <div className='relative flex flex-col bg-transparent dark:bg-theme01 items-center justify-center sms:mt-36 mds:mt-24 sms:justify-start  w-[100vw] lgs:h-[80vh]'>
+                                        <div className='relative flex flex-col bg-transparent  items-center justify-center sms:mt-36 mds:mt-24 sms:justify-start  w-[100vw] lgs:h-[80vh]'>
                                             
                                             <div className='flex flex-col items-center cursor-pointer justify-center lgs:space-y-4 sms:w-[70vw] lgs:w-[80vw] mds:w-[60vw] overflow-hidden'>
                                                 <h2 className='font-dmsans lg:text-7xl sms:text-4xl text-center mds:text-5xl text-shadow-xl text-primary' data-aos='fade-down'>Powering the <span className='font-bold text-shadow-xl text-baseprimary' data-aos='fade-up'>Next Generation</span></h2>
@@ -400,18 +400,18 @@ const LandingPage = ({darkMode}) => {
 
                                 </div>
 
-                                <div className={`absolute ${sectionExplanded ? 'lgs:-bottom-2 sms:bottom-20 mds:bottom-4' : 'bottom-20 sms:bottom-0' } flex-col bg-transparent lgs:w-[100vw] lgs:h-auto sms:h-[15vh] z-50 transfrom-700 duration-700 ease-in-out`}>
+                                <div className={`absolute ${sectionExplanded ? 'lgs:-bottom-2 sms:bottom-20 mds:bottom-4' : 'bottom-20 sms:bottom-0' } flex-col lgs:w-[100vw] lgs:h-auto sms:h-[15vh]  z-50 transfrom-700 duration-700 ease-in-out`}>
 
-                                    <div className='flex bg-transparent items-center justify-center w-[100vw] lg:h-auto space-x-6 overflow-hidden'>
+                                    <div className={`flex  items-center justify-center w-[100vw] lg:h-auto  space-x-6 overflow-hidden`}>
                                     
-                                        <div className={`relative flex lgs:w-[60rem] sms:w-[90vw] mds:w-[75vw] overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem] h-[20rem]' : 'lgs:h-[12rem] h-[8rem]'} bg-theme01 items-center justify-center  rounded-3xl transform-all duration-700 ease-in-out`}
+                                        <div className={`relative flex lgs:w-[60rem] sms:w-[90vw] mds:w-[75vw] overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem] h-[20rem]' : 'lgs:h-[12rem] h-[8rem]'} items-center justify-center ${darkMode ? ' bg-darkPrimary' : 'bg-theme01'}   rounded-3xl transform-all duration-700 ease-in-out`}
                                              style={{
                                             boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)',
                                         }}>
                                             <div className='absolute flex w-full blur-sm h-auto overflow-hidden z-20'>
                                                 <img src={'background2'} alt='' className='flex object-cover'/>
                                             </div>
-                                            <div className={`absolute flex flex-col ${sectionExplanded ? 'lgs:h-[20rem] space-y-5' : 'lgs:h-[12rem] space-y-2'}  items-center justify-center lgs:w-[60rem] overflow-hidden transform-all duration-700 ease-in-out z-30`}>
+                                            <div className={`absolute flex flex-col ${sectionExplanded ? 'lgs:h-[20rem] space-y-5' : 'lgs:h-[12rem] space-y-2'} ${darkMode ? ' bg-darkPrimary' : 'bg-theme01'}  items-center justify-center lgs:w-[60rem] overflow-hidden transform-all duration-700 ease-in-out z-30`}>
                                                 <h2 className={`font-kanit ${sectionExplanded ? 'lgs:text-5xl text-4xl' : 'lgs:text-8xl text-5xl'}  text-primary font-bold text-center transform-all duration-700 ease-in-out`}>
                                                     INDUSTRY {''}<span className='font-kanit font-thin text-primary'>4.0</span>
                                                 </h2>
@@ -552,6 +552,32 @@ const LandingPage = ({darkMode}) => {
                                     </Swiper>
                                     
                                 </div>
+
+                                <div className='hidden sms:flex lgs:flex sms:flex-col w-[100vw] h-auto items-center lgs:space-x-5 sms:space-y-5 justify-center mt-12 lgs:p-5'>
+
+                                    {DYN.slice(0,6).map((tool) => (
+
+                                        <div className="flex flex-col lgs:h-[30rem] mds:h-[30rem] bg-transparent  items-center justify-center" data-aos='fade-up'>
+
+                                            <div className='flex flex-col lgs:h-[25rem] h-[20rem] w-[25rem] sms:w-[20rem] bg-primary rounded-2xl  items-center justify-center'
+                                            style={{boxShadow:'inset 0px 0px 10px 2px rgba(0,0,0,0.5) , 0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'}}>
+                                            <h2 className='font-dmsans text-blue-900 lgs:w-[20rem] p-4 lgs:text-3xl text-center'>
+                                                {tool.title}
+                                            </h2> 
+                                            <p className='font-kanit text-center w-[15rem] text-md text-secondary'
+                                            style={{
+                                                fontWeight:'200'
+                                            }}>
+                                                {tool.description}
+                                            </p>
+                                            </div>
+
+                                            </div>
+
+                                    ))} 
+
+
+                                </div>     
 
 
                         </div>

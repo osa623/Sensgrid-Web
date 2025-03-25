@@ -66,7 +66,7 @@ const Navbar = ({darkMode, setDarkMode}) => {
           <div className='flex flex-col w-[75vw] h-auto'>
             <ul className="p-4 font-dmsans items-center text-sm justify-center"
             style={{
-              color: darkMode ? 'white' : 'secondary'
+              color: darkMode ? 'white' : 'black'
             }}>
               <div className="flex items-center justify-center">
                 <img src={namelogo} alt="bwlogo" className="h-16 w-auto m-4" />
