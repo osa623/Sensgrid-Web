@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 //images
 import namelogo from '../Assets/SensGrid logo.png';
@@ -29,49 +30,47 @@ const Navbar = ({darkMode, setDarkMode}) => {
         fontWeight:'300'
       }}>
         {/* Use Link component for routing */}
-        <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
-          <Link to='/' onClick={closeNav}>Home</Link>
-        </li>
-        <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
-          <Link to='/aboutUs' onClick={closeNav}>About Us</Link>
-        </li>
-        <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
-          <Link to='/contactUs' onClick={closeNav}>Contact Us</Link>
-        </li>
-        <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
-          <Link to='/treeView' onClick={closeNav}>Social Tree</Link>
-        </li>
-      </ul>
-      <div className="flex items-center justify-center lgs:w-[20vw] mds:w-[20vw]">
-        <div className="flex items-center">
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input
-              type="checkbox"
-              className="sr-only peer"
-              checked={darkMode}
-              onChange={() => setDarkMode(!darkMode)}
-            />
-            <div className="w-10 h-5 bg-gray-300 peer-focus:ring-2 peer-focus:ring-blue-300 rounded-full peer dark:bg-gray-700 after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border after:border-gray-300 after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:after:translate-x-5 peer-checked:bg-blue-500"></div>
-          </label>
-        </div>
-      </div>
-
-      <div className="md:hidden" onClick={handleNav}>
-        {nav ? <AiOutlineClose size={30} color={darkMode ? "#FFFFFF" : "#000000"} /> : <AiOutlineMenu size={30} color={darkMode ? "#FFFFFF" : "#000000"} />}
-      </div>
-
-      <div className={`fixed left-0 top-0 sms:w-[80vw] overflow-hidden mds:w-[80vw] h-full border-r rounded-r-2xl transition-transform duration-500 ${nav ? 'translate-x-0' : '-translate-x-full'} ${darkMode ? 'bg-gray-700 border-r-gray-500' : 'bg-gray-900 border-r-gray-400'}`}
-      >
-        <div className={`relative flex-col h-screen w-auto flex justify-between items-center ${darkMode ? 'bg-gray-800' : 'bg-primary'}`}>
-          <div className='flex flex-col w-[75vw] h-auto'>
-            <ul className="p-4 font-dmsans items-center text-sm justify-center"
-            style={{
-              color: darkMode ? 'white' : 'black'
-            }}>
-              <div className="flex items-center justify-center">
-                <img src={namelogo} alt="bwlogo" className="h-16 w-auto m-4" />
+          <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
+            <Link to='/' onClick={closeNav}>Home</Link>
+          </li>
+          <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
+            <Link to='/aboutUs' onClick={closeNav}>About Us</Link>
+          </li>
+          <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
+            <Link to='/contactUs' onClick={closeNav}>Contact Us</Link>
+          </li>
+          <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
+            <Link to='/treeView' onClick={closeNav}>Social Tree</Link>
+          </li>
+              </ul>
+              <div className="flex items-center justify-center lgs:w-[20vw] mds:w-[20vw]">
+          <div className="flex items-center">
+          <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="bg-gray-300 dark:bg-gray-700 text-black dark:text-white px-2 py-2 rounded-full flex items-center gap-2"
+        >
+          {darkMode ? <FaMoon /> : <FaSun />}
+        
+        </button>
+          </div>
               </div>
-              {/* Use Link component for mobile navigation */}
+
+              <div className="md:hidden" onClick={handleNav}>
+          {nav ? <AiOutlineClose size={30} color={darkMode ? "#FFFFFF" : "#000000"} /> : <AiOutlineMenu size={30} color={darkMode ? "#FFFFFF" : "#000000"} />}
+              </div>
+
+              <div className={`fixed left-0 top-0 sms:w-[80vw] overflow-hidden mds:w-[80vw] h-full border-r rounded-r-2xl transition-transform duration-500 ${nav ? 'translate-x-0' : '-translate-x-full'} ${darkMode ? 'bg-gray-700 border-r-gray-500' : 'bg-gray-900 border-r-gray-400'}`}
+              >
+          <div className={`relative flex-col h-screen w-auto flex justify-between items-center ${darkMode ? 'bg-gray-800' : 'bg-primary'}`}>
+            <div className='flex flex-col w-[75vw] h-auto'>
+              <ul className="p-4 font-dmsans items-center text-sm justify-center"
+              style={{
+                color: darkMode ? 'white' : 'black'
+              }}>
+                <div className="flex items-center justify-center">
+            <img src={namelogo} alt="bwlogo" className="h-16 w-auto m-4" />
+                </div>
+                {/* Use Link component for mobile navigation */}
               <li className="p-4 border-b text-center"
               style={{
                 borderColor: darkMode ? 'gray-500' : 'gray-600'
