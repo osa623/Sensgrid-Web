@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { use, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const Blog = () => {
+const Blog = ({darkMode}) => {
   const location = useLocation();
   const blog = location.state?.tool; // Retrieve blog data
 
@@ -20,7 +20,7 @@ const Blog = () => {
 
   return (
 
-    <div className='relative h-auto w-auto justify-center items-center'>
+    <div className={`relative h-auto w-auto ${darkMode ? 'bg-darkTheme' : 'bg-primary'} justify-center items-center`}>
       <div className='flex lgs:h-[8rem] h-[5rem] w-full'/>
 
         <div className="flex flex-col lgs:w-[80rem] mx-auto p-4 bg-white rounded-lg shadow-lg">
@@ -406,7 +406,7 @@ const Blog = () => {
 
               <div className='flex bg-transparent bg-blue-600 lgs:p-5 lgs:w-[30vw] items-center justify-center h-auto'>
 
-               <div className='flex bg-blue-700 lgs:h-[150vh] lgs:w-[30vw] rounded-lg items-center justify-center'/>
+              {/* <div className='flex bg-blue-700 lgs:h-[150vh] lgs:w-[30vw] rounded-lg items-center justify-center'/> */}
 
               </div>
 

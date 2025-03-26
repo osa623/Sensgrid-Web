@@ -43,7 +43,7 @@ const AppContent = () => {
 
 
   return (
-    <div className="relative flex-col min-h-screen overflow-hidden">
+    <div className="relative flex-col min-h-auto overflow-hidden">
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <div className="flex-grow">
         {isLoading ? (

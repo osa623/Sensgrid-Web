@@ -67,7 +67,7 @@ const TreeView = ({darkMode}) => {
 
 
   return (
-    <div className={`flex flex-col h-auto  ${darkMode ? 'bg-darkTheme' : ''} w-auto items-center justify-center mt-20 lgs:p-12`}>
+    <div className={`flex flex-col h-auto  ${darkMode ? 'bg-darkTheme' : ''} w-auto items-center justify-center pt-12 lgs:p-12`}>
 
 
               {/* Our Journey */}
@@ -100,7 +100,7 @@ const TreeView = ({darkMode}) => {
 
         <div className="flex flex-col w-auto h-auto items-center justify-center">
           {treeSet.slice(0, 6).map((tool, index) => (
-            <div key={index} className={`flex w-[30rem] h-[25rem] items-start justify-start bg-transparent z-30 lgs:p-2" data-aos="fade-left`}>
+            <div key={index} className={`flex w-[30rem] h-[25rem] items-start justify-start bg-transparent z-30 lgs:p-2 `} data-aos="fade-left">
               {index === 0 || index === 2 || index === 4 ? (
                 <div
                   className={`flex flex-col bg-primary-400 w-[30rem] ${darkMode ? 'border-2' : ''}  h-[20rem] items-start rounded-3xl justify-start lgs:p-5`}
@@ -207,7 +207,7 @@ const TreeView = ({darkMode}) => {
                   <img src={tool.img} alt='tree' className='rounded-full border-2 border-gray-500 object-cover w-[4rem] h-[4rem]' />
                 </div>
                 { index !== 5 && (
-                <div className='absolute bg-secondary w-[0.05rem] h-screen items-center justify-center z-20' data-aos='fade-down' style={{
+                <div className={`absolute ${darkMode ? 'bg-primary' : 'bg-secondary'} w-[0.05rem] h-screen items-center justify-center z-20`} data-aos='fade-down' style={{
 
                 }}/>
                 )}
@@ -215,21 +215,23 @@ const TreeView = ({darkMode}) => {
 
               </div>
               <div className='flex w-[80vw] h-[25rem] items-start justify-start top-0 bg-transparent z-30 mds:p-5 p-2' data-aos='fade-right'>
-                <div className='flex flex-col bg-primary-400 w-full h-[22rem] items-start rounded-3xl justify-start p-5'
+                <div className={`flex flex-col ${darkMode ? 'border-2' : ''} w-full h-[22rem] items-start rounded-3xl justify-start p-5`}
                 style={{
                   boxShadow:'0px 2px 10px 10px rgba(0,0,0,0.2)'
                 }}>
-                  <h2 className='flex font-russoone text-xl text-secondary'>
+                  <h2 className={`flex font-russoone ${darkMode ? 'text-primary' : 'text-secondary'} text-2xl `}>
                     {tool.year}
                   </h2>
-                  <h2 className='flex font-dmsans text-2xl text-secondary' style={{
-                    fontWeight:'200'
-                  }}>
+                  <h2
+                    className={`flex font-dmsans text-2xl  ${darkMode ? 'text-primary' : 'text-secondary'}`}
+                    style={{ fontWeight: "200" }}
+                  >
                     {tool.title}
                   </h2>
-                  <p className='flex font-dmsans mt-4 text-sm mds:text-lg text-secondary' style={{
-                    fontWeight:'200'
-                  }}>
+                  <p
+                    className={`flex font-dmsans mt-4 text-sm ${darkMode ? 'text-primary' : 'text-secondary'}`}
+                    style={{ fontWeight: "200" }}
+                  >
                     {tool.description}
                   </p>
                 </div>
