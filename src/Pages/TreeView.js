@@ -58,7 +58,7 @@ const treeSet = [
   },
 ];
 
-const TreeView = () => {
+const TreeView = ({darkMode}) => {
   useEffect(() => {
     AOS.init({
       duration: 1000
@@ -67,7 +67,7 @@ const TreeView = () => {
 
 
   return (
-    <div className="flex flex-col h-auto bg-primary w-auto items-center justify-center mt-24 lgs:p-12">
+    <div className={`flex flex-col h-auto  ${darkMode ? 'bg-darkTheme' : ''} w-auto items-center justify-center mt-20 lgs:p-12`}>
 
 
               {/* Our Journey */}
@@ -100,25 +100,25 @@ const TreeView = () => {
 
         <div className="flex flex-col w-auto h-auto items-center justify-center">
           {treeSet.slice(0, 6).map((tool, index) => (
-            <div key={index} className="flex w-[30rem] h-[25rem] items-start justify-start bg-transparent z-30 lgs:p-2" data-aos="fade-left">
+            <div key={index} className={`flex w-[30rem] h-[25rem] items-start justify-start bg-transparent z-30 lgs:p-2" data-aos="fade-left`}>
               {index === 0 || index === 2 || index === 4 ? (
                 <div
-                  className="flex flex-col bg-primary-400 w-[30rem] h-[20rem] items-start rounded-3xl justify-start lgs:p-5"
+                  className={`flex flex-col bg-primary-400 w-[30rem] ${darkMode ? 'border-2' : ''}  h-[20rem] items-start rounded-3xl justify-start lgs:p-5`}
                   style={{
                     boxShadow: "0px 2px 10px 10px rgba(0,0,0,0.2)",
                   }}
                 >
-                  <h2 className="flex font-russoone text-2xl text-secondary">
+                  <h2 className={`flex font-russoone ${darkMode ? 'text-primary' : 'text-secondary'} text-2xl `}>
                     {tool.year}
                   </h2>
                   <h2
-                    className="flex font-dmsans text-2xl text-secondary"
+                    className={`flex font-dmsans text-2xl  ${darkMode ? 'text-primary' : 'text-secondary'}`}
                     style={{ fontWeight: "200" }}
                   >
                     {tool.title}
                   </h2>
                   <p
-                    className="flex font-dmsans lgs:mt-4 text-sm text-secondary"
+                    className={`flex font-dmsans lgs:mt-4 text-sm ${darkMode ? 'text-primary' : 'text-secondary'}`}
                     style={{ fontWeight: "200" }}
                   >
                     {tool.description}
@@ -144,7 +144,7 @@ const TreeView = () => {
             </div>
             <div className='absolute flex bg-primary rounded-full w-[5rem] h-[5rem] items-center justify-center z-20'/>
             { index !== 5 && (
-            <div className='absolute flex bg-secondary w-[0.05rem] h-screen items-center justify-center z-20' data-aos='zoom-in' style={{
+            <div className={`absolute flex  ${darkMode ? 'bg-primary' : 'bg-secondary'}   w-[0.05rem] h-screen items-center justify-center z-20`} data-aos='zoom-in' style={{
 
             }}/>
             )}
@@ -163,27 +163,27 @@ const TreeView = () => {
           <div key={index} className="flex w-[30rem] h-[25rem] items-start justify-start bg-transparent z-30 lgs:p-2" data-aos="fade-right">
             {index === 1 || index === 3 || index === 5 ? (
               <div
-                className="flex flex-col bg-primary-400 w-[30rem] h-[20rem] items-start rounded-3xl justify-start lgs:p-5"
-                style={{
-                  boxShadow: "0px 2px 10px 10px rgba(0,0,0,0.2)",
-                }}
-              >
-                <h2 className="flex font-russoone text-2xl text-secondary">
-                  {tool.year}
-                </h2>
-                <h2
-                  className="flex font-dmsans text-2xl text-secondary"
-                  style={{ fontWeight: "200" }}
+                  className={`flex flex-col bg-primary-400 w-[30rem] ${darkMode ? 'border-2' : ''}  h-[20rem] items-start rounded-3xl justify-start lgs:p-5`}
+                  style={{
+                    boxShadow: "0px 2px 10px 10px rgba(0,0,0,0.2)",
+                  }}
                 >
-                  {tool.title}
-                </h2>
-                <p
-                  className="flex font-dmsans lgs:mt-4 text-sm text-secondary"
-                  style={{ fontWeight: "200" }}
-                >
-                  {tool.description}
-                </p>
-              </div>
+                  <h2 className={`flex font-russoone ${darkMode ? 'text-primary' : 'text-secondary'} text-2xl `}>
+                    {tool.year}
+                  </h2>
+                  <h2
+                    className={`flex font-dmsans text-2xl  ${darkMode ? 'text-primary' : 'text-secondary'}`}
+                    style={{ fontWeight: "200" }}
+                  >
+                    {tool.title}
+                  </h2>
+                  <p
+                    className={`flex font-dmsans lgs:mt-4 text-sm ${darkMode ? 'text-primary' : 'text-secondary'}`}
+                    style={{ fontWeight: "200" }}
+                  >
+                    {tool.description}
+                  </p>
+                </div>
             ) : (
               <div className="w-[30rem] h-[25rem]"></div> // Empty div for alignment
             )}

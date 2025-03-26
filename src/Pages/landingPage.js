@@ -553,7 +553,8 @@ const LandingPage = ({darkMode}) => {
                                     
                                 </div>
 
-                                <div className='hidden sms:flex lgs:flex sms:flex-col w-[100vw] h-auto items-center lgs:space-x-5 sms:space-y-5 justify-center mt-12 lgs:p-5'>
+                                {/* Swiper for mobile Container */}
+                                <div className='hidden sms:flex sms:flex-col w-[100vw] h-auto items-center lgs:space-x-5 sms:space-y-5 justify-center mt-12 lgs:p-5'>
 
                                     {DYN.slice(0,6).map((tool) => (
 

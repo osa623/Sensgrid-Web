@@ -51,10 +51,10 @@ const AppContent = () => {
         ) : (
           <Routes>
             <Route path="/" element={<Home darkMode={darkMode} />} />
-            <Route path='/blog/:id' element={<BlogPage />} />
-            <Route path='/contactUs' element={<ContactUs/>}/>
-            <Route path='/aboutUs' element={<AboutUs/>}/>
-            <Route path='/treeView' element={<TreeView/>}/>
+            <Route path='/blog/:id' element={<BlogPage darkMode={darkMode} />} />
+            <Route path='/contactUs' element={<ContactUs darkMode ={darkMode}/>}/>
+            <Route path='/aboutUs' element={<AboutUs darkMode ={darkMode}/>}/>
+            <Route path='/treeView' element={<TreeView darkMode ={darkMode}/>}/>
             
           </Routes>
         )}
