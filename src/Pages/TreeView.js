@@ -207,7 +207,7 @@ const TreeView = ({darkMode}) => {
                   <img src={tool.img} alt='tree' className='rounded-full border-2 border-gray-500 object-cover w-[4rem] h-[4rem]' />
                 </div>
                 { index !== 5 && (
-                <div className={`absolute ${darkMode ? 'bg-primary' : 'bg-secondary'} w-[0.05rem] h-screen items-center justify-center z-20`} data-aos='fade-down' style={{
+                <div className={`absolute  w-[0.05rem] bg-secondary h-screen items-center justify-center z-20`} data-aos='fade-down' style={{
 
                 }}/>
                 )}
@@ -215,15 +215,15 @@ const TreeView = ({darkMode}) => {
 
               </div>
               <div className='flex w-[80vw] h-[25rem] items-start justify-start top-0 bg-transparent z-30 mds:p-5 p-2' data-aos='fade-right'>
-                <div className={`flex flex-col ${darkMode ? 'border-2' : ''} w-full h-[22rem] items-start rounded-3xl justify-start p-5`}
+                <div className={`flex flex-col w-full h-[22rem] items-start rounded-3xl justify-start p-5`}
                 style={{
                   boxShadow:'0px 2px 10px 10px rgba(0,0,0,0.2)'
                 }}>
-                  <h2 className={`flex font-russoone ${darkMode ? 'text-primary' : 'text-secondary'} text-2xl `}>
+                  <h2 className={`flex font-russoone  text-2xl `}>
                     {tool.year}
                   </h2>
                   <h2
-                    className={`flex font-dmsans text-2xl  ${darkMode ? 'text-primary' : 'text-secondary'}`}
+                    className={`flex font-dmsans text-2xl `}
                     style={{ fontWeight: "200" }}
                   >
                     {tool.title}

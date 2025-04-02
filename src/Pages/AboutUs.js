@@ -6,10 +6,10 @@ import sensegrid1 from '../Assets/sensegrid2.png';
 import sensegrid2 from '../Assets/object02.png';
 import dropdown from '../Assets/dropdown.png';
 
-const AboutUs = () => {
+const AboutUs = ({darkMode}) => {
   return (
                   
-        <section className='flex flex-col overflow-hidden items-center sms:mt-16 justify-center h-auto w-full'>
+        <section className={`flex flex-col overflow-hidden items-center ${darkMode ? ' bg-darkTheme' : 'bg-primary' } sms:mt-16 justify-center h-auto w-full`}>
 
                             <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center'>
                                         <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
@@ -17,7 +17,7 @@ const AboutUs = () => {
                                         <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='zoom-in'/>
                                         <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
                             </div>
-                            <div className={`relative flex flex-col bg-primary overflow-hidden lgs:h-[100rem] sms:h-[160rem] mds:h-[100rem] w-full items-center justify-start transform-all duration-1000 ease-in-out`}
+                            <div className={`relative flex flex-col bg-transparent overflow-hidden lgs:h-[100rem] sms:h-[160rem] mds:h-[100rem] w-full items-center justify-start transform-all duration-1000 ease-in-out`}
                             style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) , inset 0px 5px 20px 1px rgba(0, 0, 0, 0.2)',
                             }}>

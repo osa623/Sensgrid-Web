@@ -1093,8 +1093,6 @@ const LandingPage = ({darkMode}) => {
                             height:'50%',
                             justifyItems: 'center',
                             overflow: 'hidden',
-                            boxShadow:'inset 0 5px 10px 10px rgba(255, 255, 255, 0.9) , 0 5px 10px 10px rgba(255, 255, 255, 0.9)',
-                            borderRadius: '20px',
                             backdropFilter: 'blur(20px)',
                             WebkitBackdropFilter: 'blur(10px)',
 
@@ -1102,7 +1100,7 @@ const LandingPage = ({darkMode}) => {
 
                             }}>
                             <div
-                            className='flex flex-col w-auto mds:h-[15vh] border-2 items-center justify-center lgs:h-[10vh] bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            className={`flex flex-col w-auto mds:h-[15vh] border-2 items-center justify-center lgs:h-[10vh] ${darkMode ? 'bg-primary' : ''} m-2 hover:scale-110 transition duration-1000 ease-in-out`} style={{
                                 borderRadius: '20px',
                                 overflow:'hidden'
                                 
@@ -1119,9 +1117,10 @@ const LandingPage = ({darkMode}) => {
                             </div>
 
                             <div 
-                            className='flex flex-col w-auto mds:h-[15vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
-                            borderRadius:'20px',
-                            overflow:'hidden'
+                            className={`flex flex-col w-auto mds:h-[15vh] border-2 items-center justify-center lgs:h-[10vh] ${darkMode ? 'bg-primary' : ''} m-2 hover:scale-110 transition duration-1000 ease-in-out`} style={{
+                                borderRadius: '20px',
+                                overflow:'hidden'
+                                
                             }}>
 
                             <img src={arduino} alt="supta" style={{
@@ -1134,9 +1133,10 @@ const LandingPage = ({darkMode}) => {
 
                             </div>
                             <div
-                            className='flex flex-col w-auto mds:h-[15vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            className={`flex flex-col w-auto mds:h-[15vh] border-2 items-center justify-center lgs:h-[10vh] ${darkMode ? 'bg-primary' : ''} m-2 hover:scale-110 transition duration-1000 ease-in-out`} style={{
                                 borderRadius: '20px',
                                 overflow:'hidden'
+                                
                             }}>
                             <img src={nvidia} alt="supta" style={{
                                 width:'100%',
@@ -1149,9 +1149,10 @@ const LandingPage = ({darkMode}) => {
                             </div>
 
                             <div
-                            className='flex flex-col w-auto mds:h-[15vh] lgs:h-[10vh] border-2 bg-basesecondary m-2 hover:scale-110 transition duration-1000 ease-in-out' style={{
+                            className={`flex flex-col w-auto mds:h-[15vh] border-2 items-center justify-center lgs:h-[10vh] ${darkMode ? 'bg-primary' : ''} m-2 hover:scale-110 transition duration-1000 ease-in-out`} style={{
                                 borderRadius: '20px',
                                 overflow:'hidden'
+                                
                             }}>
                             <img src={espressif} alt="supta" style={{
                                 width:'100%',
