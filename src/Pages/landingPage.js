@@ -420,11 +420,11 @@ const LandingPage = ({darkMode}) => {
                                                 </h2>
                                                 <div
                                                         className={`${
-                                                            sectionExplanded ? 'lgs:w-[45rem] opacity-100' : 'lgs:w-[45rem] opacity-0 pointer-events-none'
-                                                        } transition-all sms:w-[45rem] duration-700 ease-in-out`}
+                                                            sectionExplanded ? 'lgs:w-[45rem] opacity-100 ' : 'lgs:w-[45rem] opacity-0 pointer-events-none'
+                                                        } transition-all duration-700 ease-in-out`}
                                                         >
                                                         {sectionExplanded && (
-                                                            <p className="hidden lgs:flex before:font-kanit text-primary text-md sms:text-sm sms:w-[75vw] mds:w-[60vw] text-center" style={{
+                                                            <p className="hidden lgs:flex before:ont-kanit text-primary text-md sms:text-sm sms:w-[75vw] mds:w-[60vw] text-center" style={{
                                                                 fontWeight:'200'
                                                             }}>
                                                             Revolutionizing the Industry 2.0 era with innovative IoT solutions, our platform is designed
@@ -435,6 +435,9 @@ const LandingPage = ({darkMode}) => {
                                                             </p>
                                                         )}
 
+                                                       
+                                                        </div>
+
                                                         <p className="hidden sms:flex font-kanit text-primary text-md sms:text-sm sms:w-[75vw] mds:w-[60vw] text-center" style={{
                                                                 fontWeight:'200'
                                                             }}>
@@ -444,7 +447,6 @@ const LandingPage = ({darkMode}) => {
                                                             with reliable, state-of-the-art infrastructure and smart solutions that pave the way for a
                                                             smarter, more connected future.
                                                             </p>
-                                                        </div>
 
                                                 
                                                 <div className='flex flex-col h-auto w-auto lgs:mt-2 cursor-pointer hover:mt-4 items-center justify-center transform-all duration-700 ease-in-out' onClick={handleSectionExpand}>
@@ -580,20 +582,33 @@ const LandingPage = ({darkMode}) => {
 
                                     {DYN.slice(0,6).map((tool) => (
 
-                                        <div className="flex flex-col lgs:h-[30rem] mds:h-[30rem] bg-transparent  items-center justify-center" data-aos='fade-up'>
+                                        <div className="flex flex-col h-[25rem] bg-transparent  items-center justify-center" data-aos='fade-up'>
 
-                                            <div className='flex flex-col lgs:h-[25rem] h-[20rem] w-[25rem] sms:w-[20rem] bg-primary rounded-2xl  items-center justify-center'
-                                            style={{boxShadow:'inset 0px 0px 10px 2px rgba(0,0,0,0.5) , 0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'}}>
-                                            <h2 className='font-dmsans text-blue-900 lgs:w-[20rem] p-4 lgs:text-3xl text-center'>
-                                                {tool.title}
-                                            </h2> 
-                                            <p className='font-kanit text-center w-[15rem] text-md text-secondary'
-                                            style={{
-                                                fontWeight:'200'
-                                            }}>
-                                                {tool.description}
-                                            </p>
-                                            </div>
+                                        <div className={`relative flex-col flex lgs:h-[25rem] lgs:w-[25rem]  mds:h-[30rem] ${darkMode ? 'border-4' : 'border-0'}  bg-transparent rounded-2xl  items-center justify-center`}>
+
+                                                    <div className="absolute bg-blue-500 h-[25rem] w-[25rem] items-center justify-center overflow-hidden z-30 rounded-2xl">
+                                                        <img src= {tool.image} alt='' className='object-cover h-[25rem] lgs:w-full'/>
+                                                    </div>
+                                                    <div className="absolute lgs:flex flex-col bg-transparent h-[25rem] overflow-hidden w-[25rem] items-center justify-center z-40 rounded-2xl">
+                                                        <div className={`flex ${darkMode ? 'bg-gradient-to-t from-secondary to-transparent ' : 'bg-gradient-to-t from-primary to-transparent '}   rounded-t-2xl w-full h-[10rem]`}/>
+                                                        <div className={`flex ${darkMode ? 'bg-secondary ' : 'bg-primary '}  w-full h-[10rem] `}/>
+                                                        <div className={`flex ${darkMode ? 'bg-gradient-to-b from-secondary to-transparent ' : 'bg-gradient-to-b from-primary to-transparent '}   rounded-b-2xl w-full h-[10rem]`}/>
+                                                    </div>
+
+                                                    <div className='absolute flex flex-col h-[25rem] mds:h-[20rem] w-[25rem] bg-transparent rounded-2xl z-50  items-center justify-center'
+                                                    style={{boxShadow:'inset 0px 0px 10px 2px rgba(0,0,0,0.5) , 0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'}}>
+                                                        <h2 className={`flex font-bricolagegrotesque ${darkMode ? 'text-primary ' : 'text-primary'}  text-primary lgs:w-[20rem] bg-theme01 rounded-xl p-4 text-xl text-center`}>
+                                                            {tool.title}
+                                                        </h2> 
+                                                        <p className={`font-poppoins text-center w-[15rem]  ${darkMode ? 'text-primary ' : 'text-secondary'}  mt-5 text-md `}
+                                                        style={{
+                                                            fontWeight:'200'
+                                                        }}>
+                                                            {tool.description}
+                                                        </p>
+                                                    </div>
+
+                                                    </div>
 
                                             </div>
 
