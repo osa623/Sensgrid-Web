@@ -7,6 +7,7 @@ import Marquee from "react-fast-marquee";
 
 //backgrounds
 import backgroundVideo from '../Assets/backgroundVideo.mp4';
+import backgroundImageDetail from '../Assets/swiperBackground.jpg';
 
 //details images
 import dropdown from '../Assets/dropdown.png';
@@ -274,27 +275,32 @@ const testimonial = [
 const DYN = [
     { 
         id: 1, 
-        title: 'IoT and Smart Mobility Integration', 
+        title: 'IoT and Smart Mobility Integration',
+        image : backgroundImageDetail,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed turpis nec ipsum malesuada vehicula. Curabitur faucibus velit nec erat elementum, id tempus ligula pharetra.' 
     },
     { 
         id: 2, 
         title: 'Real-Time Data Processing in IoT', 
+        image : backgroundImageDetail,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod libero vel urna ultricies, id malesuada erat sagittis. Duis ut tortor in velit auctor tincidunt at non augue.' 
     },
     { 
         id: 3, 
         title: 'Edge Computing in IoT Networks', 
+        image : backgroundImageDetail,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed justo ac ligula ultricies convallis. Sed varius ex ut nunc tristique, ut dignissim libero dignissim.' 
     },
     { 
         id: 4, 
         title: 'Sensor Fusion in IoT Applications', 
+        image : backgroundImageDetail,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec lectus nec urna feugiat dapibus non ac lorem. Donec rhoncus nunc et ligula convallis, sit amet aliquet neque scelerisque.' 
     },
     { 
         id: 5, 
         title: 'AI-Powered IoT for Traffic Management', 
+        image : backgroundImageDetail,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis metus et arcu vehicula, in tristique velit mattis. Ut convallis dolor et ligula vestibulum, non dapibus libero cursus.' 
     }
 ];
@@ -404,14 +410,14 @@ const LandingPage = ({darkMode}) => {
 
                                     <div className={`flex  items-center justify-center w-[100vw] lg:h-auto  space-x-6 overflow-hidden`}>
                                     
-                                        <div className={`relative flex lgs:w-[60rem] sms:w-[90vw] mds:w-[75vw] overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem] h-[20rem]' : 'lgs:h-[12rem] h-[8rem]'} items-center justify-center ${darkMode ? ' bg-darkPrimary' : 'bg-theme01'}   rounded-3xl transform-all duration-700 ease-in-out`}
+                                        <div className={`relative flex lgs:w-[60rem] sms:w-[90vw] mds:w-[75vw] overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem] h-[20rem] sms:mt-12' : 'lgs:h-[12rem] h-[8rem] sms:mt-0'} items-center justify-center ${darkMode ? 'border-2 bg-gray-900' : 'bg-theme01'}   rounded-3xl transform-all duration-700 ease-in-out`}
                                              style={{
                                             boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)',
                                         }}>
                                             <div className='absolute flex w-full blur-sm h-auto overflow-hidden z-20'>
                                                 <img src={'background2'} alt='' className='flex object-cover'/>
                                             </div>
-                                            <div className={`absolute flex flex-col ${sectionExplanded ? 'lgs:h-[20rem] space-y-5' : 'lgs:h-[12rem] space-y-2'} ${darkMode ? ' bg-darkPrimary' : 'bg-theme01'}  items-center justify-center lgs:w-[60rem] overflow-hidden transform-all duration-700 ease-in-out z-30`}>
+                                            <div className={`absolute flex flex-col ${sectionExplanded ? 'lgs:h-[20rem] space-y-5' : 'lgs:h-[12rem] space-y-2'} ${darkMode ? ' bg-gray-900' : 'bg-theme01'}  items-center justify-center  lgs:w-[60rem] overflow-hidden transform-all duration-700 ease-in-out z-30`}>
                                                 <h2 className={`font-kanit ${sectionExplanded ? 'lgs:text-5xl text-4xl' : 'lgs:text-8xl text-5xl'}  text-primary font-bold text-center transform-all duration-700 ease-in-out`}>
                                                     INDUSTRY {''}<span className='font-kanit font-thin text-primary'>4.0</span>
                                                 </h2>
@@ -473,7 +479,7 @@ const LandingPage = ({darkMode}) => {
                                 </div>
 
                                 {/* Primary Section */}
-                                <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center'>
+                                <div className={`flex flex-col w-full h-auto ${sectionExplanded ? 'sms:mt-24' : 'sms:mt-0'} transition-all duration-700 ease-in-out  sms:mt-52 items-center cursor-pointer justify-center`}>
                                 <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
                                     <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent overflow-hidden">
                                     <div className="flex w-auto h-auto" data-aos='fade-right'>
@@ -512,7 +518,7 @@ const LandingPage = ({darkMode}) => {
                                         }}
                                         pagination={{ clickable: true }}
                                         navigation={true}
-                                        modules={[EffectCoverflow, Pagination, Navigation]}
+                                        modules={[EffectCoverflow, Navigation]}
                                         className="flex lgs:h-[40rem] items-center justify-center p-24"
                                         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                                     >
@@ -528,14 +534,23 @@ const LandingPage = ({darkMode}) => {
                                             return (
                                                 <SwiperSlide className="group" key={index}>
 
-                                                    <div className="flex flex-col lgs:h-[30rem] mds:h-[30rem] bg-transparent  items-center justify-center">
+                                                    <div className={`relative flex-col lgs:h-[25rem] lgs:w-[25rem]  mds:h-[30rem] ${darkMode ? 'border-2' : 'border-0'}  bg-transparent rounded-2xl  items-center justify-center`}>
 
-                                                      <div className='flex flex-col lgs:h-[25rem] mds:h-[20rem] w-[25rem] bg-primary rounded-2xl  items-center justify-center'
+                                                    <div className="absolute bg-blue-500 lgs:h-[25rem] lgs:w-[25rem] items-center justify-center overflow-hidden z-30 rounded-2xl">
+                                                        <img src= {tool.image} alt='' className='onject-cover lgs:h-[25rem] lgs:w-full'/>
+                                                    </div>
+                                                    <div className="absolute lgs:flex flex-col bg-transparent lgs:h-[25rem] overflow-hidden lgs:w-[25rem] items-center justify-center z-40 rounded-2xl">
+                                                         <div className='flex bg-gradient-to-t from-primary to-transparent rounded-t-2xl lgs:w-full lgs:h-[10rem]'/>
+                                                         <div className='flex bg-primary lgs:w-full lgs:h-[10rem] '/>
+                                                         <div className='flex bg-gradient-to-b from-primary to-transparent lgs:w-full lgs:h-[5rem] '/>
+                                                    </div>
+
+                                                      <div className='absolute flex flex-col lgs:h-[25rem] mds:h-[20rem] w-[25rem] bg-transparent rounded-2xl z-50  items-center justify-center'
                                                       style={{boxShadow:'inset 0px 0px 10px 2px rgba(0,0,0,0.5) , 0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'}}>
-                                                        <h2 className='font-dmsans text-blue-900 lgs:w-[20rem] p-4 lgs:text-3xl text-center'>
+                                                        <h2 className='flex font-bricolagegrotesque text-primary lgs:w-[20rem] bg-theme01 rounded-xl p-4 lgs:text-3xl text-center'>
                                                             {tool.title}
                                                         </h2> 
-                                                        <p className='font-kanit text-center w-[15rem] text-md text-secondary'
+                                                        <p className='font-poppoins text-center w-[15rem] lgs:mt-5 text-md text-secondary'
                                                         style={{
                                                             fontWeight:'200'
                                                         }}>
@@ -554,7 +569,7 @@ const LandingPage = ({darkMode}) => {
                                 </div>
 
                                 {/* Swiper for mobile Container */}
-                                <div className='hidden sms:flex sms:flex-col w-[100vw] h-auto items-center lgs:space-x-5 sms:space-y-5 justify-center mt-12 lgs:p-5'>
+                                <div className={`hidden sms:flex sms:flex-col w-[100vw] h-auto  items-center lgs:space-x-5 sms:space-y-5 justify-center mt-12 lgs:p-5`}>
 
                                     {DYN.slice(0,6).map((tool) => (
 
