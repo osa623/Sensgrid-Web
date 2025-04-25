@@ -247,7 +247,6 @@ const blog = [
       },
 ];
 
-
 const testimonial = [
     {
       id: 1,
@@ -270,8 +269,6 @@ const testimonial = [
 
 ];
 
-
-// Slide data with images
 const DYN = [
     { 
         id: 1, 
@@ -410,7 +407,7 @@ const LandingPage = ({darkMode}) => {
 
                                     <div className={`flex  items-center justify-center w-[100vw] lg:h-auto  space-x-6 overflow-hidden`}>
                                     
-                                        <div className={`relative flex lgs:w-[60rem] sms:w-[90vw] mds:w-[75vw] overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem] h-[20rem] sms:mt-12' : 'lgs:h-[12rem] h-[8rem] sms:mt-0'} items-center justify-center ${darkMode ? 'border-2 bg-gray-900' : 'bg-theme01'}   rounded-3xl transform-all duration-700 ease-in-out`}
+                                        <div className={`relative flex lgs:w-[60rem] sms:w-[90vw] mds:w-[75vw] overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem] h-[20rem] sms:mt-12' : 'lgs:h-[12rem] h-[20rem] sms:mt-0'} items-center justify-center ${darkMode ? 'border-2 bg-gray-900' : 'bg-theme01'}   rounded-3xl transform-all duration-700 ease-in-out`}
                                              style={{
                                             boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)',
                                         }}>
@@ -424,10 +421,10 @@ const LandingPage = ({darkMode}) => {
                                                 <div
                                                         className={`${
                                                             sectionExplanded ? 'lgs:w-[45rem] opacity-100' : 'lgs:w-[45rem] opacity-0 pointer-events-none'
-                                                        } transition-all duration-700 ease-in-out`}
+                                                        } transition-all sms:w-[45rem] duration-700 ease-in-out`}
                                                         >
                                                         {sectionExplanded && (
-                                                            <p className="font-kanit text-primary text-md sms:text-sm sms:w-[75vw] mds:w-[60vw] text-center" style={{
+                                                            <p className="hidden lgs:flex before:font-kanit text-primary text-md sms:text-sm sms:w-[75vw] mds:w-[60vw] text-center" style={{
                                                                 fontWeight:'200'
                                                             }}>
                                                             Revolutionizing the Industry 2.0 era with innovative IoT solutions, our platform is designed
@@ -437,6 +434,16 @@ const LandingPage = ({darkMode}) => {
                                                             smarter, more connected future.
                                                             </p>
                                                         )}
+
+                                                        <p className="hidden sms:flex font-kanit text-primary text-md sms:text-sm sms:w-[75vw] mds:w-[60vw] text-center" style={{
+                                                                fontWeight:'200'
+                                                            }}>
+                                                            Revolutionizing the Industry 2.0 era with innovative IoT solutions, our platform is designed
+                                                            to seamlessly integrate advanced technologies to drive efficiency, connectivity, and
+                                                            sustainability. Proudly powered by SLTMobitel, we aim to empower businesses and industries
+                                                            with reliable, state-of-the-art infrastructure and smart solutions that pave the way for a
+                                                            smarter, more connected future.
+                                                            </p>
                                                         </div>
 
                                                 
@@ -534,23 +541,23 @@ const LandingPage = ({darkMode}) => {
                                             return (
                                                 <SwiperSlide className="group" key={index}>
 
-                                                    <div className={`relative flex-col lgs:h-[25rem] lgs:w-[25rem]  mds:h-[30rem] ${darkMode ? 'border-2' : 'border-0'}  bg-transparent rounded-2xl  items-center justify-center`}>
+                                                    <div className={`relative flex-col flex lgs:h-[25rem] lgs:w-[25rem]  mds:h-[30rem] ${darkMode ? 'border-4' : 'border-0'}  bg-transparent rounded-2xl  items-center justify-center`}>
 
                                                     <div className="absolute bg-blue-500 lgs:h-[25rem] lgs:w-[25rem] items-center justify-center overflow-hidden z-30 rounded-2xl">
                                                         <img src= {tool.image} alt='' className='onject-cover lgs:h-[25rem] lgs:w-full'/>
                                                     </div>
                                                     <div className="absolute lgs:flex flex-col bg-transparent lgs:h-[25rem] overflow-hidden lgs:w-[25rem] items-center justify-center z-40 rounded-2xl">
-                                                         <div className='flex bg-gradient-to-t from-primary to-transparent rounded-t-2xl lgs:w-full lgs:h-[10rem]'/>
-                                                         <div className='flex bg-primary lgs:w-full lgs:h-[10rem] '/>
-                                                         <div className='flex bg-gradient-to-b from-primary to-transparent lgs:w-full lgs:h-[5rem] '/>
+                                                         <div className={`flex ${darkMode ? 'bg-gradient-to-t from-secondary to-transparent ' : 'bg-gradient-to-t from-primary to-transparent '}   rounded-t-2xl lgs:w-full lgs:h-[10rem]`}/>
+                                                         <div className={`flex ${darkMode ? 'bg-secondary ' : 'bg-primary '}  lgs:w-full lgs:h-[10rem] `}/>
+                                                         <div className={`flex ${darkMode ? 'bg-gradient-to-b from-secondary to-transparent ' : 'bg-gradient-to-b from-primary to-transparent '}   rounded-b-2xl lgs:w-full lgs:h-[10rem]`}/>
                                                     </div>
 
                                                       <div className='absolute flex flex-col lgs:h-[25rem] mds:h-[20rem] w-[25rem] bg-transparent rounded-2xl z-50  items-center justify-center'
                                                       style={{boxShadow:'inset 0px 0px 10px 2px rgba(0,0,0,0.5) , 0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)'}}>
-                                                        <h2 className='flex font-bricolagegrotesque text-primary lgs:w-[20rem] bg-theme01 rounded-xl p-4 lgs:text-3xl text-center'>
+                                                        <h2 className={`flex font-bricolagegrotesque ${darkMode ? 'text-primary ' : 'text-primary'}  text-primary lgs:w-[20rem] bg-theme01 rounded-xl p-4 lgs:text-3xl text-center`}>
                                                             {tool.title}
                                                         </h2> 
-                                                        <p className='font-poppoins text-center w-[15rem] lgs:mt-5 text-md text-secondary'
+                                                        <p className={`font-poppoins text-center w-[15rem]  ${darkMode ? 'text-primary ' : 'text-secondary'}  lgs:mt-5 text-md `}
                                                         style={{
                                                             fontWeight:'200'
                                                         }}>
@@ -965,7 +972,7 @@ const LandingPage = ({darkMode}) => {
                                           </div>
                                         </div>
                                         <div className='flex flex-col h-[15rem] w-[25rem] mds:w-[20rem] bg-primary rounded-b-lg justify-start items-center smsLp-4'>
-                                                <p className='flex font-dmsans text-center w-[22rem] h-[12rem]   mds:w-[10rem] lgs:p-2 text-sm mds:text-xs text-secondary'
+                                                <p className='flex font-dmsans text-center w-[22rem] h-[12rem] sms:w-[75vw]   mds:w-[10rem] lgs:p-2 text-sm mds:text-xs text-secondary'
                                                 style={{
                                                     fontWeight:'300'
                                                 }}>

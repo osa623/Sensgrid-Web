@@ -52,7 +52,7 @@ const AboutUs = ({darkMode}) => {
                                                                 style={{fontWeight:'200'}}>
                                                                 Who We Are
                                                                 </h2>  
-                                                                <p className='font-kanit text-md mds:text-sm text-center sms:w-[80vw] text-secondary'
+                                                                <p className={`font-kanit text-md mds:text-sm  ${darkMode ? 'text-primary ' : 'text-secondary'}  text-center sms:w-[80vw] `}
                                                                 data-aos='fade-left' data-aos-delay='450' style={{
                                                                     fontWeight:'200'
                                                                 }}>
@@ -69,20 +69,20 @@ const AboutUs = ({darkMode}) => {
                                                                     style={{fontWeight:'200'}}>
                                                                     Our Achievements
                                                                     </h2>  
-                                                                    <h2 className='font-kanit text-md mds:text-sm  text-center mds:w-[40vw]  sms:w-[80vw] text-secondary'
+                                                                    <h2 className={`font-kanit text-md mds:text-sm  text-center mds:w-[40vw]  sms:w-[80vw]  ${darkMode ? 'text-primary ' : 'text-secondary'} `}
                                                                      data-aos='fade-right' data-aos-delay='350' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Successfully designed and manufactured cutting-edge IoT solutions through the SLT-Mobitel Innovation Center.
                                                                     </h2>  
-                                                                    <h2 className='font-kanit text-md mds:text-sm text-center  mds:w-[40vw]   sms:w-[80vw] text-secondary'
+                                                                    <h2 className={`font-kanit text-md mds:text-sm  text-center mds:w-[40vw]  sms:w-[80vw]  ${darkMode ? 'text-primary ' : 'text-secondary'} `}
                                                                       data-aos='fade-right' data-aos-delay='400'
                                                                      style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Empowered industries with real-time monitoring and predictive technologies, significantly reducing downtime.
                                                                     </h2> 
-                                                                   <h2 className='font-kanit text-md mds:text-sm  text-center  mds:w-[40vw]   sms:w-[80vw] text-secondary'
+                                                                   <h2 className={`font-kanit text-md mds:text-sm  text-center mds:w-[40vw]  sms:w-[80vw]  ${darkMode ? 'text-primary ' : 'text-secondary'} `}
                                                                    data-aos='fade-right' data-aos-delay='450' style={{
                                                                         fontWeight:'200'
                                                                     }}>
@@ -109,37 +109,37 @@ const AboutUs = ({darkMode}) => {
                                                                     style={{fontWeight:'200'}}>
                                                                     Our Solutions
                                                                     </h2>  
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
+                                                                    <h2 className={`font-kanit text-md mds:text-sm sms:w-[80vw]  sms:text-center text-start ${darkMode ? 'text-primary ' : 'text-secondary'}`}
                                                                     data-aos='fade-left' data-aos-delay='350' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Machine Condition Monitoring: Real-time insights for predictive maintenance and enhanced performance
                                                                     </h2> 
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
+                                                                    <h2 className={`font-kanit text-md mds:text-sm sms:w-[80vw]  sms:text-center text-start ${darkMode ? 'text-primary ' : 'text-secondary'}`}
                                                                     data-aos='fade-left' data-aos-delay='400' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Process Optimization and Monitoring: Automated systems for increased efficiency and tailored dashboards.
                                                                     </h2> 
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
+                                                                    <h2 className={`font-kanit text-md mds:text-sm sms:w-[80vw]  sms:text-center text-start ${darkMode ? 'text-primary ' : 'text-secondary'}`}
                                                                     data-aos='fade-left' data-aos-delay='450' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Environment Monitoring Solutions: Comprehensive systems for regulatory compliance and advanced analytics.
                                                                     </h2>
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
+                                                                    <h2 className={`font-kanit text-md mds:text-sm sms:w-[80vw]  sms:text-center text-start ${darkMode ? 'text-primary ' : 'text-secondary'}`}
                                                                     data-aos='fade-left' data-aos-delay='500' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                    Energy Management Solutions: Tools for optimizing energy usage and reporting sustainability metrics.
                                                                     </h2>  
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
+                                                                    <h2 className={`font-kanit text-md mds:text-sm sms:w-[80vw]  sms:text-center text-start ${darkMode ? 'text-primary ' : 'text-secondary'}`}
                                                                     data-aos='fade-left' data-aos-delay='550' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Supply Chain Monitoring: Inventory tracking and logistics optimization for better visibility.
                                                                     </h2>  
-                                                                    <h2 className='font-kanit text-md mds:text-sm sms:w-[80vw] sms:text-center text-start text-secondary'
+                                                                    <h2 className={`font-kanit text-md mds:text-sm sms:w-[80vw]  sms:text-center text-start ${darkMode ? 'text-primary ' : 'text-secondary'}`}
                                                                     data-aos='fade-left' data-aos-delay='600' style={{
                                                                         fontWeight:'200'
                                                                     }}>
