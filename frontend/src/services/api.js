@@ -1,36 +1,54 @@
+import axios from 'axios';
+
 /**
  * API service for handling all API calls to the backend
  */
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
-// Contact form submission
+// Create a configured axios instance
+const apiClient = axios.create({
+  baseURL: API_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Function to submit contact form data
 export const submitContactForm = async (formData) => {
   try {
-    // Ensure we're using the correct endpoint URL
-    const url = `${API_BASE_URL}/contact/submit`;
-    console.log('Submitting form to:', url); // Debug log
-    
-    const response = await fetch(url, {
-      method: 'POST',
-      body: formData,
-      // Don't set Content-Type header when sending FormData
+    const response = await axios.post(`${API_URL}/contact/submit`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
     });
-    
-    return await response.json();
+    return response.data;
   } catch (error) {
-    console.error('API error:', error);
-    throw new Error('Failed to connect to the server');
+    console.error('API Error:', error.response ? error.response.data : error.message);
+    throw error.response ? error.response.data : { success: false, message: error.message };
   }
 };
 
 // Health check
 export const checkServerHealth = async () => {
   try {
-    const response = await fetch(`${API_BASE_URL}/health`);
+    const response = await fetch(`${API_URL}/health`);
     return await response.json();
   } catch (error) {
     console.error('Health check failed:', error);
     return { status: 'error', message: 'Cannot connect to server' };
   }
 };
+
+// Test email service
+export const testEmailService = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/contact/test-email`);
+    return response.data;
+  } catch (error) {
+    console.error('Email test error:', error.response ? error.response.data : error.message);
+    throw error.response ? error.response.data : { success: false, message: error.message };
+  }
+};
+
+export default apiClient;

@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "WiFi AP vs. STA Mode in IoT devices.",
+    "subtitle": "Which One is Right for Your Project?",
+    "authorInfo": {
+      "name": "Nishan Dananjaya",
+      "title": "Associate Embedded Engineer",
+      "profileImage": "portfolio1"
+    },
+    "date": "January 28, 2025",
+    "images": {
+      "main": "blog01",
+      "section1": "subimage01",
+      "section2": "subimage02",
+      "section3": "subimage03",
+      "section4": ""
+    },
+    "introduction": [
+      "Typically, IoT devices can run on two modes as AP (Access Point) and STA(Station). Station Mode (STA) is the standard mode for most WiFi devices. In this mode, a device connects to an existing network, much like your smartphone does when it connects to your home WiFi. In this scenario, your phone is functioning in Station Mode.",
+      "In contrast, Access Point Mode (AP) transforms the device into an access point. Instead of joining a network, the device creates its own network, allowing other devices to connect directly to it. "
+    ],
+    "sections": [
+      {
+        "title": "Why AP mode, what are the use cases?",
+        "subsections": [
+          {
+            "title": "Why Use AP Mode?",
+            "content": "AP mode offers numerous advantages for IoT devices, enabling them to create independent networks that facilitate seamless connectivity for other devices. Additionally, IoT devices can function as central hubs, managing connections for multiple wireless clients. AP mode seamlessly integrates with both wired and wireless networks, enhancing flexibility in various deployment scenarios"
+          },
+          {
+            "title": "Use Cases",
+            "content": [
+              "Smart Home Systems: AP mode is ideal for connecting multiple IoT devices within a smart home, ensuring reliable and efficient communication between devices. ",
+              "Industrial IoT Gateways: In industrial environments, AP mode enables a gateway to collect and manage data from multiple connected devices, improving operational efficiency. ",
+              "Remote Monitoring Systems: For applications such as agriculture or wildlife monitoring, AP mode allows multiple sensors to connect to a centralized device, providing real-time data collection and analysis. "
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Why STA mode, what are the use cases?",
+        "subsections": [
+          {
+            "title": "Why Use STA Mode?",
+            "content": "STA mode allows IoT devices to connect to existing Wi-Fi networks, providing seamless integration into established network infrastructures. This mode enables key functionalities such as cloud-based data storage, firmware updates, and remote access. Additionally, STA mode is more power-efficient than AP mode, making it ideal for battery-operated devices."
+          },
+          {
+            "title": "Use Cases",
+            "content": [
+              "Smart Appliances: Home devices like smart refrigerators, thermostats, and lighting systems use STA mode to connect to the home Wi-Fi network, allowing users to control them remotely via smartphones or voice assistants.",
+              "Wearable Technology: Devices such as smartwatches and fitness trackers operate in STA mode to sync data with smartphones or cloud services, providing users with real-time health and activity information.",
+              "Industrial Automation: In industrial settings, sensors and machinery equipped with IoT capabilities connect in STA mode to the facility's Wi-Fi network, enabling centralized monitoring, data collection, and process optimization."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "How to select the AP or STA mode for your project?",
+        "subsections": [
+          {
+            "title": "",
+            "content": "When selecting between AP and STA modes, several factors should be considered to ensure optimal performance and integration."
+          },
+          {
+            "title": "",
+            "content": [
+              "Network Infrastructure plays a key role in this decision. If an existing Wi-Fi network is available, STA mode allows devices to seamlessly integrate into the current setup without the need to create a separate network. Conversely, if the device needs to operate independently or in an environment without existing Wi-Fi, AP mode enables it to establish its own network for direct connections.",
+              "Device Roles and Communication are also critical. Devices designed to act as central hubs, managing multiple client devices like smart home controllers, are best suited for AP mode. In contrast, devices that need to send data to a central server or the cloud benefit from STA mode, leveraging the existing network for connectivity.",
+              "Power Consumption is another consideration, as STA mode is generally more energyefficient, making it ideal for battery-powered devices due to its reduced connection management overhead.",
+              "Security Considerations must also be evaluated; AP mode can enhance security by creating a dedicated network that isolates traffic, while STA mode relies on the security protocols of the existing network, which may simplify management but requires trust in the network's safeguards",
+              "Lastly, Scalability is important for deployment. AP mode is well-suited for scenarios involving a limited number of devices connecting directly to a central device. For largescale deployments, STA mode is preferable, as it allows devices to utilize a robust existing network infrastructure, accommodating numerous devices without requiring each one to manage its own network."
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Conclusion",
+        "subsections": [
+          {
+            "title": "",
+            "content": "Choosing between AP and STA modes for your IoT project depends on the specific requirements of your application. AP mode is ideal for scenarios where the device needs to create its own network, act as a central hub, or operate in environments without existing infrastructure. On the other hand, STA mode is better suited for devices that need to connect to an existing network, prioritize power efficiency, or integrate seamlessly into large-scale deployments. By carefully evaluating factors such as network infrastructure, device roles, power consumption, security, and scalability, you can determine which mode best aligns with your project's goals. Both modes have their unique advantages, and the right choice will ensure optimal performance and functionality for your IoT solution."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "ESP32 FOTA Using GitHub Repositories",
+    "subtitle": "Simplifying OTA Updates with GitHub",
+    "authorInfo": {
+      "name": "Madeehsa Lakshan",
+      "title": "Associate Embedded Engineer",
+      "profileImage": "portfolio2"
+    },
+    "date": "January 25, 2025",
+    "images": {
+      "main": "blog02",
+      "section1": "blog02",
+      "section2": "blog2chart",
+      "section3": "blog2chart2",
+      "section4": ""
+    },
+    "introduction": [],
+    "sections": [
+      {
+        "title": "Introduction",
+        "subsections": [
+          {
+            "title": "",
+            "content": "Firmware Over-The-Air (FOTA) is one of the most important features of IoT devices, which allows users to upgrade firmware without physical access to the devices. This FOTA update mechanism allows a device to update itself based on data received while the normal firmware is running. This blog post will discuss the implementation of FOTA updates for ESP32 using a GitHub (private or public) repository (SSL)."
+          }
+        ]
+      },
+      {
+        "title": "How it works",
+        "subsections": [
+          {
+            "title": "",
+            "content": "ESP32 connects to the internet and establishes a secure connection with the GitHub server. Then ESP periodically checks with the saved version file and compares with the current version. If a new version is detected, end devices download the firmware binary file to a different partition and perform an OTA update."
+          }
+        ]
+      },
+      {
+        "title": "Use Case: ESP32 FOTA update using GitHub private repositories",
+        "subsections": []
+      },
+      {
+        "title": "Key Components and Architecture",
+        "subsections": [
+          {
+            "title": "Firmware Version Management",
+            "content": ""
+          },
+          {
+            "title": "A JSON file on GitHub stores the current firmware version and download URL",
+            "content": [
+              "A JSON file on GitHub stores the current firmware version and download URL",
+              "The ESP32 compares its current version with the server-side version",
+              "If a new version is detected, it initiates the download and update process"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Secure Connectivity",
+        "subsections": [
+          {
+            "title": "",
+            "content": ""
+          },
+          {
+            "title": "Security is paramount in this implementation",
+            "content": [
+              "Uses WiFiClientSecure for encrypted connections",
+              "Supports loading custom Root CA certificates",
+              "Authenticates GitHub API requests using Personal Access Tokens (PAT)",
+              "Stores WiFi credentials securely in LittleFS"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Rollback Mechanism",
+        "subsections": [
+          {
+            "title": "",
+            "content": ""
+          },
+          {
+            "title": "An innovative feature allows hardware-triggered firmware rollback",
+            "content": [
+              "A dedicated pin can trigger a return to the previous firmware version",
+              "Provides a safety net if a new firmware update causes unexpected issues"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
