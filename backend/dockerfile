@@ -1,5 +1,5 @@
 # Use Node.js as the base image
-FROM node:18-alpine
+FROM node:20-alpine
 
 # Set working directory
 WORKDIR /app
@@ -10,14 +10,22 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Create a non-root user and set ownership
+RUN addgroup -g 1001 nodejs && \
+    adduser -S -u 1001 -G nodejs nodeuser && \
+    chown -R nodeuser:nodejs /app
+
 # Copy the rest of the application code
-COPY . .
+COPY --chown=nodeuser:nodejs . .
 
 # Build the application (if needed)
 RUN npm run build
 
 # Expose the port your app runs on
 EXPOSE 5000
+
+# Switch to non-root user
+USER nodeuser
 
 # Command to run the application
 CMD ["npm", "start"]
