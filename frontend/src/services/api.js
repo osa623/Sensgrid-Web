@@ -17,10 +17,9 @@ const apiClient = axios.create({
 // Function to submit contact form data
 export const submitContactForm = async (formData) => {
   try {
+    // Don't manually set Content-Type with FormData - axios will set it with boundary
     const response = await axios.post(`${API_URL}/contact/submit`, formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
+      // Remove the explicit Content-Type header to let axios set it properly for FormData
     });
     return response.data;
   } catch (error) {

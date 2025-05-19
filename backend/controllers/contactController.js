@@ -40,7 +40,7 @@ const fileFilter = (req, file, cb) => {
   }
 };
 
-// Initialize multer upload
+// Initialize multer upload with error handling
 const upload = multer({
   storage,
   fileFilter,
@@ -50,36 +50,52 @@ const upload = multer({
 }).single('attachment');
 
 // Configure nodemailer transporter with more robust settings
-const transporter = nodemailer.createTransport({
-  service: process.env.EMAIL_SERVICE || 'gmail',
-  host: process.env.EMAIL_HOST || 'smtp.gmail.com',
-  port: parseInt(process.env.EMAIL_PORT || '587'),
-  secure: process.env.EMAIL_SECURE === 'true',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  },
-  tls: {
-    rejectUnauthorized: false // Helps with self-signed certificates
-  },
-  debug: true, // Enable debug output
-  logger: true // Log information into the console
-});
-
-// Verify email connection on startup
-transporter.verify(function(error, success) {
-  if (error) {
-    console.error("Email server connection error:", error);
-  } else {
-    console.log("Email server connection verified and is ready to send messages");
-  }
-});
+let transporter;
+try {
+  transporter = nodemailer.createTransport({
+    service: process.env.EMAIL_SERVICE || 'gmail',
+    host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+    port: parseInt(process.env.EMAIL_PORT || '587'),
+    secure: process.env.EMAIL_SECURE === 'true',
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    },
+    tls: {
+      rejectUnauthorized: false // Helps with self-signed certificates
+    },
+    debug: true, // Enable debug output
+    logger: true // Log information into the console
+  });
+  
+  // Log email configuration for debugging
+  console.log('Email configuration:');
+  console.log('Service:', process.env.EMAIL_SERVICE);
+  console.log('Host:', process.env.EMAIL_HOST);
+  console.log('Port:', process.env.EMAIL_PORT);
+  console.log('User:', process.env.EMAIL_USER ? 'Configured' : 'Missing');
+  console.log('Password:', process.env.EMAIL_PASS ? 'Configured' : 'Missing');
+  
+  // Verify email connection on startup
+  transporter.verify(function(error, success) {
+    if (error) {
+      console.error("Email server connection error:", error);
+    } else {
+      console.log("Email server connection verified and is ready to send messages");
+    }
+  });
+} catch (error) {
+  console.error('Failed to create email transporter:', error);
+}
 
 // Handle contact form submission
 exports.submitContactForm = async (req, res) => {
-  // Handle file upload
+  console.log('Contact form submission received');
+  
+  // Handle file upload with explicit error handling
   upload(req, res, async (err) => {
     if (err) {
+      console.error('Upload error:', err);
       return res.status(400).json({
         success: false,
         message: `Upload error: ${err.message}`
@@ -87,7 +103,16 @@ exports.submitContactForm = async (req, res) => {
     }
 
     try {
+      // Log the form data for debugging
+      console.log('Form data received:', req.body);
       const { name, email, contactNumber, solution, issueReport } = req.body;
+      
+      if (!name || !email) {
+        return res.status(400).json({
+          success: false,
+          message: 'Name and email are required'
+        });
+      }
       
       console.log("Preparing to send email with the following data:");
       console.log("From:", process.env.EMAIL_USER);
@@ -96,6 +121,15 @@ exports.submitContactForm = async (req, res) => {
       console.log("Email:", email);
       console.log("Contact:", contactNumber);
       console.log("Attachment:", req.file ? req.file.originalname : "None");
+      
+      // Check if email transport is configured
+      if (!transporter) {
+        console.error('Email transporter not configured');
+        return res.status(500).json({
+          success: false,
+          message: 'Email service not configured'
+        });
+      }
       
       // Send email notification with enhanced HTML template
       const mailOptions = {
@@ -110,14 +144,14 @@ exports.submitContactForm = async (req, res) => {
             <div style="padding: 20px;">
               <p><strong>Name:</strong> ${name}</p>
               <p><strong>Email:</strong> ${email}</p>
-              <p><strong>Contact Number:</strong> ${contactNumber}</p>
+              <p><strong>Contact Number:</strong> ${contactNumber || 'Not provided'}</p>
               <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 15px 0;">
                 <p style="margin-top: 0;"><strong>Solution:</strong></p>
-                <p style="white-space: pre-line;">${solution}</p>
+                <p style="white-space: pre-line;">${solution || 'Not provided'}</p>
               </div>
               <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin: 15px 0;">
                 <p style="margin-top: 0;"><strong>Issue Report:</strong></p>
-                <p style="white-space: pre-line;">${issueReport}</p>
+                <p style="white-space: pre-line;">${issueReport || 'Not provided'}</p>
               </div>
               ${req.file ? `<p><strong>Attachment:</strong> File uploaded (${req.file.originalname})</p>` : ''}
             </div>

@@ -405,17 +405,17 @@ const LandingPage = ({darkMode}) => {
 
                                 <div className={`absolute ${sectionExplanded ? 'lgs:-bottom-2 sms:bottom-20 mds:bottom-4' : 'bottom-20 sms:bottom-0' } flex-col lgs:w-[100vw] lgs:h-auto sms:h-[15vh]  z-50 transfrom-700 duration-700 ease-in-out`}>
 
-                                    <div className={`flex  items-center justify-center w-[100vw] lg:h-auto  space-x-6 overflow-hidden`}>
+                                    <div className={`flex  items-center justify-center w-[100vw]  lg:h-auto  space-x-6 overflow-hidden`}>
                                     
-                                        <div className={`relative flex lgs:w-[60rem] sms:w-[90vw] mds:w-[75vw] overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem] h-[20rem] sms:mt-12' : 'lgs:h-[12rem] h-[20rem] sms:mt-0'} items-center justify-center ${darkMode ? 'border-2 bg-gray-900' : 'bg-theme01'}   rounded-3xl transform-all duration-700 ease-in-out`}
+                                        <div className={`relative flex lgs:w-[60rem] sms:w-[90vw] mds:w-[75vw]  overflow-hidden ${sectionExplanded ? 'lgs:h-[20rem] h-[25rem] sms:mt-12' : 'lgs:h-[12rem] h-[25rem] sms:mt-0'} items-center justify-center ${darkMode ? 'border-2 bg-gray-900' : 'bg-theme01'}   rounded-3xl sms:py-3 transform-all duration-700 ease-in-out`}
                                              style={{
                                             boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.2) , inset 0px 5px 20px 1px rgba(255, 255, 255, 0.2)',
                                         }}>
                                             <div className='absolute flex w-full blur-sm h-auto overflow-hidden z-20'>
                                                 <img src={'background2'} alt='' className='flex object-cover'/>
                                             </div>
-                                            <div className={`absolute flex flex-col ${sectionExplanded ? 'lgs:h-[20rem] space-y-5' : 'lgs:h-[12rem] space-y-2'} ${darkMode ? ' bg-gray-900' : 'bg-theme01'}  items-center justify-center  lgs:w-[60rem] overflow-hidden transform-all duration-700 ease-in-out z-30`}>
-                                                <h2 className={`font-kanit ${sectionExplanded ? 'lgs:text-5xl text-4xl' : 'lgs:text-8xl text-5xl'}  text-primary font-bold text-center transform-all duration-700 ease-in-out`}>
+                                            <div className={`absolute flex flex-col ${sectionExplanded ? 'lgs:h-[20rem] space-y-5' : 'lgs:h-[12rem] space-y-2'} ${darkMode ? ' bg-gray-900' : 'bg-theme01'}  items-center justify-center  lgs:w-[60rem] overflow-hidden sms:py-2 transform-all duration-700 ease-in-out z-30`}>
+                                                <h2 className={`font-bricolagegrotesque ${sectionExplanded ? 'lgs:text-5xl text-4xl' : 'lgs:text-8xl text-5xl'}  text-primary font-bold text-center transform-all duration-700 ease-in-out`}>
                                                     INDUSTRY {''}<span className='font-kanit font-thin text-primary'>4.0</span>
                                                 </h2>
                                                 <div
@@ -456,7 +456,7 @@ const LandingPage = ({darkMode}) => {
                                                     }}>
                                                         Let's Find Out
                                                     </h2>
-                                                    <img src= {dropdown} alt='' className='object-cover h-5'/>
+                                                    <img src= {dropdown} alt='' className={`object-cover h-5 ${darkMode ? ' text-primary' : 'text-primary'}`}/>
                                                 </div>
                                             </div>
 
