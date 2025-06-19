@@ -14,6 +14,8 @@ import PageOne from './SeperatePages/PageOne.js';
 import Pagetwo from './SeperatePages/Pagetwo.js';
 import Pagethree from './SeperatePages/Pagethree.js';
 import Pagefour from './SeperatePages/Pagefour.js';
+import ArticleView from './Pages/ArticleView.js';
+import ArticleSection from './Pages/ArticleSection.js';
 
 
 
@@ -59,6 +61,8 @@ const AppContent = () => {
             <Route path='/contactUs' element={<ContactUs darkMode ={darkMode}/>}/>
             <Route path='/aboutUs' element={<AboutUs darkMode ={darkMode}/>}/>
             <Route path='/treeView' element={<TreeView darkMode ={darkMode}/>}/>
+            <Route path='/articles' element={<ArticleSection darkMode ={darkMode}/>}/>
+            <Route path='/articleview/:id' element={<ArticleView darkMode ={darkMode}/>}/>
             <Route path= '/pageOne' element={<PageOne/>}/>
             <Route path= '/pageTwo' element={<Pagetwo/>}/>
             <Route path= '/pageThree' element={<Pagethree/>}/>

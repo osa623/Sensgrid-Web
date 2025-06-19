@@ -37,7 +37,7 @@ const Navbar = ({darkMode, setDarkMode}) => {
             <Link to='/aboutUs' onClick={closeNav}>About Us</Link>
           </li>
           <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
-            <Link to='/contactUs' onClick={closeNav}>Articles</Link>
+            <Link to='/articles' onClick={closeNav}>Articles</Link>
           </li>
           <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
             <Link to='/contactUs' onClick={closeNav}>Contact Us</Link>
@@ -85,6 +85,12 @@ const Navbar = ({darkMode, setDarkMode}) => {
                 borderColor: darkMode ? 'gray-500' : 'gray-600'
               }}>
                 <Link to='/aboutUs' onClick={closeNav}>About Us</Link>
+              </li>
+              <li className="p-4 border-b text-center"
+              style={{
+                borderColor: darkMode ? 'gray-500' : 'gray-600'
+              }}>
+                <Link to='/articles' onClick={closeNav}>Articles</Link>
               </li>
               <li className="p-4 border-b text-center"
               style={{
