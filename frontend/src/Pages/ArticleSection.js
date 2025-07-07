@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const ArticleSection = () => {
+const ArticleSection = ({darkMode, setDarkMode}) => {
   const navigate = useNavigate();
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -128,15 +128,30 @@ const ArticleSection = () => {
   const featuredArticles = articles.slice(0, Math.min(3, articles.length));
 
   return (
-    <div className="bg-gray-50 min-h-screen pt-16 pb-24  px-4 sm:px-6 lg:px-8">
+    <div className={`${darkMode ? ' bg-darkTheme' : 'bg-primary' }  min-h-screen pt-16 pb-24  px-4 sm:px-6 lg:px-8`}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12 mt-12">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
-            Latest Articles
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Explore our collection of insights, research findings, and industry updates in the field of sensor technologies.
+                                <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
+                                    <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent overflow-hidden">
+                                      <div className="flex w-auto h-auto" data-aos='fade-right'>
+                                          <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl text-5xl text-center"
+                                          style={{
+                                            fontWeight:'200'
+                                          }}>
+                                            OUR
+                                          </h2>
+                                          <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-5xl lgs:text-7xl items-center justify-center text-center" style={{
+                                            fontWeight:'900',
+                                            boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
+                                          }}>
+                                            ARTICLES
+                                          </h2>
+                                      </div>
+                                    </div>
+                                </div>
+          <p className={`text-md text-gray-600 max-w-4xl ${darkMode ? ' text-primary' : 'text-secondary' }  mx-auto`}>
+            Stay updated with the latest trends, tools, and breakthroughs in the world of technology. From software development and AI advancements to emerging gadgets and digital solutions, our curated articles provide in-depth analysis, expert opinions, and practical tips to keep you informed and inspired. Dive into the future—one article at a time
           </p>
         </div>
 
@@ -231,7 +246,7 @@ const ArticleSection = () => {
         ) : null}
 
         {/* Filters Section */}
-        <div className="mb-10 p-5 bg-white rounded-xl shadow-sm">
+        <div className={`mb-10 p-5 ${darkMode ? 'bg-darkTheme border-2' : 'bg-white'} rounded-xl shadow-sm`}>
           <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
             {/* Search */}
             <div className="relative flex-grow md:max-w-md">
@@ -291,7 +306,7 @@ const ArticleSection = () => {
               {/* Reset filters button */}
               <button
                 onClick={() => setFilters({ category: 'all', searchTerm: '', tag: 'all' })}
-                className="py-2 px-4 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
+                className="py-2 px-4 border border-gray-300 bg-primary rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
               >
                 Reset Filters
               </button>
@@ -301,10 +316,10 @@ const ArticleSection = () => {
 
         {/* Articles Section Label */}
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold text-gray-800">
+          <h2 className={`text-xl font-bold ${darkMode ? 'text-primary' : 'text-secondary'}`}>
             {filters.searchTerm || filters.category !== 'all' || filters.tag !== 'all' ? 'Search Results' : 'All Articles'}
           </h2>
-          <p className="text-gray-600 text-sm">
+          <p className={`text-gray-600 text-sm ${darkMode ? 'text-primary' : 'text-secondary'}`}>
             {filteredArticles.length} {filteredArticles.length === 1 ? 'article' : 'articles'} found
           </p>
         </div>
@@ -326,7 +341,7 @@ const ArticleSection = () => {
         ) : filteredArticles.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredArticles.map((article) => (
-              <div key={article._id} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
+              <div key={article._id} className={`${darkMode ? 'border-2 drop-shadow-md bg-darkTheme' : 'bg-primary' }  rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full`}>
                 {/* Article Image */}
                 <div className="h-48 overflow-hidden">
                   <img 
@@ -354,8 +369,7 @@ const ArticleSection = () => {
                         {article.category}
                       </span>
                     )}
-                    
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+                    <h3 className={`text-xl font-bold ${darkMode ? ' text-primary' : 'text-secondary' }  mb-2 line-clamp-2`}>
                       {article.title || "Untitled Article"}
                     </h3>
                     
@@ -367,7 +381,7 @@ const ArticleSection = () => {
                       })}
                     </p>
                     
-                    <p className="text-gray-600 mb-4 line-clamp-3">
+                    <p className={`text-gray-600 mb-4 line-clamp-3 ${darkMode ? 'text-primary' : 'text-secondary'}`}>
                       {article.subtitle || "No content available"}
                     </p>
                   </div>

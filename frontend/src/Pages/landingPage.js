@@ -4,13 +4,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import 'aos/dist/aos.css';
 import Marquee from "react-fast-marquee";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import axios from 'axios';
 
 //backgrounds
 import backgroundVideo from '../Assets/backgroundVideo.mp4';
 import backgroundImageDetail from '../Assets/swiperBackground.jpg';
 
 //details images
-import dropdown from '../Assets/dropdown.png';
 import onTheProgramming from '../Assets/onTheFlyProgramming.png';
 import RealTimeMonitoring from '../Assets/Real-Time-Monitoring.png';
 import Security from '../Assets/Security.png';
@@ -56,6 +57,7 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 
 
 import '../Components/Swiper.css';
+import { FaArrowAltCircleDown, FaArrowAltCircleUp, FaArrowCircleUp, FaArrowUp } from 'react-icons/fa';
 
 
 
@@ -310,6 +312,8 @@ const LandingPage = ({darkMode}) => {
 
     //other hooks
     const [sectionExplanded , setSectionExpanded] = useState(false);   
+    const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [activeIndex, setActiveIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
     const navigate = useNavigate();
@@ -322,6 +326,25 @@ const LandingPage = ({darkMode}) => {
 
         setSectionExpanded(!sectionExplanded);
     };
+
+
+    useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/articles');
+        setArticles(response.data);
+        setLoading(false);       
+        console.log("Fetched articles:", response.data);
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+        setLoading(false);
+        
+
+        
+      }
+    };
+    fetchArticles();
+  }, []);
 
     
 
@@ -450,13 +473,8 @@ const LandingPage = ({darkMode}) => {
 
                                                 
                                                 <div className='flex flex-col h-auto w-auto lgs:mt-2 cursor-pointer hover:mt-4 items-center justify-center transform-all duration-700 ease-in-out' onClick={handleSectionExpand}>
-                                                    <h2 className='font-kanit text-md text-primary'
-                                                    style={{
-                                                        fontWeight:'100'
-                                                    }}>
-                                                        Let's Find Out
-                                                    </h2>
-                                                    <img src= {dropdown} alt='' className={`object-cover h-5 ${darkMode ? ' text-primary' : 'text-primary'}`}/>
+                                                    {sectionExplanded ? (<FaArrowAltCircleDown className='text-primary text-2xl mt-2 h-6' />) : (<FaArrowCircleUp className='text-primary text-2xl mt-2 h-6' />)}
+                                                    
                                                 </div>
                                             </div>
 
@@ -489,7 +507,7 @@ const LandingPage = ({darkMode}) => {
 
                                 {/* Primary Section */}
                                 <div className={`flex flex-col w-full h-auto ${sectionExplanded ? 'sms:mt-24' : 'sms:mt-0'} transition-all duration-700 ease-in-out  sms:mt-52 items-center cursor-pointer justify-center`}>
-                                <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
+                                <div className="relative flex lgs:h-[15rem] h-[10rem] w-full sms:mt-12 items-center justify-center">
                                     <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent overflow-hidden">
                                     <div className="flex w-auto h-auto" data-aos='fade-right'>
                                         <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl text-5xl text-center"
@@ -511,7 +529,7 @@ const LandingPage = ({darkMode}) => {
 
 
                                 {/* Swiper Container */}
-                                <div className="hidden relative lgs:flex mds:flex w-full items-center justify-center bg-transparent z-30">
+                                <div className="hidden relative lgs:flex mds:flex  w-full items-center justify-center bg-transparent z-30">
                                     
                                     <Swiper
                                         effect="coverflow"
@@ -526,8 +544,8 @@ const LandingPage = ({darkMode}) => {
                                             modifier: 2.5,
                                         }}
                                         pagination={{ clickable: true }}
-                                        navigation={true}
-                                        modules={[EffectCoverflow, Navigation]}
+                                        navigation={false}
+                                        modules={[EffectCoverflow]}
                                         className="flex lgs:h-[40rem] items-center justify-center p-24"
                                         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                                     >
@@ -628,10 +646,10 @@ const LandingPage = ({darkMode}) => {
 
                         <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
                                     
-                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
+                                   <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}/>
                                     <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
                                     <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
-                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
+                                    <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}/>
                         
                         </div>
 
@@ -650,7 +668,7 @@ const LandingPage = ({darkMode}) => {
                                     fontWeight:'900',
                                     boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                   }}>
-                                    WE DO
+                                    WE OFFER
                                   </h2>
                                </div>
                             </div>
@@ -765,10 +783,10 @@ const LandingPage = ({darkMode}) => {
 
 
                       <div className='flex bg-transparent lgs:w-auto h-[5rem] items-center lgs:space-x-2 overflow-hidden justify-center'>
-                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
+                                   <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}/>
                                     <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='zoom-in'/>
                                     <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='zoom-in'/>
-                                    <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
+                                    <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}/>
                         </div>     
 
 
@@ -781,7 +799,7 @@ const LandingPage = ({darkMode}) => {
                         <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
                                <div className="flex w-auto h-auto" data-aos='fade-left'>
-                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-5xl text-4xl text-center"
+                                  <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl text-4xl text-center"
                                   style={{
                                     fontWeight:'200'
                                   }}>
@@ -801,7 +819,7 @@ const LandingPage = ({darkMode}) => {
                                     
                             {partners.slice(0,3).map((tool) => (
 
-                            <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-pointer items-center justify-center rounded-lg lgs:h-[25rem]'                                         data-aos='fade-up'
+                            <div key={tool.id} className='flex flex-col lgs:w-[25rem] sms:w-[22rem] mds:w-[20rem] overflow-hidden bg-primary cursor-default items-center justify-center rounded-lg lgs:h-[25rem]'                                         data-aos='fade-up'
                                         data-aos-delay={`${200 + tool.id * 50}`} style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) '
                             }}>
@@ -843,10 +861,10 @@ const LandingPage = ({darkMode}) => {
                     <section className='flex flex-col overflow-hidden items-center justify-start sms:mt-5 h-auto w-full'>
 
                             <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center'>
-                                        <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
+                                        <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}/>
                                         <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
                                         <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]'/>
-                                        <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl'/>
+                                        <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}  />
                             </div>
                             <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
                             <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
@@ -868,14 +886,14 @@ const LandingPage = ({darkMode}) => {
                            </div>
                            <div className='flex sms:flex-col sms:h-auto sms:p-5  w-full items-center justify-center mds:space-x-5 lgs:space-x-5 sms:space-y-4 mt-12'>
                             
-                            {blog.map((tool)=> (
+                            {articles.map((tool)=> (
                                 <div key={tool.id} className='flex flex-col w-[25rem] sms:w-[22rem] overflow-hidden bg-primary cursor-default items-center justify-center rounded-lg lgs:h-[22rem]'
                                                                         data-aos='fade-up'
                                                                         data-aos-delay={`${100 + tool.id * 50}`} style={{
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) '
                             }}>
                                     <div className='relative flex flex-col h-[12rem] w-[25rem] sms:w-[22rem] bg-primary justify-center rounded-t-md overflow-hidden items-center '>
-                                        <img src={tool.image} alt='' className='object-cover scale-150 sms:h-40'/>
+                                        <img src={tool.images[0]} alt='' className='object-cover overflow-hidden scale-150 sms:h-40'/>
                                         <div className='absolute top-0 right-0 flex flex-col h-[2rem] w-[5rem] rounded-bl-2xl bg-blue-700 justify-center items-center'
                                         style={{
                                             boxShadow: '0px 5px 8px 2px rgba(0, 0, 0, 0.5) , inset 0px 4px 5px 2px rgba(255, 255, 255, 0.4)',
@@ -883,7 +901,7 @@ const LandingPage = ({darkMode}) => {
                                             <span className='text-primary font-dmsans text-md'>blog #{tool.id}</span>
                                         </div>
                                     </div>
-                                    <div className='flex flex-col h-[5rem] w-[25rem] sms:w-[22rem] bg-transparent lgs:rounded-t-xl justify-center items-start p-2'>
+                                    <div className='flex flex-col h-[5rem] mt-6  w-[25rem] sms:w-[22rem] bg-transparent lgs:rounded-t-xl justify-center items-start p-2'>
                                        <h2 className='font-dmsans text-start lgs:w-[25rem] sms:w-[22rem] lgs:text-lg sms:text-md text-blue-900' style={{
                                         fontWeight:'800'
                                        }}>
@@ -899,9 +917,7 @@ const LandingPage = ({darkMode}) => {
                                     <div className='flex h-[5rem] w-[25rem] sms:w-[22rem]  bg-transparent  justify-center items-center sms:p-1'>
                                        <div className='flex w-[15rem] sms:w-[15rem] h-[5rem] items-center justify-start p-2'>
 
-                                         <div className='flex w-[3.5rem] h-[3.5rem] items-center justify-center border-2 border-blue-400 overflow-hidden bg-theme01 rounded-full'>
-                                            <img src= {tool.profileimage} alt='' className='object-cover rounded-full'/>
-                                         </div>
+
                                          <div className='flex flex-col ml-2'>
                                             <h2 className='font-dmsans text-sm text-secondary' style={{
                                                 fontWeight:'500'
@@ -925,7 +941,7 @@ const LandingPage = ({darkMode}) => {
                                       </div>
                                        <div className='flex w-[10rem] sms:w-[7rem] h-[4rem] items-center justify-center'>
 
-                                         <div  onClick={() => navigate(`/blog/${tool.id}`, { state: { tool } })}  className='flex w-[8rem] sms:w-[6rem] sms:h-[3rem] h-[2.5rem] bg-blue-600 rounded-xl cursor-pointer items-center justify-center' style={{
+                                         <div  onClick={() => navigate(`/articleview/${tool.articleid}`, { state: { tool } })}  className='flex w-[8rem] sms:w-[6rem] sms:h-[3rem] h-[2.5rem] bg-blue-600 rounded-xl cursor-pointer items-center justify-center' style={{
                                             boxShadow: '0px 5px 8px 2px rgba(0, 0, 0, 0.3) , inset 0px 4px 5px 2px rgba(255, 255, 255, 0.4)',
                                          }}>
                                            <h2 className='font-dmsans text-white text-md' style={{}}>
@@ -949,6 +965,16 @@ const LandingPage = ({darkMode}) => {
 
                     {/* Client Reviews Section */}
                     <section  className='flex flex-col overflow-hidden items-center justify-center h-auto w-full'>
+
+                      <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
+                                    
+                                   <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}/>
+                                    <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                    <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                    <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}/>
+                        
+                        </div>
+
 
                         <div className='relative flex lgs:w-full lgs:h-auto lgs:p-5 items-center justify-center '>
                         <div className='flex flex-col w-full h-auto items-center cursor-pointer justify-center z-30'>
@@ -1014,6 +1040,16 @@ const LandingPage = ({darkMode}) => {
 
                     {/* Powered By Section */}
                     <section  className='flex flex-col overflow-hidden items-center justify-center h-auto w-full lgs:p-12'>
+
+                      <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
+                                    
+                                   <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}/>
+                                    <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                    <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                    <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}/>
+                        
+                        </div>
+
 
                             <div className="relative flex lgs:h-[15rem] h-[10rem] w-full items-center justify-center">
                                 <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent">
@@ -1206,15 +1242,15 @@ const LandingPage = ({darkMode}) => {
                             </Marquee>
                             </div> 
 
+                       <div className='flex bg-transparent lgs:w-auto lgs:h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
+                                    
+                                   <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}/>
+                                    <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                    <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
+                                    <div className= {`flex ${darkMode ? 'bg-primary' : 'bg-secondary'} lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl`}/>
+                        
+                        </div>
 
-                            <div className='flex bg-transparent w-auto h-[5rem] items-center lgs:space-x-2 justify-center overflow-hidden'>
-                                            
-                                            <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
-                                            <div className= 'flex bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
-                                            <div className= 'flex  bg-theme01 rounded-2xl lgs:w-[0.5rem] lgs:h-[0.5rem]' data-aos='fade-up'/>
-                                            <div className= 'flex bg-secondary lgs:w-[8rem] lgs:h-[0.1rem] rounded-r-2xl' data-aos='zoom-in'/>
-                                
-                             </div>
 
 
 

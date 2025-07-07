@@ -22,9 +22,9 @@ const AboutUs = ({darkMode}) => {
                                 boxShadow: '0px 4px 20px 1px rgba(0, 0, 0, 0.5) , inset 0px 5px 20px 1px rgba(0, 0, 0, 0.2)',
                             }}>
                                     <div className='flex flex-col w-full h-auto items-center justify-start mt-12'>
-                                                <h2 className={`font-kanit text-theme01 lgs:text-3xl sms:text-3xl mds:text-4xl text-center transform-all duration-700 ease-in-out`}
+                                                <h2 className={`font-kanit text-theme01 lgs:text-5xl sms:text-3xl mds:text-4xl text-center transform-all duration-700 ease-in-out`}
                                                 style={{
-                                                    fontWeight:'100'
+                                                    fontWeight:'300'
                                                 }}>
                                                     Want to Know More About {''}<h2 className='flex font-kanit items-center justify-center text-baseprimary' style={{fontWeight:'800' , paddingLeft: '0.8rem'}}>
                                                     {''}<span className='text-theme01'>SENSE</span>GRID     
@@ -52,7 +52,7 @@ const AboutUs = ({darkMode}) => {
                                                                 style={{fontWeight:'200'}}>
                                                                 Who We Are
                                                                 </h2>  
-                                                                <p className={`font-kanit text-md mds:text-sm  ${darkMode ? 'text-primary ' : 'text-secondary'}  text-center sms:w-[80vw] `}
+                                                                <p className={`font-kanit text-md mds:text-sm sms:text-center  ${darkMode ? 'text-primary ' : 'text-secondary'}  text-left sms:w-[80vw] `}
                                                                 data-aos='fade-left' data-aos-delay='450' style={{
                                                                     fontWeight:'200'
                                                                 }}>
@@ -63,26 +63,31 @@ const AboutUs = ({darkMode}) => {
                                                        </div>
                                                        <div className='flex sms:flex-col w-auto lgs:w-[80vw] mds:w-[80vw] mt-12  justify-evenly items-center'>
 
+                                                           <img src={sensegrid1} alt='' className='object-cover lgs:w-[35rem] mds:w-[20rem] sms:mt-12 sms:w-[20rem] rounded-xl lgs:h-auto'
+                                                            data-aos='fade-left' data-aos-delay='350'
+                                                           />
+
+                                                           
                                                                 <div className = 'flex flex-col lgs:w-[30rem] sms:w-[80vw] mds:w-[80vw] h-auto space-y-4 overflow-hidden items-center justify-center lgs:space-y-4'>
-                                                                    <h2 className='font-kanit text-5xl text-theme01 text-center'
+                                                                    <h2 className='font-kanit text-5xl sms:mt-6 text-theme01 text-center'
                                                                     data-aos='fade-down' data-aos-delay='350'
                                                                     style={{fontWeight:'200'}}>
                                                                     Our Achievements
                                                                     </h2>  
-                                                                    <h2 className={`font-kanit text-md mds:text-sm  text-center mds:w-[40vw]  sms:w-[80vw]  ${darkMode ? 'text-primary ' : 'text-secondary'} `}
+                                                                    <h2 className={`font-kanit text-md mds:text-sm  text-left sms:text-center mds:w-[40vw]  sms:w-[80vw]  ${darkMode ? 'text-primary ' : 'text-secondary'} `}
                                                                      data-aos='fade-right' data-aos-delay='350' style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Successfully designed and manufactured cutting-edge IoT solutions through the SLT-Mobitel Innovation Center.
                                                                     </h2>  
-                                                                    <h2 className={`font-kanit text-md mds:text-sm  text-center mds:w-[40vw]  sms:w-[80vw]  ${darkMode ? 'text-primary ' : 'text-secondary'} `}
+                                                                    <h2 className={`font-kanit text-md mds:text-sm  text-left sms:text-center mds:w-[40vw]  sms:w-[80vw]  ${darkMode ? 'text-primary ' : 'text-secondary'} `}
                                                                       data-aos='fade-right' data-aos-delay='400'
                                                                      style={{
                                                                         fontWeight:'200'
                                                                     }}>
                                                                     Empowered industries with real-time monitoring and predictive technologies, significantly reducing downtime.
                                                                     </h2> 
-                                                                   <h2 className={`font-kanit text-md mds:text-sm  text-center mds:w-[40vw]  sms:w-[80vw]  ${darkMode ? 'text-primary ' : 'text-secondary'} `}
+                                                                   <h2 className={`font-kanit text-md mds:text-sm  text-left sms:text-center mds:w-[40vw]  sms:w-[80vw]  ${darkMode ? 'text-primary ' : 'text-secondary'} `}
                                                                    data-aos='fade-right' data-aos-delay='450' style={{
                                                                         fontWeight:'200'
                                                                     }}>
@@ -90,14 +95,11 @@ const AboutUs = ({darkMode}) => {
                                                                     </h2>                                      
                                                                 </div>
                                                            
-                                                           <img src={sensegrid1} alt='' className='object-cover lgs:w-[35rem] mds:w-[20rem] sms:mt-12 sms:w-[20rem] rounded-xl lgs:h-auto'
-                                                            data-aos='fade-left' data-aos-delay='350'
-                                                           />
     
 
                                                             
                                                         </div>
-                                                        <div className='flex sms:flex-col w-auto lgs:w-[80vw] mds:w-[80vw] mt-12 justify-evenly items-center'>
+                                                        <div className='flex sms:flex-col w-auto lgs:w-[80vw] mds:w-[80vw] mt-12 lgs:pt-20 justify-evenly items-center'>
                                                            
                                                            <img src={sensegrid2} alt='' className='object-cover lgs:w-[30rem] mds:w-[20rem]  lgs:h-auto'
                                                                  data-aos='fade-right' data-aos-delay='350'

@@ -85,26 +85,17 @@ const ContactUs = ({darkMode}) => {
       className={`flex flex-col ${darkMode ? "bg-gray-800 text-white" : "bg-white text-black"}`}
     >
       <div className="relative mx-auto px-6 sms:mt-12 lgs:mb-12">
-        <div className="relative flex lgs:h-[10rem] sms:h-[10rem] w-full items-center justify-center">
-          <div className="hidden absolute sms:flex items-center justify-center w-full h-[28rem] bg-transparent">
-            <div className="flex w-auto h-auto" data-aos="fade-right">
-              <h2
-                className={`font-dmsans text-primary bg-theme01 p-4 lgs:text-5xl sms:text-5xl text-center ${
-                  darkMode ? "border-4" : "border-0"
-                }`}
-                style={{ fontWeight: "200" }}
-              >
-                Contact
+        <div className="relative flex lgs:h-[15rem] lgs:mt-12 h-[10rem] w-full items-center justify-center">
+          <div className="absolute flex items-center justify-center w-full h-[28rem] bg-transparent overflow-hidden">
+            <div className="flex w-auto h-auto" data-aos='fade-right'>
+              <h2 className="font-dmsans text-primary bg-theme01 p-4 lgs:text-7xl text-5xl text-center"
+                style={{ fontWeight: '200' }}>
+                CONTACT
               </h2>
-              <h2
-                className={`flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 sms:text-5xl text-7xl items-center justify-center text-center ${
-                  darkMode ? "border-4" : "border-0"
-                }`}
-                style={{
-                  fontWeight: "900",
-                  boxShadow: "0px 1px 20px 2px rgba(0,0,0,0.4)"
-                }}
-              >
+              <h2 className="flex bg-primary p-1 flex-col font-dmsans text-theme01 lgs:p-2 text-5xl lgs:text-7xl items-center justify-center text-center" style={{
+                fontWeight: '900',
+                boxShadow: '0px 1px 20px 2px rgba(0,0,0,0.4)'
+              }}>
                 US
               </h2>
             </div>
@@ -113,84 +104,84 @@ const ContactUs = ({darkMode}) => {
         <div className="sms:w-full mx-auto">
           <form
             onSubmit={handleSubmit}
-            className={`max-w-2xl w-full p-8 rounded-xl shadow-2xl transform transition duration-300 hover:scale-105 ${
+            className={`max-w-4xl w-full p-8 rounded-xl shadow-2xl transform transition duration-300 hover:scale-100 ${
               darkMode ? "bg-gray-700 text-white" : "bg-white text-black"
             }`}
-            style={{ 
-              background: darkMode ? 
-                "linear-gradient(145deg, #2d3748, #1a202c)" : 
+            style={{
+              background: darkMode ?
+                "linear-gradient(145deg, #2d3748, #1a202c)" :
                 "linear-gradient(145deg, #ffffff, #f3f4f6)",
-              borderLeft: "5px solid #3B82F6" 
+              borderLeft: "5px solid #3B82F6"
             }}
           >
-            <h2 className="text-2xl font-semibold text-center mb-6" 
-                style={{ 
-                  background: "linear-gradient(90deg, #3B82F6, #6366F1)", 
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent"
-                }}>
-              Contact Us
-            </h2>
-            <div className="grid grid-cols-1 mds:grid-cols-2 sms:grid-cols-2 gap-6">
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Name"
-                required
-                className={`w-full px-4 text-secondary py-3 rounded-lg border ${
-                  darkMode ? "border-gray-500" : "border-gray-300"
-                } focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition`}
-              />
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email"
-                required
-                className={`w-full px-4 text-secondary  py-3 rounded-lg border ${
-                  darkMode ? "border-gray-500" : "border-gray-300"
-                } focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition`}
-              />
+            {/* Main form grid container */}
+            <div className="grid grid-cols-1 lgs:grid-cols-2 gap-6">
+              {/* Left Column - Personal Information */}
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Name"
+                  required
+                  className={`w-full px-4 text-secondary py-3 rounded-lg border ${
+                    darkMode ? "border-gray-500" : "border-gray-300"
+                  } focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition`}
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email"
+                  required
+                  className={`w-full px-4 text-secondary py-3 rounded-lg border ${
+                    darkMode ? "border-gray-500" : "border-gray-300"
+                  } focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition`}
+                />
+                <input
+                  type="tel"
+                  name="contactNumber"
+                  value={formData.contactNumber}
+                  onChange={handleChange}
+                  placeholder="Contact Number"
+                  required
+                  className={`w-full px-4 text-secondary py-3 rounded-lg border ${
+                    darkMode ? "border-gray-500" : "border-gray-300"
+                  } focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition`}
+                />
+              </div>
+
+              {/* Right Column - Message Information */}
+              <div className="space-y-4">
+                <textarea
+                  name="solution"
+                  value={formData.solution}
+                  onChange={handleChange}
+                  placeholder="Solution"
+                  rows={4}
+                  required
+                  className={`w-full px-4 py-3 text-secondary rounded-lg border ${
+                    darkMode ? "border-gray-500" : "border-gray-300"
+                  } focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition`}
+                />
+                <textarea
+                  name="issueReport"
+                  value={formData.issueReport}
+                  onChange={handleChange}
+                  placeholder="Issue Report"
+                  rows={4}
+                  required
+                  className={`w-full px-4 py-3 text-secondary rounded-lg border ${
+                    darkMode ? "border-gray-500" : "border-gray-300"
+                  } focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition`}
+                />
+              </div>
             </div>
-            <input
-              type="tel"
-              name="contactNumber"
-              value={formData.contactNumber}
-              onChange={handleChange}
-              placeholder="Contact Number"
-              required
-              className={`w-full mt-4 px-4 text-secondary  py-3 rounded-lg border ${
-                darkMode ? "border-gray-500" : "border-gray-300"
-              } focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition`}
-            />
-            <textarea
-              name="solution"
-              value={formData.solution}
-              onChange={handleChange}
-              placeholder="Solution"
-              rows={4}
-              required
-              className={`w-full mt-4 px-4 py-3 text-secondary  rounded-lg border ${
-                darkMode ? "border-gray-500" : "border-gray-300"
-              } focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition`}
-            />
-            <textarea
-              name="issueReport"
-              value={formData.issueReport}
-              onChange={handleChange}
-              placeholder="Issue Report"
-              rows={4}
-              required
-              className={`w-full mt-4 px-4 py-3 text-secondary  rounded-lg border ${
-                darkMode ? "border-gray-500" : "border-gray-300"
-              } focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition`}
-            />
             
-            {/* Attachment Section */}
-            <div className="mt-4">
+            {/* Attachment Section - Full Width */}
+            <div className="mt-6 col-span-full">
               <label 
                 className={`block mb-2 text-sm font-medium ${
                   darkMode ? "text-blue-300" : "text-blue-600"

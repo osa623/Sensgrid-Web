@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { FaMoon, FaSun } from 'react-icons/fa';
 
@@ -8,7 +8,10 @@ import namelogo from '../Assets/SensGrid logo.png';
 
 const Navbar = ({darkMode, setDarkMode}) => {
   const [nav, setNav] = useState(false);
+  const location = useLocation();
 
+  // Helper function to check if current route is active
+  const isActive = (path) => location.pathname === path;
 
   const handleNav = () => {
     setNav(!nav);
@@ -30,19 +33,22 @@ const Navbar = ({darkMode, setDarkMode}) => {
         fontWeight:'300'
       }}>
         {/* Use Link component for routing */}
-          <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
+          <li className={`p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm transition-all duration-200 ${isActive('/') ? 'text-blue-600 border-2 bg-baseprimary bg-opacity-10 rounded-lg' : ''}`}>
             <Link to='/' onClick={closeNav}>Home</Link>
           </li>
-          <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
+          <li className={`p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm transition-all duration-200 ${isActive('/aboutUs') ? 'text-blue-600 border-2   bg-baseprimary bg-opacity-10 rounded-lg' : ''}`}>
             <Link to='/aboutUs' onClick={closeNav}>About Us</Link>
           </li>
-          <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
+          <li className={`p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm transition-all duration-200 ${isActive('/articles') ? 'text-blue-600 border-2 bg-baseprimary bg-opacity-10 rounded-lg' : ''}`}>
             <Link to='/articles' onClick={closeNav}>Articles</Link>
           </li>
-          <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
+          <li className={`p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm transition-all duration-200 ${isActive('/contactUs') ? 'text-blue-600 border-2 bg-baseprimary bg-opacity-10 rounded-lg' : ''}`}>
             <Link to='/contactUs' onClick={closeNav}>Contact Us</Link>
           </li>
-          <li className="p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm">
+          <li className={`p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm transition-all duration-200 ${isActive('/caseStudies') ? 'text-blue-600 border-2 bg-baseprimary bg-opacity-10 rounded-lg' : ''}`}>
+            <Link to='/caseStudies' onClick={closeNav}>Case Studies</Link>
+          </li>
+          <li className={`p-4 hover:text-baseprimary dark:hover:text-gray-300 mds:text-sm transition-all duration-200 ${isActive('/treeView') ? 'text-blue-600 border-2 bg-baseprimary bg-opacity-10 rounded-lg' : ''}`}>
             <Link to='/treeView' onClick={closeNav}>Social Tree</Link>
           </li>
               </ul>
@@ -74,31 +80,37 @@ const Navbar = ({darkMode, setDarkMode}) => {
             <img src={namelogo} alt="bwlogo" className="h-16 w-auto m-4" />
                 </div>
                 {/* Use Link component for mobile navigation */}
-              <li className="p-4 border-b text-center"
+              <li className={`p-4 border-b text-center transition-all duration-200 ${isActive('/') ? 'text-baseprimary border-l-4 border-l-baseprimary bg-baseprimary bg-opacity-5' : ''}`}
               style={{
                 borderColor: darkMode ? 'gray-500' : 'gray-600'
               }}>
                 <Link to='/' onClick={closeNav}>Home</Link>
               </li>
-              <li className="p-4 border-b text-center"
+              <li className={`p-4 border-b text-center transition-all duration-200 ${isActive('/aboutUs') ? 'text-baseprimary border-l-4 border-l-baseprimary bg-baseprimary bg-opacity-5' : ''}`}
               style={{
                 borderColor: darkMode ? 'gray-500' : 'gray-600'
               }}>
                 <Link to='/aboutUs' onClick={closeNav}>About Us</Link>
               </li>
-              <li className="p-4 border-b text-center"
+              <li className={`p-4 border-b text-center transition-all duration-200 ${isActive('/articles') ? 'text-baseprimary border-l-4 border-l-baseprimary bg-baseprimary bg-opacity-5' : ''}`}
               style={{
                 borderColor: darkMode ? 'gray-500' : 'gray-600'
               }}>
                 <Link to='/articles' onClick={closeNav}>Articles</Link>
               </li>
-              <li className="p-4 border-b text-center"
+              <li className={`p-4 border-b text-center transition-all duration-200 ${isActive('/contactUs') ? 'text-baseprimary border-l-4 border-l-baseprimary bg-baseprimary bg-opacity-5' : ''}`}
               style={{
                 borderColor: darkMode ? 'gray-500' : 'gray-600'
               }}>
                 <Link to='/contactUs' onClick={closeNav}>Contact Us</Link>
               </li>
-              <li className="p-4 border-b text-center"
+              <li className={`p-4 border-b text-center transition-all duration-200 ${isActive('/caseStudies') ? 'text-baseprimary border-l-4 border-l-baseprimary bg-baseprimary bg-opacity-5' : ''}`}
+              style={{
+                borderColor: darkMode ? 'gray-500' : 'gray-600'
+              }}>
+                <Link to='/caseStudies' onClick={closeNav}>Case Studies</Link>
+              </li>
+              <li className={`p-4 border-b text-center transition-all duration-200 ${isActive('/treeView') ? 'text-baseprimary border-l-4 border-l-baseprimary bg-baseprimary bg-opacity-5' : ''}`}
               style={{
                 borderColor: darkMode ? 'gray-500' : 'gray-600'
               }}>

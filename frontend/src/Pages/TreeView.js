@@ -88,7 +88,7 @@ const TreeView = ({darkMode}) => {
                                             fontWeight:'900',
                                             boxShadow:'0px 1px 20px 2px rgba(0,0,0,0.4)'
                                           }}>
-                                            JOURNEY
+                                            COMMUTE
                                           </h2>
                                       </div>
                                     </div>

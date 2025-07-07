@@ -5,9 +5,9 @@ import '../Components/Style.css';
 //image
 import logo from '../Assets/SensGrid logo.png';
 
-const Loading = () => {
+const Loading = ({ darkMode }) => {
   return (
-    <div className='flex h-screen items-center justify-center'>
+    <div className={`flex h-screen items-center justify-center ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
        <div className='absolute flex h-auto w-auto z-40'>
          <img src= {logo} alt='' className='object-cover w-32'/>
        </div>

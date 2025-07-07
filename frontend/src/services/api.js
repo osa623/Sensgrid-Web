@@ -4,7 +4,7 @@ import axios from 'axios';
  * API service for handling all API calls to the backend
  */
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_URL = 'http://localhost:5001/api';
 
 // Create a configured axios instance
 const apiClient = axios.create({

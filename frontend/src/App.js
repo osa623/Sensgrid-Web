@@ -16,6 +16,7 @@ import Pagethree from './SeperatePages/Pagethree.js';
 import Pagefour from './SeperatePages/Pagefour.js';
 import ArticleView from './Pages/ArticleView.js';
 import ArticleSection from './Pages/ArticleSection.js';
+import CaseStudies from './Pages/CaseStudies.js';
 
 
 
@@ -47,13 +48,17 @@ const AppContent = () => {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
 
   return (
     <div className="relative flex-col min-h-auto overflow-hidden">
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
       <div className="flex-grow">
         {isLoading ? (
-          <Loading />
+          <Loading darkMode={darkMode} setDarkMode={setDarkMode} />
         ) : (
           <Routes>
             <Route path="/" element={<Home darkMode={darkMode} />} />
@@ -63,6 +68,7 @@ const AppContent = () => {
             <Route path='/treeView' element={<TreeView darkMode ={darkMode}/>}/>
             <Route path='/articles' element={<ArticleSection darkMode ={darkMode}/>}/>
             <Route path='/articleview/:id' element={<ArticleView darkMode ={darkMode}/>}/>
+            <Route path='/caseStudies' element={<CaseStudies darkMode ={darkMode}/>}/>
             <Route path= '/pageOne' element={<PageOne/>}/>
             <Route path= '/pageTwo' element={<Pagetwo/>}/>
             <Route path= '/pageThree' element={<Pagethree/>}/>
@@ -71,7 +77,7 @@ const AppContent = () => {
             
           </Routes>
         )}
-        <Footer/>
+        <Footer darkmode={darkMode} />
       </div>
     </div>
   );

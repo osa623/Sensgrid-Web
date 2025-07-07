@@ -6,9 +6,10 @@
 
 
 .swiper-slide {
-    width: 30rem;
+    width: 20rem;
     height: 30rem;
     position: flex;
+    display: flex;
   }
   
   .swiper-slide-shadow-left,
