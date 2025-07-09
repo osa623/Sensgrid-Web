@@ -22,10 +22,13 @@ const Footer = ({darkmode}) => {
     
               {/* Links */}
               <div className="flex flex-wrap gap-6 text-sm">
-                <Link to='/home' className={`transition-colors ${darkmode ? 'hover:text-blue-400' : 'hover:text-blue-600'}`}>Home</Link>
-                <Link to='/aboutUs' className={`transition-colors ${darkmode ? 'hover:text-blue-400' : 'hover:text-blue-600'}`}>About</Link>
-                <Link to='/contactUs' className={`transition-colors ${darkmode ? 'hover:text-blue-400' : 'hover:text-blue-600'}`}>Contact</Link>
+                <Link to='/' className={`transition-colors ${darkmode ? 'hover:text-blue-400' : 'hover:text-blue-600'}`}>Home</Link>
+                <Link to='/aboutUs' className={`transition-colors ${darkmode ? 'hover:text-blue-400' : 'hover:text-blue-600'}`}>About Us</Link>
+                <Link to='/articles' className={`transition-colors ${darkmode ? 'hover:text-blue-400' : 'hover:text-blue-600'}`}>Articles</Link>
+                <Link to='/contactUs' className={`transition-colors ${darkmode ? 'hover:text-blue-400' : 'hover:text-blue-600'}`}>Contact Us</Link>
+                <Link to='/caseStudies' className={`transition-colors ${darkmode ? 'hover:text-blue-400' : 'hover:text-blue-600'}`}>Case Studies</Link>
                 <Link to='/treeView' className={`transition-colors ${darkmode ? 'hover:text-blue-400' : 'hover:text-blue-600'}`}>Social Tree</Link>
+
               </div>
             </div>
     
