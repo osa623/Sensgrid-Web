@@ -885,8 +885,8 @@ const LandingPage = ({darkMode}) => {
                             </div>
                            </div>
                            <div className='flex sms:flex-col sms:h-auto sms:p-5  w-full items-center justify-center mds:space-x-5 lgs:space-x-5 sms:space-y-4 mt-12'>
-                            
-                            {articles.map((tool)=> (
+
+                            {articles.slice(0,4).filter(article => article.status === 'published').map((tool)=> (
                                 <div key={tool.id} className='flex flex-col w-[25rem] sms:w-[22rem] overflow-hidden bg-primary cursor-default items-center justify-center rounded-lg lgs:h-[22rem]'
                                                                         data-aos='fade-up'
                                                                         data-aos-delay={`${100 + tool.id * 50}`} style={{

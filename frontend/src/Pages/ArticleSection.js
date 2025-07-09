@@ -183,7 +183,7 @@ const ArticleSection = ({darkMode, setDarkMode}) => {
 
             {/* Slider content */}
             <div className="h-full relative">
-              {featuredArticles.map((article, index) => (
+              {featuredArticles.filter(article => article.status === 'published').map((article, index) => (
                 <div 
                   key={article._id} 
                   className={`absolute inset-0 transition-opacity duration-500 ${
@@ -340,7 +340,7 @@ const ArticleSection = ({darkMode, setDarkMode}) => {
           </div>
         ) : filteredArticles.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredArticles.map((article) => (
+            {filteredArticles.filter(article => article.status === 'published').map((article) => (
               <div key={article._id} className={`${darkMode ? 'border-2 drop-shadow-md bg-darkTheme' : 'bg-primary' }  rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col h-full`}>
                 {/* Article Image */}
                 <div className="h-48 overflow-hidden">
@@ -434,28 +434,7 @@ const ArticleSection = ({darkMode, setDarkMode}) => {
           </div>
         )}
         
-        {/* Pagination */}
-        {filteredArticles.length > 0 && (
-          <div className="mt-12 flex justify-center">
-            <nav className="flex items-center space-x-2" aria-label="Pagination">
-              <button className="px-3 py-2 rounded-md bg-white text-sm font-medium text-gray-500 hover:bg-gray-100 border border-gray-300">
-                Previous
-              </button>
-              <button className="px-3 py-2 rounded-md bg-blue-600 text-sm font-medium text-white hover:bg-blue-700">
-                1
-              </button>
-              <button className="px-3 py-2 rounded-md bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 border border-gray-300">
-                2
-              </button>
-              <button className="px-3 py-2 rounded-md bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 border border-gray-300">
-                3
-              </button>
-              <button className="px-3 py-2 rounded-md bg-white text-sm font-medium text-gray-500 hover:bg-gray-100 border border-gray-300">
-                Next
-              </button>
-            </nav>
-          </div>
-        )}
+
       </div>
     </div>
   );
